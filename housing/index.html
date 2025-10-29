@@ -1,0 +1,1085 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Finding Housing in Chiang Mai</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* Finding Housing in Chiang Mai - Page CSS */
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.page-intro {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.content-main {
+  margin-bottom: 3rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+  margin-top: 1.2rem;
+}
+
+.section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.section ul, .section ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.section p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.key-facts {
+  background: #f0f4ff;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.key-facts h3 {
+  margin-top: 0;
+}
+
+.key-facts ul {
+  margin-bottom: 0;
+}
+
+.search-platforms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.platform-card {
+  background: #fafbfc;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.platform-card h3 {
+  margin-top: 0;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.amenity-item {
+  background: #fff8f0;
+  border: 1px solid #ffe0cc;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.amenity-item h4 {
+  margin-top: 0;
+  color: #d97706;
+}
+
+.amenity-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.checklist {
+  background: #f9fafb;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.8rem;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checklist-item label {
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.evaluation-guide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.eval-category {
+  background: #fafbfc;
+  border-radius: 6px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+.eval-category h3 {
+  margin-top: 0;
+}
+
+.eval-category ul {
+  margin-bottom: 0;
+}
+
+.cost-table {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.cost-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.cost-table thead {
+  background: #f0f4ff;
+}
+
+.cost-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #667eea;
+}
+
+.cost-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cost-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.alternatives {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.alt-card {
+  background: #fffbf0;
+  border-left: 4px solid #f59e0b;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.alt-card h3 {
+  margin-top: 0;
+  color: #d97706;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-section ul {
+  margin-bottom: 1.5rem;
+}
+
+.cta-section li {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: white;
+  color: #667eea;
+}
+
+.btn-primary:hover {
+  background: #f0f4ff;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-platforms,
+  .alternatives,
+  .evaluation-guide {
+    grid-template-columns: 1fr;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.page-intro {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.content-main {
+  margin-bottom: 3rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+  margin-top: 1.2rem;
+}
+
+.section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.section ul, .section ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.section p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.key-facts {
+  background: #f0f4ff;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.key-facts h3 {
+  margin-top: 0;
+}
+
+.key-facts ul {
+  margin-bottom: 0;
+}
+
+.search-platforms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.platform-card {
+  background: #fafbfc;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.platform-card h3 {
+  margin-top: 0;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.amenity-item {
+  background: #fff8f0;
+  border: 1px solid #ffe0cc;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.amenity-item h4 {
+  margin-top: 0;
+  color: #d97706;
+}
+
+.amenity-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.checklist {
+  background: #f9fafb;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.8rem;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checklist-item label {
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.evaluation-guide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.eval-category {
+  background: #fafbfc;
+  border-radius: 6px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+.eval-category h3 {
+  margin-top: 0;
+}
+
+.eval-category ul {
+  margin-bottom: 0;
+}
+
+.cost-table {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.cost-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.cost-table thead {
+  background: #f0f4ff;
+}
+
+.cost-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #667eea;
+}
+
+.cost-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cost-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.alternatives {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.alt-card {
+  background: #fffbf0;
+  border-left: 4px solid #f59e0b;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.alt-card h3 {
+  margin-top: 0;
+  color: #d97706;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-section ul {
+  margin-bottom: 1.5rem;
+}
+
+.cta-section li {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: white;
+  color: #667eea;
+}
+
+.btn-primary:hover {
+  background: #f0f4ff;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-platforms,
+  .alternatives,
+  .evaluation-guide {
+    grid-template-columns: 1fr;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><div class="page-container">
+  <div class="page-header">
+    <h1>Finding Housing in Chiang Mai</h1>
+    <p class="page-intro">A practical guide to locating, evaluating, and securing accommodation in Chiang Mai, with focus on the Suthep neighborhood.</p>
+  </div>
+
+  <div class="content-main">
+    <section class="section">
+      <h2>Housing Overview</h2>
+      <p>Chiang Mai offers excellent value for housing, with quality accommodations significantly cheaper than Western countries. Whether you're looking for a temporary base or permanent residence, this guide covers the process from search to move-in.</p>
+      
+      <div class="key-facts">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li><strong>Suthep Area Range:</strong> $250–$500/month for furnished apartments</li>
+          <li><strong>Lease Terms:</strong> Monthly to yearly (yearly offers 10–20% discount)</li>
+          <li><strong>Deposits:</strong> Typically 1–2 months rent</li>
+          <li><strong>Best Neighborhoods for Expats:</strong> Suthep, Nimman, Old City, Chiang Mai University area</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Where to Search</h2>
+      <div class="search-platforms">
+        <div class="platform-card">
+          <h3>Online Platforms</h3>
+          <ul>
+            <li><strong>Airbnb:</strong> Short-term, good for first 2–4 weeks while apartment hunting</li>
+            <li><strong>Booking.com:</strong> Monthly deals available; contact directly for rates</li>
+            <li><strong>Thai Property Sites:</strong> DDproperty.com, Doonung.com (Thai-language but searchable)</li>
+            <li><strong>Facebook Groups:</strong> "Chiang Mai Apartments," "Accommodation in Chiang Mai," "Housing in Chiang Mai"</li>
+            <li><strong>Nomad Lists:</strong> Community forums with vetted recommendations</li>
+          </ul>
+        </div>
+        
+        <div class="platform-card">
+          <h3>On-the-Ground Search</h3>
+          <ul>
+            <li>Walk around your target neighborhood and look for "For Rent" signs (สำหรับให้เช่า)</li>
+            <li>Ask local residents and other expats for recommendations</li>
+            <li>Visit local real estate agents (many English-speaking)</li>
+            <li>Check community boards at cafes and coworking spaces</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Suthep Neighborhood Guide</h2>
+      <p>Suthep (สุเทพ) is highly recommended for expats seeking community, amenities, and proximity to healthcare.</p>
+      
+      <h3>Why Choose Suthep?</h3>
+      <ul>
+        <li>Large, established expat community</li>
+        <li>Close to Chiang Mai University (cultural events, markets)</li>
+        <li>Multiple gyms, pools, and recreation centers</li>
+        <li>Restaurants serving international and Thai cuisine</li>
+        <li>Bangkok Hospital and other medical facilities nearby</li>
+        <li>Access to hiking and nature activities</li>
+        <li>Active AA meetings and recovery communities</li>
+      </ul>
+
+      <h3>Nearby Amenities in Suthep</h3>
+      <div class="amenities-grid">
+        <div class="amenity-item">
+          <h4>Healthcare</h4>
+          <p>Bangkok Hospital Chiang Mai, Health Care Medical Clinic, multiple pharmacies</p>
+        </div>
+        <div class="amenity-item">
+          <h4>Shopping & Food</h4>
+          <p>Lotus's supermarket, local markets, numerous restaurants</p>
+        </div>
+        <div class="amenity-item">
+          <h4>Recreation</h4>
+          <p>Gyms, swimming pools, yoga studios, art centers</p>
+        </div>
+        <div class="amenity-item">
+          <h4>Community</h4>
+          <p>AA meetings (50+ per week in Chiang Mai), expat groups, co-working spaces</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Housing Search Checklist</h2>
+      <div class="checklist">
+        <div class="checklist-item">
+          <input type="checkbox" id="c1">
+          <label for="c1">Define budget: $250–$500/month recommended for quality furnished apartment</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c2">
+          <label for="c2">Identify preferred neighborhood(s): Suthep, Nimman, Old City, or Chiang Mai University area</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c3">
+          <label for="c3">Search online platforms while still in US; book Airbnb for first 2–4 weeks</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c4">
+          <label for="c4">Upon arrival, visit neighborhoods in person during daylight hours</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c5">
+          <label for="c5">Tour apartments: Check plumbing, AC, WiFi, noise levels, security</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c6">
+          <label for="c6">Verify lease terms, deposit requirements, and cancellation policy</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c7">
+          <label for="c7">Ask about utilities included and average monthly costs</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c8">
+          <label for="c8">Negotiate: Many landlords offer discounts for 6–12 month leases</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c9">
+          <label for="c9">Take photos/videos before move-in to document condition</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="c10">
+          <label for="c10">Get landlord contact info, maintenance hotline, and Wi-Fi password in writing</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What to Look For in an Apartment</h2>
+      <div class="evaluation-guide">
+        <div class="eval-category">
+          <h3>Essential</h3>
+          <ul>
+            <li>Air conditioning (crucial for comfort and health)</li>
+            <li>Hot water and adequate water pressure</li>
+            <li>Reliable WiFi (test before signing)</li>
+            <li>Secure door locks and windows</li>
+            <li>Natural light and ventilation</li>
+          </ul>
+        </div>
+        <div class="eval-category">
+          <h3>Highly Desirable</h3>
+          <ul>
+            <li>Furnished (saves on setup costs)</li>
+            <li>Quiet, away from main roads</li>
+            <li>Proximity to markets, restaurants, medical facilities</li>
+            <li>Gym or pool access (building or nearby)</li>
+            <li>Cleaning service available or included</li>
+          </ul>
+        </div>
+        <div class="eval-category">
+          <h3>Red Flags</h3>
+          <ul>
+            <li>Landlord unwilling to provide written lease</li>
+            <li>Excessive upfront costs (more than deposit + first month)</li>
+            <li>Mold, dampness, or pest evidence</li>
+            <li>No emergency contact or maintenance response system</li>
+            <li>Unclear terms about utilities and additional fees</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Cost Breakdown</h2>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Monthly Cost (USD)</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Furnished 1BR apartment (Suthep)</td>
+              <td>$250–$500</td>
+              <td>Yearly lease offers 10–20% discount</td>
+            </tr>
+            <tr>
+              <td>Utilities (electricity, water, WiFi)</td>
+              <td>$30–$60</td>
+              <td>Varies by usage; WiFi often included</td>
+            </tr>
+            <tr>
+              <td>Cleaning service (2–3 hrs/week)</td>
+              <td>$15–$30</td>
+              <td>500–800 THB per session</td>
+            </tr>
+            <tr>
+              <td>Deposit (typical)</td>
+              <td>$250–$500</td>
+              <td>Refundable at lease end (minus damages)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Negotiation Tips</h2>
+      <ul>
+        <li><strong>Lease Length:</strong> Offer 12-month commitment for 15–20% discount</li>
+        <li><strong>Utilities:</strong> Ask which utilities are included; negotiate if not</li>
+        <li><strong>Deposit:</strong> Negotiate down to 1 month if possible (standard is 1–2 months)</li>
+        <li><strong>Furnishings:</strong> If unfurnished, ask if landlord will provide basics (bed, refrigerator)</li>
+        <li><strong>Cancellation:</strong> Seek 30-day cancellation clause with deposit forfeit (vs. full lease liability)</li>
+        <li><strong>Walk Around:</strong> Document existing damage before move-in; get landlord signature</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Alternatives to Traditional Lease</h2>
+      <div class="alternatives">
+        <div class="alt-card">
+          <h3>Coliving Spaces</h3>
+          <p>Increasingly popular in Chiang Mai; include furniture, utilities, and community amenities. Prices: $400–$800/month. Good for short-term adjustment.</p>
+        </div>
+        <div class="alt-card">
+          <h3>Serviced Apartments</h3>
+          <p>Hotel-style apartments with cleaning, WiFi, 24/7 reception. Prices: $500–$1,200/month. Premium option for first 1–3 months.</p>
+        </div>
+        <div class="alt-card">
+          <h3>Monthly Airbnb/Booking.com</h3>
+          <p>Flexible for first month while apartment hunting. Book in advance for discounts. Transition to annual lease once settled.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Moving Timeline</h2>
+      <p><strong>Pre-Arrival (3–4 weeks before):</strong> Search online, book temporary accommodation, bookmark listings.</p>
+      <p><strong>Arrival Week 1:</strong> Settle into Airbnb, explore Suthep, contact promising landlords via Facebook.</p>
+      <p><strong>Week 2–3:</strong> Tour apartments, negotiate terms, finalize lease.</p>
+      <p><strong>End of Week 3:</strong> Move into permanent housing.</p>
+    </section>
+
+    <section class="section cta-section">
+      <h2>Next Steps</h2>
+      <p>Ready to find your home in Chiang Mai?</p>
+      <ul>
+        <li>Join Chiang Mai housing Facebook groups before you arrive</li>
+        <li>Set up alerts on DDproperty.com and Thai property sites</li>
+        <li>Connect with the expat community to get firsthand recommendations</li>
+        <li>Budget time to explore neighborhoods in person—this is not something to rush</li>
+      </ul>
+      <div class="button-group">
+        <a href="/carolyn-3/resources" class="btn btn-primary">View More Resources</a>
+        <a href="/carolyn-3/settling-in" class="btn btn-secondary">Back to Settling In</a>
+      </div>
+    </section>
+  </div>
+</div><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
