@@ -1,0 +1,651 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Travel to Thailand</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* Travel to Thailand - Page CSS */
+.travel-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.travel-main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 0.5rem;
+}
+
+.flight-card {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.flight-card h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.flight-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flight-card li {
+  padding: 0.5rem 0;
+  color: #555;
+}
+
+.note {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.step {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+}
+
+.step h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.checklist {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.checklist-item label {
+  cursor: pointer;
+  color: #555;
+  flex: 1;
+}
+
+.info-card {
+  background: #f0f4ff;
+  padding: 1.25rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #667eea;
+}
+
+.info-card h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-card p {
+  color: #555;
+  margin: 0;
+}
+
+.next-steps ol {
+  color: #555;
+  padding-left: 2rem;
+}
+
+.next-steps li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .travel-main h1 {
+    font-size: 1.8rem;
+  }
+  
+  section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .flight-card,
+  .step,
+  .checklist,
+  .info-card {
+    padding: 1rem;
+  }
+}.travel-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.travel-main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 0.5rem;
+}
+
+.flight-card {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.flight-card h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.flight-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flight-card li {
+  padding: 0.5rem 0;
+  color: #555;
+}
+
+.note {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.step {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+}
+
+.step h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.checklist {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.checklist-item label {
+  cursor: pointer;
+  color: #555;
+  flex: 1;
+}
+
+.info-card {
+  background: #f0f4ff;
+  padding: 1.25rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #667eea;
+}
+
+.info-card h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-card p {
+  color: #555;
+  margin: 0;
+}
+
+.next-steps ol {
+  color: #555;
+  padding-left: 2rem;
+}
+
+.next-steps li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .travel-main h1 {
+    font-size: 1.8rem;
+  }
+  
+  section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .flight-card,
+  .step,
+  .checklist,
+  .info-card {
+    padding: 1rem;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><main class="travel-main">
+  <div class="container">
+    <h1>Travel to Thailand</h1>
+    <p class="intro">Your flight details, arrival process, and essential first 24-hour setup in Chiang Mai.</p>
+
+    <section class="flight-details">
+      <h2>Flight Information</h2>
+      <div class="flight-card">
+        <h3>Baltimore → Chiang Mai</h3>
+        <ul>
+          <li><strong>Route:</strong> BWI → Detroit → Seoul → Chiang Mai (CNX)</li>
+          <li><strong>Departure:</strong> August 24, 2025</li>
+          <li><strong>Arrival:</strong> August 25, 2025 at 9:55 PM</li>
+          <li><strong>Total Journey:</strong> 25+ hours with layover</li>
+        </ul>
+        <div class="note">
+          <strong>Note:</strong> Airlines may ask for a return or onward ticket. Be prepared with documentation.
+        </div>
+      </div>
+    </section>
+
+    <section class="arrival-process">
+      <h2>Arrival Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <h3>1. Immigration & Visa Exemption</h3>
+          <p>US citizens receive automatic <strong>60-day visa exemption</strong> upon arrival. No visa required.</p>
+          <p>You will receive an automatic 60-day stamp in your passport at immigration.</p>
+        </div>
+
+        <div class="step">
+          <h3>2. Collect Luggage & Customs</h3>
+          <p>Standard baggage collection and customs procedures. Plan for 30-60 minutes.</p>
+        </div>
+
+        <div class="step">
+          <h3>3. Get a Cell Phone Plan</h3>
+          <p>Purchase a local Thai SIM card at the airport. Major providers: AIS, Dtac, True Move.</p>
+          <p><strong>Cost:</strong> 99-299 THB ($3-9) for starter plans with data</p>
+        </div>
+
+        <div class="step">
+          <h3>4. Currency Exchange</h3>
+          <p>Exchange USD to Thai Baht at airport money changer or ATM. Airport rates are reasonable.</p>
+          <p><strong>Note:</strong> ATM withdrawals charge 220 THB ($6.50) per transaction—withdraw larger amounts.</p>
+        </div>
+
+        <div class="step">
+          <h3>5. Transportation to Accommodation</h3>
+          <p>Download <strong>Grab</strong> app (Thai Uber equivalent) or take an airport taxi.</p>
+          <p><strong>Cost:</strong> 80-150 THB ($2-4.50) to Suthep area via Grab</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="first-24-hours">
+      <h2>First 24 Hours Checklist</h2>
+      <div class="checklist">
+        <div class="checklist-item">
+          <input type="checkbox" id="check1">
+          <label for="check1">Get Thai SIM card and mobile data activated</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check2">
+          <label for="check2">Exchange money or withdraw from ATM</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check3">
+          <label for="check3">Download Grab app for transportation</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check4">
+          <label for="check4">Arrive at temporary accommodation</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check5">
+          <label for="check5">Rest and adjust to time zone (UTC+7)</label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="check6">
+          <label for="check6">Locate nearby convenience store (7-Eleven)</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="important-info">
+      <h2>Important Information</h2>
+      <div class="info-card">
+        <h3>⏰ Time Zone</h3>
+        <p>Thailand is UTC+7. Adjust gradually over 2-3 days.</p>
+      </div>
+      <div class="info-card">
+        <h3>💵 Currency</h3>
+        <p>Thai Baht (THB). 1 USD ≈ 33-35 THB</p>
+      </div>
+      <div class="info-card">
+        <h3>🌡️ Weather</h3>
+        <p>August is hot and humid (28-33°C / 82-91°F). Pack light, breathable clothing.</p>
+      </div>
+      <div class="info-card">
+        <h3>📍 Destination</h3>
+        <p>Chiang Mai, Thailand. Suthep neighborhood has large expat community with English-speaking services.</p>
+      </div>
+    </section>
+
+    <section class="next-steps">
+      <h2>Next Steps</h2>
+      <p>After arriving and resting:</p>
+      <ol>
+        <li>Explore your neighborhood (grocery stores, restaurants, AA meetings)</li>
+        <li>Visit your temporary accommodation and get oriented</li>
+        <li>Begin setting up services (see <a href="/carolyn-3/settling-in">Settling In</a> guide)</li>
+        <li>Schedule a medical consultation to begin DTV preparation (see <a href="/carolyn-3/medical-planning">Medical Planning</a>)</li>
+      </ol>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
