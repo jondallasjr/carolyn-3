@@ -1,0 +1,782 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Long-Term Stay (5+ Years)</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* Long-Term Stay (5+ Years) - Page CSS */
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.page-summary {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.page-content {
+  line-height: 1.8;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.content-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.content-section h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.content-section h4 {
+  font-size: 1.1rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.content-section p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.content-section ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content-section li {
+  margin-bottom: 0.7rem;
+  color: #555;
+}
+
+.option-card {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.option-card h3 {
+  color: #667eea;
+  margin-top: 0;
+}
+
+.option-card ul {
+  margin-bottom: 0;
+}
+
+.key-points {
+  background: #f0f4ff;
+  padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.key-points li {
+  margin-bottom: 1rem;
+}
+
+.timeline-item {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.timeline-item h4 {
+  color: #856404;
+  margin-top: 0;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+  color: #856404;
+}
+
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.budget-table th,
+.budget-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.budget-table th {
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+}
+
+.budget-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.info-box {
+  background: #e7f3ff;
+  border-left: 4px solid #2196F3;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.info-box h2 {
+  margin-top: 0;
+  color: #1565C0;
+}
+
+.info-box p {
+  margin-bottom: 1rem;
+  color: #0D47A1;
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+.navigation-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.related-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.related-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.related-link:hover {
+  background: #764ba2;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .budget-table {
+    font-size: 0.9rem;
+  }
+
+  .budget-table th,
+  .budget-table td {
+    padding: 0.7rem;
+  }
+
+  .related-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .related-link {
+    display: block;
+    text-align: center;
+  }
+}.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.page-summary {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.page-content {
+  line-height: 1.8;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.content-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.content-section h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.content-section h4 {
+  font-size: 1.1rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.content-section p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.content-section ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content-section li {
+  margin-bottom: 0.7rem;
+  color: #555;
+}
+
+.option-card {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.option-card h3 {
+  color: #667eea;
+  margin-top: 0;
+}
+
+.option-card ul {
+  margin-bottom: 0;
+}
+
+.key-points {
+  background: #f0f4ff;
+  padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.key-points li {
+  margin-bottom: 1rem;
+}
+
+.timeline-item {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.timeline-item h4 {
+  color: #856404;
+  margin-top: 0;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+  color: #856404;
+}
+
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.budget-table th,
+.budget-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.budget-table th {
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+}
+
+.budget-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.info-box {
+  background: #e7f3ff;
+  border-left: 4px solid #2196F3;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.info-box h2 {
+  margin-top: 0;
+  color: #1565C0;
+}
+
+.info-box p {
+  margin-bottom: 1rem;
+  color: #0D47A1;
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+.navigation-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.related-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.related-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.related-link:hover {
+  background: #764ba2;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .budget-table {
+    font-size: 0.9rem;
+  }
+
+  .budget-table th,
+  .budget-table td {
+    padding: 0.7rem;
+  }
+
+  .related-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .related-link {
+    display: block;
+    text-align: center;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><main class="page-container">
+  <div class="page-header">
+    <h1>Long-Term Stay (5+ Years)</h1>
+    <p class="page-summary">Managing your status after DTV approval: staying continuously for up to 5 years.</p>
+  </div>
+
+  <div class="page-content">
+    <section class="content-section">
+      <h2>Overview</h2>
+      <p>Once you've successfully obtained your 5-year DTV visa, managing your long-term stay in Thailand is straightforward. The DTV allows you to remain in Thailand for extended periods with minimal visa maintenance.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Continuous Stay Options</h2>
+      <div class="option-card">
+        <h3>Option 1: 360-Day Continuous Stay</h3>
+        <p>You can stay in Thailand continuously for up to 360 days (nearly a full year) without leaving.</p>
+        <ul>
+          <li>Valid for full 360 days from your entry date</li>
+          <li>No re-entry permit required with DTV</li>
+          <li>After 360 days, you must leave Thailand briefly and re-enter</li>
+          <li>Upon re-entry, you get a fresh 180-day stamp</li>
+        </ul>
+      </div>
+
+      <div class="option-card">
+        <h3>Option 2: Extension Before 180 Days</h3>
+        <p>If you prefer to stay longer in Thailand continuously, extend before your initial 180 days expire.</p>
+        <ul>
+          <li>Extension cost: approximately $300 USD (9,900 THB)</li>
+          <li>Processing: Same-day or next-day at Immigration office</li>
+          <li>Extends your stay to a total of 360 days</li>
+          <li>Must apply before your current permission expires</li>
+        </ul>
+      </div>
+
+      <div class="option-card">
+        <h3>Option 3: Border Runs Every 180 Days</h3>
+        <p>The most flexible and cost-effective approach for many long-term residents.</p>
+        <ul>
+          <li>Leave Thailand and immediately re-enter every 180 days</li>
+          <li>Each re-entry grants a fresh 180-day stamp</li>
+          <li>Popular border runs: Laos (Vientiane), Cambodia (Poipet), Malaysia</li>
+          <li>Cost: $50-150 USD depending on destination</li>
+          <li>Time: Can be done in a weekend trip</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Key Points for DTV Holders</h2>
+      <ul class="key-points">
+        <li><strong>No Re-entry Permits Needed:</strong> Unlike other visas, DTV holders don't need separate re-entry permits for border runs</li>
+        <li><strong>5-Year Validity:</strong> Your DTV visa is valid for 5 years, meaning you don't need to reapply for visa approval</li>
+        <li><strong>Each Entry = New Stamp:</strong> Each time you re-enter Thailand, immigration stamps your passport with a new entry permission (180 days)</li>
+        <li><strong>Medical/Wellness Focus:</strong> Remember to maintain your original purpose (medical treatment, wellness, digital nomad work) in case of inquiries</li>
+        <li><strong>Financial Requirements:</strong> While there's no ongoing financial requirement after approval, maintaining stability is prudent</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>Recommended Timeline Strategy</h2>
+      <div class="timeline-item">
+        <h4>Months 1-6</h4>
+        <p>Settle into your chosen location (e.g., Chiang Mai). Establish routines, build community, access medical/wellness services as planned.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Month 5-6</h4>
+        <p>Decide your strategy: extension, border run, or partial stay. Plan your next movement.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Month 6</h4>
+        <p>If extending: Visit Immigration to extend for another 180 days. If border running: Book travel for your trip.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Years 1-5</h4>
+        <p>Repeat your chosen maintenance method. Your 5-year DTV remains valid throughout.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Budget Considerations</h2>
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Cost</th>
+            <th>Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Extension (Optional)</td>
+            <td>~$300 USD</td>
+            <td>Every 180-360 days</td>
+          </tr>
+          <tr>
+            <td>Border Run (Alternative)</td>
+            <td>$50-150 USD</td>
+            <td>Every 180-360 days</td>
+          </tr>
+          <tr>
+            <td>DTV Renewal (After 5 Years)</td>
+            <td>$340 USD (application fee)</td>
+            <td>Once after 5 years</td>
+          </tr>
+          <tr>
+            <td>Living Expenses (Chiang Mai)</td>
+            <td>$800-1,500 USD/month</td>
+            <td>Monthly</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="content-section info-box">
+      <h2>Important Reminders</h2>
+      <p><strong>After 5 Years:</strong> Your DTV expires and you'll need to reapply if you wish to continue. The process mirrors your initial application: new medical plan, sponsor documentation, and approval through a Thai embassy.</p>
+      <p><strong>Passport Space:</strong> With frequent stamps, monitor your passport's remaining pages. You can get passport pages added or renew your passport as needed.</p>
+      <p><strong>Keep Records:</strong> Save copies of all DTV approvals, medical letters, and financial sponsor documentation for future applications or inquiries.</p>
+    </section>
+
+    <section class="content-section navigation-section">
+      <h3>Related Pages</h3>
+      <div class="related-links">
+        <a href="/carolyn-3/visa" class="related-link">← DTV Visa Overview</a>
+        <a href="/carolyn-3/extension" class="related-link">Extension Process →</a>
+        <a href="/carolyn-3/resources" class="related-link">Resources & Links →</a>
+      </div>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
