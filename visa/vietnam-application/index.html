@@ -1,0 +1,799 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Vietnam Application & Processing</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* DTV Visa Guide - Page CSS */
+.visa-guide-main {
+  background: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 2rem 0 3rem 0;
+  border-bottom: 2px solid #667eea;
+  margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.overview-section {
+  margin-bottom: 3rem;
+}
+
+.overview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.overview-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.overview-card {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.overview-card h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.overview-card p {
+  color: #555;
+  margin: 0;
+}
+
+.key-requirements-section {
+  margin-bottom: 3rem;
+}
+
+.key-requirements-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.requirement-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 3px solid #667eea;
+}
+
+.requirement-item h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.requirement-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.requirement-item li {
+  padding: 0.4rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.requirement-item li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.timeline-overview-section {
+  margin-bottom: 3rem;
+}
+
+.timeline-overview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.timeline-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.step-number {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.step-content p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.approval-rates-section {
+  margin-bottom: 3rem;
+  background: #f0f4ff;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.approval-rates-section h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.approval-info .highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.approval-info p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.approval-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.approval-info li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.approval-info li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.important-notes-section {
+  margin-bottom: 3rem;
+}
+
+.important-notes-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+}
+
+.note-card h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.note-card p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.next-steps-section {
+  margin-bottom: 3rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.next-steps-section h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.next-steps-content p {
+  color: #666;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.next-steps-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #764ba2;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+  background: #f0f4ff;
+  color: #667eea;
+}
+
+.faq-preview-section {
+  margin-bottom: 2rem;
+}
+
+.faq-preview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.faq-item p {
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .overview-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .next-steps-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Vietnam Application & Processing - Page CSS */
+</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><div class="visa-guide-main">
+  <div class="container">
+    <section class="hero-section">
+      <h1>Vietnam Application & Processing</h1>
+      <p class="subtitle">Submit your DTV application in Vietnam and wait for approval while exploring the country</p>
+    </section>
+
+    <section class="overview-section">
+      <h2>Why Vietnam?</h2>
+      <div class="overview-content">
+        <div class="overview-card">
+          <h3>High Approval Rate</h3>
+          <p>Hanoi and Ho Chi Minh City embassies have very high DTV approval rates</p>
+        </div>
+        <div class="overview-card">
+          <h3>Cannot Apply from Thailand</h3>
+          <p>DTV applications must be submitted from outside Thailand only</p>
+        </div>
+        <div class="overview-card">
+          <h3>Affordable Stay</h3>
+          <p>$30-40/night accommodation while waiting for approval</p>
+        </div>
+        <div class="overview-card">
+          <h3>Fast Processing</h3>
+          <p>Official timeline: 5 working days. Realistic: 2 days to 2 weeks</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-overview-section">
+      <h2>Vietnam Trip Timeline</h2>
+      <div class="timeline-steps">
+        <div class="timeline-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Travel to Vietnam</h3>
+            <p>Fly from Chiang Mai to Hanoi or Ho Chi Minh City with your financial sponsor (Jon). Bring all DTV application documents.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Submit Application</h3>
+            <p>Submit complete DTV application package at Thai Embassy within 24 hours of arrival for best processing time.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Wait in Vietnam</h3>
+            <p>Stay in Vietnam during processing. Cannot return to Thailand until approval received via email.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Receive Approval</h3>
+            <p>Print multiple copies of DTV approval. Embassy may request additional documents during this period.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Return to Thailand</h3>
+            <p>Fly back to Chiang Mai with approved DTV visa. Show printed approval at border. 180-day stay begins.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="key-requirements-section">
+      <h2>Vietnam Entry Requirements</h2>
+      <div class="requirements-grid">
+        <div class="requirement-item">
+          <h3>Vietnamese Tourist Visa</h3>
+          <ul>
+            <li>US citizens need visa for Vietnam ($25 online)</li>
+            <li>Can obtain e-visa online before travel</li>
+            <li>Valid for 30 days single entry</li>
+            <li>Processing: 3-5 business days</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Budget for Vietnam Stay</h3>
+          <ul>
+            <li>Accommodation: $30-40/night</li>
+            <li>Food & transport: $15-25/day</li>
+            <li>Total estimated: $400-600 for 7-14 day stay</li>
+            <li>Embassy may request additional docs during wait</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Documents to Bring</h3>
+          <ul>
+            <li>Printed DTV application package (multiple copies)</li>
+            <li>Passport</li>
+            <li>Medical plan letters from doctors</li>
+            <li>Financial sponsor documentation</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Critical Timing</h3>
+          <ul>
+            <li>Submit within 24 hours of arrival for best processing</li>
+            <li>Official processing: 5 working days</li>
+            <li>Realistic timeline: 2 days to 2 weeks</li>
+            <li>Check email daily for approval or requests</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="approval-rates-section">
+      <h2>Embassy Selection</h2>
+      <div class="approval-info">
+        <span class="highlight">VERY HIGH approval rate from Hanoi and Ho Chi Minh City</span>
+        <p>Both embassies have proven track records with DTV applications. Choose based on:</p>
+        <ul>
+          <li><strong>Hanoi Embassy:</strong> Northern route, slightly larger city, well-established expat network</li>
+          <li><strong>Ho Chi Minh City Embassy:</strong> Southern route, larger city, robust infrastructure</li>
+          <li>Both process applications efficiently with clear procedures</li>
+          <li>Both have experience with medical tourism DTV applications</li>
+        </ul>
+        <p style="margin-top: 1.5rem;"><strong>Pro tip:</strong> Research current wait times for your chosen embassy before booking flights.</p>
+      </div>
+    </section>
+
+    <section class="important-notes-section">
+      <h2>Critical Information</h2>
+      <div class="notes-grid">
+        <div class="note-card">
+          <h3>🚫 Cannot Return During Processing</h3>
+          <p>You must stay in Vietnam while waiting for DTV approval. Do not return to Thailand or your application may be denied.</p>
+        </div>
+        <div class="note-card">
+          <h3>📧 Check Email Regularly</h3>
+          <p>Approval arrives via email with DTV document. Print multiple copies immediately. Embassy may also request additional documents via email.</p>
+        </div>
+        <div class="note-card">
+          <h3>✓ Bring Financial Sponsor</h3>
+          <p>It's recommended (and often required) to travel with your financial sponsor (Jon) for the application submission.</p>
+        </div>
+        <div class="note-card">
+          <h3>📋 Document Perfection</h3>
+          <p>All documents must be error-free. Typos or inconsistencies cause automatic rejection. Review thoroughly before submission.</p>
+        </div>
+        <div class="note-card">
+          <h3>💰 Additional Requests</h3>
+          <p>Embassy may request additional financial documents or clarifications during processing. Budget extra time if this occurs.</p>
+        </div>
+        <div class="note-card">
+          <h3>🛂 Border Entry Procedure</h3>
+          <p>When returning to Thailand with approved DTV, show printed approval at immigration. 5-year visa and 180-day entry permit issued immediately.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="key-requirements-section">
+      <h2>Vietnam Trip Checklist</h2>
+      <div class="requirements-grid">
+        <div class="requirement-item">
+          <h3>Before You Leave Thailand</h3>
+          <ul>
+            <li>Obtain Vietnamese tourist e-visa ($25)</li>
+            <li>Book return flights to Thailand</li>
+            <li>Verify all DTV documents are error-free</li>
+            <li>Print multiple copies of entire application package</li>
+            <li>Confirm financial sponsor will travel with you</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Upon Arrival in Vietnam</h3>
+          <ul>
+            <li>Go to Thai Embassy within 24 hours</li>
+            <li>Submit complete DTV application package</li>
+            <li>Receive submission receipt and timeline</li>
+            <li>Get embassy contact info for inquiries</li>
+            <li>Ask about email notification procedure</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>While Waiting (2-14 days)</h3>
+          <ul>
+            <li>Explore Vietnam responsibly</li>
+            <li>Check email multiple times daily</li>
+            <li>Respond immediately to any embassy requests</li>
+            <li>Keep printed copies accessible at all times</li>
+            <li>Do not leave Vietnam during processing</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Upon Approval</h3>
+          <ul>
+            <li>Print multiple copies of DTV approval email</li>
+            <li>Book flight back to Chiang Mai</li>
+            <li>Pack printed approvals in carry-on bag</li>
+            <li>Arrive at Thailand border prepared</li>
+            <li>Present approval document to immigration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-steps-section">
+      <h2>What Happens After Approval</h2>
+      <div class="next-steps-content">
+        <p>Once your DTV visa is approved and you return to Thailand, you'll have a 5-year visa with:</p>
+        <ul style="margin-bottom: 1.5rem; color: #666;">
+          <li><strong>180-day continuous stay:</strong> You can stay in Thailand for up to 180 days without leaving</li>
+          <li><strong>No re-entry permits needed:</strong> For the full 5 years, you don't need special permits to stay</li>
+          <li><strong>Extension option:</strong> Can extend for additional 180 days (costs ~$300) or do border runs every 180 days</li>
+          <li><strong>Long-term stability:</strong> This visa solves your visa situation for 5+ years, allowing you to focus on settling and treatment</li>
+        </ul>
+        <p style="font-size: 1.05rem; color: #555; margin-bottom: 2rem;">Your DTV approval opens the door to deep roots in Thailand—whether that's permanent housing in Suthep, ongoing medical treatment, building community, or long-term recovery support.</p>
+      </div>
+      <div class="next-steps-links">
+        <a href="/carolyn-3/visa/preparation" class="btn btn-secondary">← Back to Preparation</a>
+        <a href="/carolyn-3/settling-in" class="btn btn-primary">Next: Settling In →</a>
+        <a href="/carolyn-3/extension" class="btn btn-secondary">Learn About Extensions</a>
+      </div>
+    </section>
+  </div>
+</div><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
