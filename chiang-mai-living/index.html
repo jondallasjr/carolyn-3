@@ -1,0 +1,1142 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Chiang Mai Living Guide</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+}
+
+.logo a {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-menu a {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 60px 40px 20px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .site-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .site-nav.active {
+    max-height: 300px;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px 0;
+  }
+  
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .logo a {
+    font-size: 1.2em;
+  }
+}
+/* Chiang Mai Living Guide - Page CSS */
+.chiang-mai-guide {
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  opacity: 0.95;
+}
+
+.guide-section {
+  padding: 60px 40px;
+}
+
+.guide-section.alternate {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.guide-section h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.card ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95em;
+}
+
+.card li:last-child {
+  border-bottom: none;
+}
+
+.cost-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1em;
+}
+
+.cost-row:last-child {
+  border-bottom: none;
+}
+
+.cost-row:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.cost-item {
+  flex: 1;
+  color: #333;
+}
+
+.cost-price {
+  color: #667eea;
+  font-weight: 600;
+  text-align: right;
+  min-width: 150px;
+}
+
+.transportation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.transport-card {
+  background: white;
+  border-left: 4px solid #667eea;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.transport-card h3 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.community-list {
+  display: grid;
+  gap: 30px;
+}
+
+.community-item {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.community-item h3 {
+  color: #667eea;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+.community-item ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.community-item li {
+  padding: 6px 0 6px 25px;
+  position: relative;
+}
+
+.community-item li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.amenity {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.amenity h4 {
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.amenity p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.tip {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.tip h3 {
+  color: #667eea;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 0 10px;
+  background: white;
+  color: #667eea;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid white;
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: white;
+  text-decoration: none;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #667eea;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+  
+  .hero-content p {
+    font-size: 1em;
+  }
+  
+  .guide-section {
+    padding: 40px 20px;
+  }
+  
+  .guide-section h2 {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cost-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  
+  .cost-price {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+  
+  .cta-button {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .cta-section {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.4em;
+  }
+  
+  .guide-section h2 {
+    font-size: 1.3em;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+}.chiang-mai-guide {
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  opacity: 0.95;
+}
+
+.guide-section {
+  padding: 60px 40px;
+}
+
+.guide-section.alternate {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.guide-section h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.card ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95em;
+}
+
+.card li:last-child {
+  border-bottom: none;
+}
+
+.cost-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1em;
+}
+
+.cost-row:last-child {
+  border-bottom: none;
+}
+
+.cost-row:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.cost-item {
+  flex: 1;
+  color: #333;
+}
+
+.cost-price {
+  color: #667eea;
+  font-weight: 600;
+  text-align: right;
+  min-width: 150px;
+}
+
+.transportation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.transport-card {
+  background: white;
+  border-left: 4px solid #667eea;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.transport-card h3 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.community-list {
+  display: grid;
+  gap: 30px;
+}
+
+.community-item {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.community-item h3 {
+  color: #667eea;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+.community-item ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.community-item li {
+  padding: 6px 0 6px 25px;
+  position: relative;
+}
+
+.community-item li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.amenity {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.amenity h4 {
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.amenity p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.tip {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.tip h3 {
+  color: #667eea;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 0 10px;
+  background: white;
+  color: #667eea;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid white;
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: white;
+  text-decoration: none;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #667eea;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+  
+  .hero-content p {
+    font-size: 1em;
+  }
+  
+  .guide-section {
+    padding: 40px 20px;
+  }
+  
+  .guide-section h2 {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cost-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  
+  .cost-price {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+  
+  .cta-button {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .cta-section {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.4em;
+  }
+  
+  .guide-section h2 {
+    font-size: 1.3em;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/carolyn-3/">Thailand DTV Guide</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<script>
+  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+    document.querySelector('.site-nav').classList.toggle('active');
+  });
+</script><nav class="site-nav">
+  <ul class="nav-menu">
+    <li><a href="/carolyn-3/">Home</a></li>
+    <li><a href="/carolyn-3/phases">Phases</a></li>
+    <li><a href="/carolyn-3/resources">Resources</a></li>
+    <li><a href="/carolyn-3/faq">FAQ</a></li>
+    <li><a href="/carolyn-3/contact">Contact</a></li>
+  </ul>
+</nav><main class="chiang-mai-guide">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Chiang Mai Living Guide</h1>
+      <p>Practical information for daily life in Thailand's northern hub</p>
+    </div>
+  </section>
+
+  <section class="guide-section">
+    <div class="container">
+      <h2>Neighborhoods & Housing</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Suthep Area</h3>
+          <p>Large expat community with English-speaking services. Close to Chiang Mai University and hiking.</p>
+          <ul>
+            <li><strong>Housing Cost:</strong> $250-500/month</li>
+            <li><strong>Best for:</strong> Expats, families, quieter setting</li>
+            <li><strong>Amenities:</strong> Gyms, pools, restaurants, grocery stores</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Old City</h3>
+          <p>Historic temples and traditional Thai culture. Central location with good restaurants.</p>
+          <ul>
+            <li><strong>Vibe:</strong> Cultural, walkable, touristy</li>
+            <li><strong>Best for:</strong> First-time visitors, cultural immersion</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Nimman</h3>
+          <p>Modern, trendy area with cafes, bars, and young professionals.</p>
+          <ul>
+            <li><strong>Vibe:</strong> Youthful, contemporary, nightlife</li>
+            <li><strong>Best for:</strong> Digital nomads, social scene</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section alternate">
+    <div class="container">
+      <h2>Daily Costs & Budget</h2>
+      <div class="cost-table">
+        <div class="cost-row">
+          <div class="cost-item"><strong>Housing</strong></div>
+          <div class="cost-price">$250-500/month</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-item"><strong>Food (local)</strong></div>
+          <div class="cost-price">$2-5/meal</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-item"><strong>Physical Therapy</strong></div>
+          <div class="cost-price">$25-75/session</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-item"><strong>Cleaning Service</strong></div>
+          <div class="cost-price">500-800 THB ($15-24)</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-item"><strong>ATM Withdrawal Fee</strong></div>
+          <div class="cost-price">220 THB ($6.50)</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-item"><strong>Grab Taxi/Motorbike</strong></div>
+          <div class="cost-price">Very inexpensive</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section">
+    <div class="container">
+      <h2>Transportation</h2>
+      <div class="transportation-grid">
+        <div class="transport-card">
+          <h3>Grab App</h3>
+          <p>Download and set up Grab for taxis and motorbikes. Very affordable compared to Western cities.</p>
+        </div>
+        <div class="transport-card">
+          <h3>Public Transport</h3>
+          <p>Buses and songthaews (shared red trucks) are the cheapest local transportation options.</p>
+        </div>
+        <div class="transport-card">
+          <h3>Motorcycle Rental</h3>
+          <p>Affordable option for getting around. International license recommended but not always required.</p>
+        </div>
+        <div class="transport-card">
+          <h3>Walking</h3>
+          <p>Chiang Mai is very walkable, especially in Suthep and Old City areas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section alternate">
+    <div class="container">
+      <h2>Healthcare & Medical Services</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Bangkok Hospital Chiang Mai</h3>
+          <p>24/7 English-speaking facility with proven track record for DTV medical letters.</p>
+          <ul>
+            <li>Consultation: ~$40-90</li>
+            <li>Excellent for medical documentation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Physical Therapy</h3>
+          <p>Specialized treatment at fraction of US costs ($25-75/session vs $100+ in US).</p>
+          <ul>
+            <li>Multiple clinics available</li>
+            <li>English-speaking therapists</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Pharmacies</h3>
+          <p>Many US medications available at lower prices. Bring list of prescriptions for local equivalents.</p>
+          <ul>
+            <li>Widely available throughout city</li>
+            <li>Over-the-counter availability varies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section">
+    <div class="container">
+      <h2>Community & Social Activities</h2>
+      <div class="community-list">
+        <div class="community-item">
+          <h3>Recovery Community</h3>
+          <p>50+ AA meetings per week in Chiang Mai. Buddhist recovery and Refuge Recovery meetings available. Counselling Thailand and The Cabin alumni network for addiction support.</p>
+        </div>
+        <div class="community-item">
+          <h3>Expat Groups</h3>
+          <p>Join Chiang Mai Expats Facebook groups. Large expat community with established support networks.</p>
+        </div>
+        <div class="community-item">
+          <h3>Activity Groups</h3>
+          <ul>
+            <li>Yoga & fitness classes</li>
+            <li>Hiking groups</li>
+            <li>Art & crafting circles</li>
+            <li>Cooking classes</li>
+            <li>Board game meetups</li>
+          </ul>
+        </div>
+        <div class="community-item">
+          <h3>Volunteering</h3>
+          <p>Teaching English, women's organizations, and other volunteer opportunities available through expat networks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section alternate">
+    <div class="container">
+      <h2>Essential Amenities Near Suthep</h2>
+      <div class="amenities-grid">
+        <div class="amenity">
+          <h4>🛒 Shopping</h4>
+          <p>Convenience stores and grocery stores throughout the area</p>
+        </div>
+        <div class="amenity">
+          <h4>🍽️ Dining</h4>
+          <p>Western-style restaurants and local Thai food abundant</p>
+        </div>
+        <div class="amenity">
+          <h4>💪 Fitness</h4>
+          <p>Gyms and swimming pools widely available</p>
+        </div>
+        <div class="amenity">
+          <h4>🏥 Medical</h3>
+          <p>Multiple hospitals and clinics with English support</p>
+        </div>
+        <div class="amenity">
+          <h4>🕉️ Spiritual</h4>
+          <p>AA meetings and counseling centers throughout city</p>
+        </div>
+        <div class="amenity">
+          <h4>🌍 Culture</h4>
+          <p>Temples, museums, and cultural experiences</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section">
+    <div class="container">
+      <h2>Practical Tips</h2>
+      <div class="tips-list">
+        <div class="tip">
+          <h3>Language</h3>
+          <p>Learn basic Thai to enhance your experience. Many locals appreciate the effort, though English is spoken in expat areas.</p>
+        </div>
+        <div class="tip">
+          <h3>Air Quality</h3>
+          <p>Plan for burning season (March-May). Consider southern Thailand or Bali trip during worst air quality months.</p>
+        </div>
+        <div class="tip">
+          <h3>Cell Phone</h3>
+          <p>Get a cell phone plan at the airport upon arrival. Very inexpensive with good coverage.</p>
+        </div>
+        <div class="tip">
+          <h3>Banking</h3>
+          <p>ATM withdrawals cost 220 THB (~$6.50) per transaction. Plan withdrawals accordingly.</p>
+        </div>
+        <div class="tip">
+          <h3>Medication Supply</h3>
+          <p>Research prescription medication availability before arrival. Bring documentation and consider 90-day backup supply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Move to Chiang Mai?</h2>
+      <p>Check out our comprehensive DTV visa guides and resources</p>
+      <a href="/carolyn-3/phases" class="cta-button">View Visa Phases</a>
+      <a href="/carolyn-3/resources" class="cta-button secondary">Resources & Links</a>
+    </div>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Thailand DTV Guide</h3>
+        <p>Your complete resource for obtaining the 5-year Digital Nomad/Medical Treatment visa.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/carolyn-3/phases">Visa Phases</a></li>
+          <li><a href="/carolyn-3/resources">Resources</a></li>
+          <li><a href="/carolyn-3/faq">FAQ</a></li>
+          <li><a href="/carolyn-3/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Important</h3>
+        <p>This guide is informational only. Consult official Thai embassy sources and legal professionals before applying.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Thailand DTV Guide. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
