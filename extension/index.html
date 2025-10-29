@@ -1,0 +1,675 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Tourist Visa Extension</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* Tourist Visa Extension - Page CSS */
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.info-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.info-section:last-child {
+  border-bottom: none;
+}
+
+.info-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.info-section h3 {
+  font-size: 1.2rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.info-section p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.info-section ul, .info-section ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-section li {
+  margin-bottom: 0.8rem;
+  line-height: 1.8;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.info-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.info-card h3 {
+  margin-top: 0;
+}
+
+.info-card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.tip {
+  background: #fff3cd;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid #ffc107;
+  margin: 1rem 0;
+}
+
+.doc-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.doc-list li {
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.doc-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.process-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step-counter;
+}
+
+.process-list li {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  counter-increment: step-counter;
+  position: relative;
+}
+
+.process-list li:before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.highlight-box h2 {
+  color: #667eea;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 2rem 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-section h2 {
+    font-size: 1.4rem;
+  }
+}.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.info-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.info-section:last-child {
+  border-bottom: none;
+}
+
+.info-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.info-section h3 {
+  font-size: 1.2rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.info-section p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.info-section ul, .info-section ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-section li {
+  margin-bottom: 0.8rem;
+  line-height: 1.8;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.info-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.info-card h3 {
+  margin-top: 0;
+}
+
+.info-card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.tip {
+  background: #fff3cd;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid #ffc107;
+  margin: 1rem 0;
+}
+
+.doc-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.doc-list li {
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.doc-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.process-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step-counter;
+}
+
+.process-list li {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  counter-increment: step-counter;
+  position: relative;
+}
+
+.process-list li:before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.highlight-box h2 {
+  color: #667eea;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 2rem 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-section h2 {
+    font-size: 1.4rem;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><main class="main-container">
+  <div class="page-header">
+    <h1>Tourist Visa Extension (30-Day)</h1>
+    <p class="subtitle">Extend your 60-day tourist visa to 90 days</p>
+  </div>
+
+  <div class="content-wrapper">
+    <section class="info-section">
+      <h2>Overview</h2>
+      <p>If you're entering Thailand on a tourist visa exemption (60 days for US citizens), you can extend your stay by an additional 30 days at the Thai Immigration Office in Chiang Mai. This gives you a total of 90 days to settle in and prepare for your DTV application.</p>
+    </section>
+
+    <section class="info-section">
+      <h2>Key Information</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>When to Apply</h3>
+          <p>Days 20-30 of your initial 60-day stay</p>
+          <p class="note">Can be applied for anytime before your 60-day visa expires</p>
+        </div>
+        <div class="info-card">
+          <h3>Processing Time</h3>
+          <p>Same-day processing</p>
+          <p class="note">Arrive early in the morning for fastest service</p>
+        </div>
+        <div class="info-card">
+          <h3>Cost</h3>
+          <p>1,900 THB (~$55 USD)</p>
+          <p class="note">Bring cash; not all immigration offices accept cards</p>
+        </div>
+        <div class="info-card">
+          <h3>Result</h3>
+          <p>Total stay extended to 90 days</p>
+          <p class="note">Provides extra time before DTV application deadline</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Location & Hours</h2>
+      <p><strong>Chiang Mai Immigration Office</strong></p>
+      <ul>
+        <li>Address: Huay Kaew Rd, Chiang Mai 50200</li>
+        <li>Hours: Monday-Friday, 8:30 AM - 4:30 PM</li>
+        <li>Closed: Thai national holidays and weekends</li>
+      </ul>
+      <p class="tip">Arrive early (8:30-9:00 AM) for faster processing and less crowding</p>
+    </section>
+
+    <section class="info-section">
+      <h2>Required Documents</h2>
+      <ul class="doc-list">
+        <li>Passport with current 60-day tourist stamp</li>
+        <li>TM.7 Form (available at immigration or download ahead of time)</li>
+        <li>One 4x6 cm passport photo (bring 2 just in case)</li>
+        <li>Cash: 1,900 THB</li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2>Step-by-Step Process</h2>
+      <ol class="process-list">
+        <li><strong>Get the form:</strong> Pick up TM.7 form at immigration office or print ahead of time</li>
+        <li><strong>Fill out the form:</strong> Complete all fields with your passport information</li>
+        <li><strong>Submit documents:</strong> Give passport, completed form, photo, and fee to officer</li>
+        <li><strong>Receive stamp:</strong> Get your 30-day extension stamp in passport</li>
+        <li><strong>Total stay:</strong> You now have 90 days from original arrival date</li>
+      </ol>
+    </section>
+
+    <section class="info-section highlight-box">
+      <h2>⏱️ Timeline Tip</h2>
+      <p>According to your relocation timeline, you should apply for the 30-day extension around <strong>October 19-20</strong> (days 25-26 of your stay). This brings your tourist stay to 90 days total, giving you time to:</p>
+      <ul>
+        <li>Complete medical consultations</li>
+        <li>Prepare your full DTV application package</li>
+        <li>Travel to Vietnam for DTV processing without rushing</li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2>Is This Extension Necessary?</h2>
+      <p><strong>Optional but recommended.</strong> You can:</p>
+      <ul>
+        <li><strong>Extend to 90 days:</strong> Gives you the most time to prepare for DTV (recommended)</li>
+        <li><strong>Skip extension:</strong> Border run to Laos/Myanmar at day 60, return with new 60-day stamp</li>
+        <li><strong>Leave at day 60:</strong> Go to Vietnam early for DTV processing</li>
+      </ul>
+      <p>For medical tourism on the DTV, having the full 90 days is beneficial for establishing your medical plan with Bangkok Hospital.</p>
+    </section>
+
+    <section class="info-section">
+      <h2>Common Tips</h2>
+      <ul>
+        <li>✓ Bring more passport photos than needed (always useful to have extras)</li>
+        <li>✓ Come on a weekday morning for fastest service</li>
+        <li>✓ Ask for the "30-day extension" clearly if language is a barrier</li>
+        <li>✓ Keep your extension stamp safe—you'll need it for all official matters</li>
+        <li>✓ Mark your new departure date on a calendar (90 days from arrival)</li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2>Next Steps</h2>
+      <p>After extending your visa to 90 days, focus on:</p>
+      <ol>
+        <li>Schedule your medical consultation at Bangkok Hospital</li>
+        <li>Begin gathering DTV application documents</li>
+        <li>Arrange travel to Vietnam (around day 75-80)</li>
+        <li>Submit your DTV application within 24 hours of arriving in Vietnam</li>
+      </ol>
+      <p><a href="/carolyn-3/visa/preparation">Learn more about DTV preparation →</a></p>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
