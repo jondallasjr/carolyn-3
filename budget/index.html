@@ -1,0 +1,897 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Thailand Budget & Cost Guide</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* Thailand Budget & Cost Guide - Page CSS */
+.budget-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.budget-section {
+  margin-bottom: 3rem;
+}
+
+.budget-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+}
+
+/* Budget Grid */
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.budget-card {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.budget-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.budget-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.budget-card .cost {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.budget-card .description {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Estimate Cards */
+.estimate-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.estimate-card {
+  padding: 2rem;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+}
+
+.estimate-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.estimate-card .total {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.estimate-card .details {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.estimate-card.conservative {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.estimate-card.moderate {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.estimate-card.comfortable {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Annual Grid */
+.annual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.annual-card {
+  background: white;
+  border: 2px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.annual-card .label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.annual-card .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin: 0;
+}
+
+/* Comparison Table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comparison-table thead {
+  background: #667eea;
+  color: white;
+}
+
+.comparison-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comparison-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* One-Time Costs */
+.onetime-costs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.cost-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  border-top: 4px solid #667eea;
+}
+
+.cost-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cost-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cost-item li {
+  padding: 0.5rem 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Info Section */
+.info-section {
+  background: #f0f4ff;
+  padding: 2rem;
+  border-radius: 4px;
+  border-left: 4px solid #667eea;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  padding: 0.75rem 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.tips-list strong {
+  color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .budget-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .budget-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table {
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75rem;
+  }
+
+  .estimate-card .total {
+    font-size: 1.3rem;
+  }
+}.budget-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.budget-section {
+  margin-bottom: 3rem;
+}
+
+.budget-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+}
+
+/* Budget Grid */
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.budget-card {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.budget-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.budget-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.budget-card .cost {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.budget-card .description {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Estimate Cards */
+.estimate-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.estimate-card {
+  padding: 2rem;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+}
+
+.estimate-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.estimate-card .total {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.estimate-card .details {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.estimate-card.conservative {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.estimate-card.moderate {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.estimate-card.comfortable {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Annual Grid */
+.annual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.annual-card {
+  background: white;
+  border: 2px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.annual-card .label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.annual-card .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin: 0;
+}
+
+/* Comparison Table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comparison-table thead {
+  background: #667eea;
+  color: white;
+}
+
+.comparison-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comparison-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* One-Time Costs */
+.onetime-costs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.cost-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  border-top: 4px solid #667eea;
+}
+
+.cost-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cost-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cost-item li {
+  padding: 0.5rem 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Info Section */
+.info-section {
+  background: #f0f4ff;
+  padding: 2rem;
+  border-radius: 4px;
+  border-left: 4px solid #667eea;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  padding: 0.75rem 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.tips-list strong {
+  color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .budget-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .budget-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table {
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75rem;
+  }
+
+  .estimate-card .total {
+    font-size: 1.3rem;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><div class="budget-container">
+  <div class="page-header">
+    <h1>Thailand Budget & Cost Guide</h1>
+    <p class="subtitle">Realistic monthly and annual budgets for living in Chiang Mai with cost comparisons to US</p>
+  </div>
+
+  <section class="budget-section">
+    <h2>Monthly Budget Breakdown</h2>
+    <div class="budget-grid">
+      <div class="budget-card">
+        <h3>Housing</h3>
+        <p class="cost">$250–$500</p>
+        <p class="description">Furnished apartment in Suthep area, moderate quality</p>
+      </div>
+      <div class="budget-card">
+        <h3>Food & Dining</h3>
+        <p class="cost">$150–$300</p>
+        <p class="description">Mix of street food, local restaurants, and Western groceries</p>
+      </div>
+      <div class="budget-card">
+        <h3>Transportation</h3>
+        <p class="cost">$30–$60</p>
+        <p class="description">Grab taxis, motorbikes, occasional longer trips</p>
+      </div>
+      <div class="budget-card">
+        <h3>Healthcare & Fitness</h3>
+        <p class="cost">$100–$300</p>
+        <p class="description">Physical therapy ($25–$75/session), gym membership, consultations</p>
+      </div>
+      <div class="budget-card">
+        <h3>Utilities & Internet</h3>
+        <p class="cost">$30–$50</p>
+        <p class="description">Electricity, water, WiFi, phone plan</p>
+      </div>
+      <div class="budget-card">
+        <h3>Recreation & Social</h3>
+        <p class="cost">$50–$150</p>
+        <p class="description">Activities, memberships, community groups, dining out</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="budget-section">
+    <h2>Total Monthly Estimates</h2>
+    <div class="estimate-cards">
+      <div class="estimate-card conservative">
+        <h3>Conservative Budget</h3>
+        <p class="total">$610–$1,160/month</p>
+        <p class="details">Lower end of all ranges. Minimal social activities.</p>
+      </div>
+      <div class="estimate-card moderate">
+        <h3>Moderate Budget</h3>
+        <p class="total">$810–$1,560/month</p>
+        <p class="details">Mid-range living with regular activities and healthcare.</p>
+      </div>
+      <div class="estimate-card comfortable">
+        <h3>Comfortable Budget</h3>
+        <p class="total">$1,010–$2,060/month</p>
+        <p class="details">Higher end with active lifestyle and frequent activities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="budget-section">
+    <h2>Annual Budget</h2>
+    <div class="annual-grid">
+      <div class="annual-card">
+        <p class="label">Conservative</p>
+        <p class="amount">$7,320–$13,920/year</p>
+      </div>
+      <div class="annual-card">
+        <p class="label">Moderate</p>
+        <p class="amount">$9,720–$18,720/year</p>
+      </div>
+      <div class="annual-card">
+        <p class="label">Comfortable</p>
+        <p class="amount">$12,120–$24,720/year</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="budget-section">
+    <h2>US vs. Thailand Cost Comparison</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>US Average</th>
+          <th>Thailand</th>
+          <th>Savings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rent (1BR apartment)</td>
+          <td>$1,200–$2,000</td>
+          <td>$250–$500</td>
+          <td>75–87%</td>
+        </tr>
+        <tr>
+          <td>Meal (restaurant)</td>
+          <td>$12–$20</td>
+          <td>$2–$5</td>
+          <td>75–90%</td>
+        </tr>
+        <tr>
+          <td>Physical therapy session</td>
+          <td>$100–$150</td>
+          <td>$25–$75</td>
+          <td>50–75%</td>
+        </tr>
+        <tr>
+          <td>Gym membership</td>
+          <td>$40–$80/month</td>
+          <td>$15–$30/month</td>
+          <td>60–75%</td>
+        </tr>
+        <tr>
+          <td>Prescription medication</td>
+          <td>Often expensive</td>
+          <td>Fraction of US cost</td>
+          <td>50–90%</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="budget-section">
+    <h2>One-Time Costs</h2>
+    <div class="onetime-costs">
+      <div class="cost-item">
+        <h4>Arrival Setup</h4>
+        <ul>
+          <li>Cell phone plan: $0–$30</li>
+          <li>Initial groceries: $50–$100</li>
+          <li>Deposits/initial services: $100–$200</li>
+        </ul>
+      </div>
+      <div class="cost-item">
+        <h4>Visa & Documentation</h4>
+        <ul>
+          <li>DTV Application: $340</li>
+          <li>Medical consultation: $40–$90</li>
+          <li>30-day tourist extension: $58 (1,900 THB)</li>
+        </ul>
+      </div>
+      <div class="cost-item">
+        <h4>Medical</h4>
+        <ul>
+          <li>Initial consultation: $40–$90</li>
+          <li>Medical records compilation: $0–$100</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="budget-section info-section">
+    <h2>Budget Tips</h2>
+    <ul class="tips-list">
+      <li><strong>ATM fees:</strong> Expect 220 THB (~$6.50) per withdrawal. Withdraw larger amounts to minimize fees.</li>
+      <li><strong>Cleaning services:</strong> 500–800 THB ($15–$24) for 2–3 hours. Much cheaper than US.</li>
+      <li><strong>Transportation:</strong> Grab is inexpensive. Motorbike rentals: $4–$8/day.</li>
+      <li><strong>Healthcare:</strong> Bangkok Hospital and private clinics have English-speaking staff and lower costs than US.</li>
+      <li><strong>Food:</strong> Street food and local restaurants are cheapest. Western groceries at specialty stores cost more.</li>
+      <li><strong>Social activities:</strong> Many expat groups and activities are free or low-cost.</li>
+      <li><strong>US disability income:</strong> Likely stretches much further in Thailand than in the US.</li>
+    </ul>
+  </section>
+</div><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
