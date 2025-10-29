@@ -6,32 +6,36 @@
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
   line-height: 1.6;
-  background-color: #fff;
+  color: #333;
+  background: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
   line-height: 1.2;
 }
 
 a {
   color: #667eea;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #764ba2;
 }
 
+/* HEADER STYLES */
 .site-header {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -40,913 +44,566 @@ a:hover {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-  height: 70px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .logo a {
-  font-size: 1.5em;
-  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
   color: #667eea;
 }
 
-.mobile-menu-toggle {
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
   display: none;
-  flex-direction: column;
   background: none;
   border: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  gap: 5px;
-  padding: 5px;
-}
-
-.mobile-menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  transition: 0.3s;
-}
-
-.site-nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
+  color: #333;
 }
 
 .nav-menu {
-  display: flex;
   list-style: none;
-  gap: 40px;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
   color: #333;
+  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.2s ease;
 }
 
 .nav-menu a:hover {
   color: #667eea;
-  text-decoration: none;
 }
 
+/* FOOTER STYLES */
 .site-footer {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 60px 40px 20px;
-  margin-top: 80px;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.footer-section h3 {
-  margin-bottom: 15px;
-  color: #667eea;
+.footer-links {
+  display: flex;
+  gap: 2rem;
 }
 
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section ul li {
-  margin-bottom: 10px;
-}
-
-.footer-section a {
-  color: #ccc;
-  transition: color 0.3s;
-}
-
-.footer-section a:hover {
-  color: #667eea;
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.footer-section p {
-  color: #ccc;
-  line-height: 1.6;
+.footer-links a:hover {
+  color: #667eea;
 }
 
-.footer-bottom {
-  border-top: 1px solid #333;
-  padding-top: 20px;
-  text-align: center;
-  color: #999;
-}
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .header-container {
-    padding: 0 20px;
-  }
-  
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  
-  .site-nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  }
-  
-  .site-nav.active {
-    max-height: 300px;
+  .menu-toggle {
+    display: block;
   }
   
   .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
     flex-direction: column;
     gap: 0;
-    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
   }
   
   .nav-menu li {
-    border-bottom: 1px solid #eee;
-  }
-  
-  .nav-menu li:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid #e0e0e0;
   }
   
   .nav-menu a {
+    padding: 1rem;
     display: block;
-    padding: 15px 0;
   }
   
-  .site-footer {
-    padding: 40px 20px 20px;
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
   
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-container {
-    padding: 0 15px;
-  }
-  
-  .logo a {
-    font-size: 1.2em;
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
   }
 }
 /* Frequently Asked Questions - Page CSS */
 .faq-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 2rem 1rem;
 }
 
 .faq-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 3rem;
 }
 
 .faq-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   color: #333;
 }
 
 .faq-header p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: #666;
-  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .faq-content {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 3rem;
 }
 
-.faq-category {
+.faq-section {
   border-left: 4px solid #667eea;
-  padding-left: 30px;
+  padding-left: 2rem;
 }
 
-.faq-category h2 {
-  font-size: 1.8em;
+.faq-section h2 {
+  font-size: 1.8rem;
   color: #333;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .faq-item {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 6px;
-  transition: box-shadow 0.3s, background-color 0.3s;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.faq-item:hover {
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
-  background-color: #fafbff;
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-.faq-question {
-  font-size: 1.2em;
-  color: #667eea;
-  margin-bottom: 12px;
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.75rem;
   cursor: pointer;
-  user-select: none;
   display: flex;
   align-items: center;
-  font-weight: 600;
+  gap: 0.5rem;
 }
 
-.faq-question::before {
-  content: '▶';
-  margin-right: 10px;
-  font-size: 0.9em;
-  transition: transform 0.3s;
+.faq-item h3:hover {
+  color: #667eea;
 }
 
-.faq-item.expanded .faq-question::before {
-  transform: rotate(90deg);
-}
-
-.faq-answer {
+.faq-item p {
   color: #555;
   line-height: 1.7;
-  font-size: 0.95em;
-}
-
-.faq-answer p {
-  margin-bottom: 12px;
-}
-
-.faq-answer ul {
-  margin: 12px 0 12px 20px;
-  list-style-type: disc;
-}
-
-.faq-answer ul li {
-  margin-bottom: 8px;
-}
-
-.faq-answer strong {
-  color: #333;
-  font-weight: 600;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .faq-container {
-    padding: 40px 20px;
+    padding: 1rem;
   }
 
   .faq-header h1 {
-    font-size: 1.8em;
+    font-size: 2rem;
   }
 
-  .faq-header p {
-    font-size: 1em;
-  }
-
-  .faq-category {
-    padding-left: 20px;
+  .faq-section {
+    padding-left: 1.5rem;
     border-left-width: 3px;
   }
 
-  .faq-category h2 {
-    font-size: 1.4em;
-    margin-bottom: 20px;
+  .faq-section h2 {
+    font-size: 1.5rem;
   }
 
-  .faq-item {
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .faq-question {
-    font-size: 1.1em;
-  }
-
-  .faq-answer {
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .faq-container {
-    padding: 30px 15px;
-  }
-
-  .faq-header h1 {
-    font-size: 1.5em;
-  }
-
-  .faq-header p {
-    font-size: 0.95em;
-  }
-
-  .faq-category h2 {
-    font-size: 1.2em;
-  }
-
-  .faq-item {
-    padding: 12px;
-  }
-
-  .faq-question {
-    font-size: 1em;
+  .faq-item h3 {
+    font-size: 1.1rem;
   }
 }.faq-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 2rem 1rem;
 }
 
 .faq-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 3rem;
 }
 
 .faq-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   color: #333;
 }
 
 .faq-header p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: #666;
-  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .faq-content {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 3rem;
 }
 
-.faq-category {
+.faq-section {
   border-left: 4px solid #667eea;
-  padding-left: 30px;
+  padding-left: 2rem;
 }
 
-.faq-category h2 {
-  font-size: 1.8em;
+.faq-section h2 {
+  font-size: 1.8rem;
   color: #333;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #eee;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .faq-item {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 6px;
-  transition: box-shadow 0.3s, background-color 0.3s;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.faq-item:hover {
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
-  background-color: #fafbff;
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-.faq-question {
-  font-size: 1.2em;
-  color: #667eea;
-  margin-bottom: 12px;
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.75rem;
   cursor: pointer;
-  user-select: none;
   display: flex;
   align-items: center;
-  font-weight: 600;
+  gap: 0.5rem;
 }
 
-.faq-question::before {
-  content: '▶';
-  margin-right: 10px;
-  font-size: 0.9em;
-  transition: transform 0.3s;
+.faq-item h3:hover {
+  color: #667eea;
 }
 
-.faq-item.expanded .faq-question::before {
-  transform: rotate(90deg);
-}
-
-.faq-answer {
+.faq-item p {
   color: #555;
   line-height: 1.7;
-  font-size: 0.95em;
-}
-
-.faq-answer p {
-  margin-bottom: 12px;
-}
-
-.faq-answer ul {
-  margin: 12px 0 12px 20px;
-  list-style-type: disc;
-}
-
-.faq-answer ul li {
-  margin-bottom: 8px;
-}
-
-.faq-answer strong {
-  color: #333;
-  font-weight: 600;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .faq-container {
-    padding: 40px 20px;
+    padding: 1rem;
   }
 
   .faq-header h1 {
-    font-size: 1.8em;
+    font-size: 2rem;
   }
 
-  .faq-header p {
-    font-size: 1em;
-  }
-
-  .faq-category {
-    padding-left: 20px;
+  .faq-section {
+    padding-left: 1.5rem;
     border-left-width: 3px;
   }
 
-  .faq-category h2 {
-    font-size: 1.4em;
-    margin-bottom: 20px;
+  .faq-section h2 {
+    font-size: 1.5rem;
   }
 
-  .faq-item {
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .faq-question {
-    font-size: 1.1em;
-  }
-
-  .faq-answer {
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .faq-container {
-    padding: 30px 15px;
-  }
-
-  .faq-header h1 {
-    font-size: 1.5em;
-  }
-
-  .faq-header p {
-    font-size: 0.95em;
-  }
-
-  .faq-category h2 {
-    font-size: 1.2em;
-  }
-
-  .faq-item {
-    padding: 12px;
-  }
-
-  .faq-question {
-    font-size: 1em;
+  .faq-item h3 {
+    font-size: 1.1rem;
   }
 }</style></head><body><header class="site-header">
   <div class="header-container">
     <div class="logo">
-      <a href="/carolyn-3/">Thailand DTV Guide</a>
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
     </div>
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
   </div>
-</header>
-<script>
-  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-    document.querySelector('.site-nav').classList.toggle('active');
-  });
-</script><nav class="site-nav">
-  <ul class="nav-menu">
-    <li><a href="/carolyn-3/">Home</a></li>
-    <li><a href="/carolyn-3/phases">Phases</a></li>
-    <li><a href="/carolyn-3/resources">Resources</a></li>
-    <li><a href="/carolyn-3/faq">FAQ</a></li>
-    <li><a href="/carolyn-3/contact">Contact</a></li>
-  </ul>
-</nav><div class="faq-container">
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><main class="faq-container">
   <div class="faq-header">
     <h1>Frequently Asked Questions</h1>
-    <p>Find answers to common questions about the DTV visa, medical requirements, costs, and relocation to Thailand.</p>
+    <p>Answers to common questions about the DTV visa, medical tourism, living in Chiang Mai, and the relocation process.</p>
   </div>
 
   <div class="faq-content">
-    <div class="faq-category">
-      <h2>DTV Visa Basics</h2>
+    <section class="faq-section">
+      <h2>DTV Visa</h2>
       
       <div class="faq-item">
-        <h3 class="faq-question">What is the DTV visa?</h3>
-        <div class="faq-answer">
-          <p>The DTV (Destination Thailand Visa) is a 5-year long-term visa introduced by Thailand for digital nomads and individuals seeking medical treatment. It allows continuous stay for up to 180 days per entry, with optional extensions up to 360 days.</p>
-        </div>
+        <h3>What is the DTV visa?</h3>
+        <p>The DTV (Digital Nomad Visa) is a long-term Thai visa designed for remote workers, digital nomads, and people receiving passive income or healthcare services. It's valid for 5 years and allows stays of up to 180 days per entry.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Who is eligible for the DTV visa?</h3>
-        <div class="faq-answer">
-          <p>US citizens can apply as digital nomads or for medical treatment purposes. For medical treatment, you must have a documented medical plan from a Thai hospital and proof of financial sponsorship.</p>
-        </div>
+        <h3>Do I need a visa to enter Thailand initially?</h3>
+        <p>No. US citizens receive a 60-day visa exemption automatically upon arrival. You can use this time to set up your medical plan and gather documents before applying for the DTV from Vietnam.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">How long does the DTV approval process take?</h3>
-        <div class="faq-answer">
-          <p><strong>Official timeline:</strong> 5 working days. <strong>Realistic timeline:</strong> 2 days to 2 weeks. Processing time varies by embassy location. Hanoi and Ho Chi Minh City have high approval rates.</p>
-        </div>
+        <h3>Why do I need to apply for the DTV from Vietnam instead of Thailand?</h3>
+        <p>Thai law requires DTV applications to be submitted from outside Thailand. Most applicants use the Thai embassy in Hanoi or Ho Chi Minh City because these locations have very high approval rates (often 95%+) and faster processing times (2-7 days).</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Can I apply for the DTV from inside Thailand?</h3>
-        <div class="faq-answer">
-          <p>No. You must apply from outside Thailand at a Thai embassy or consulate. Most applicants apply from Vietnam (Hanoi or Ho Chi Minh City) for convenience and fast processing.</p>
-        </div>
+        <h3>What documents do I need for the DTV application?</h3>
+        <p>Required documents include: a valid passport, medical plan with letters from Thai doctors confirming 6+ months of ongoing treatment, proof of financial sponsorship (bank statements showing 500,000+ THB), and a sponsorship letter from your financial sponsor. All documents must be error-free—typos cause automatic rejection.</p>
       </div>
-    </div>
 
-    <div class="faq-category">
-      <h2>Medical Requirements</h2>
+      <div class="faq-item">
+        <h3>How much does the DTV cost?</h3>
+        <p>The application fee is $340 USD (paid to the embassy). You may also incur costs for medical consultations (~$40-90), medical letters, travel to Vietnam, and accommodation during processing.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I stay in Thailand while my DTV is being processed?</h3>
+        <p>No. You must remain outside Thailand during processing. Most applicants stay in Vietnam for 2-7 days while waiting for approval. You cannot return to Thailand until your DTV is approved and stamped.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What's the approval timeline for the DTV?</h3>
+        <p>Official processing time is 5 working days, but in reality it ranges from 2 days to 2 weeks. The Hanoi and Ho Chi Minh City embassies are known for faster approvals. The embassy may request additional documents, which can extend the timeline.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What happens after my DTV is approved?</h3>
+        <p>You'll receive DTV approval electronically via email. Print multiple copies and return to Thailand with your passport. Present the printed approval at immigration, and your 5-year DTV will be stamped into your passport. You can then stay in Thailand for 180 days, with the option to extend for another 180 days or do a border run.</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Medical Tourism & Health</h2>
       
       <div class="faq-item">
-        <h3 class="faq-question">What medical documentation do I need for DTV approval?</h3>
-        <div class="faq-answer">
-          <p>You need a medical treatment plan from a Thai hospital (e.g., Bangkok Hospital) showing:</p>
-          <ul>
-            <li>Documented medical condition requiring treatment</li>
-            <li>Treatment plan for 6+ months</li>
-            <li>Estimated treatment costs</li>
-            <li>Doctor's consultation and recommendation letter</li>
-          </ul>
-        </div>
+        <h3>How do I get a medical plan for the DTV?</h3>
+        <p>Contact Bangkok Hospital or another English-speaking medical facility in Chiang Mai. Schedule an in-person consultation (typically $40-90) to discuss your medical needs. The doctor will create a medical plan outlining 6+ months of ongoing treatment, which becomes part of your DTV application.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">How do I get a medical plan before arriving in Thailand?</h3>
-        <div class="faq-answer">
-          <p>You cannot. You must arrive first on a 60-day tourist visa exemption, schedule an in-person consultation with a Thai doctor, and develop the treatment plan during your initial stay. This typically takes 3-5 weeks.</p>
-        </div>
+        <h3>Are my US medications available in Thailand?</h3>
+        <p>Yes, many US medications are available in Thailand at a fraction of US prices. However, bring a 90-day supply from the US as backup. Bring US medical records including surgeries, MRIs, X-rays, and prescriptions from your doctor to facilitate getting medications from Thai pharmacies.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">How much does a medical consultation cost in Thailand?</h3>
-        <div class="faq-answer">
-          <p>A consultation at Bangkok Hospital or similar facilities typically costs $40-90. Physical therapy sessions range from $25-75 per session, compared to $100+ in the US.</p>
-        </div>
+        <h3>How much does physical therapy cost in Thailand?</h3>
+        <p>Physical therapy in Thailand typically costs $25-75 per session, compared to $100+ in the US. Bangkok Hospital and other private clinics offer high-quality care at a fraction of Western prices.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Will my US medications be available in Thailand?</h3>
-        <div class="faq-answer">
-          <p>Many US medications are available in Thailand at a fraction of the cost. Bring a 90-day supply and US medical records. Consult with a Thai doctor about availability and equivalents.</p>
-        </div>
+        <h3>What medical facilities are available in Chiang Mai?</h3>
+        <p>Chiang Mai has several 24/7 English-speaking hospitals and clinics, including Bangkok Hospital (highly recommended for DTV medical letters), Chiang Mai RAM Hospital, and numerous private clinics. Research facilities before arrival and identify your primary care provider.</p>
       </div>
-    </div>
 
-    <div class="faq-category">
-      <h2>Financial Requirements</h2>
+      <div class="faq-item">
+        <h3>Should I get travel health insurance?</h3>
+        <p>Yes, it's strongly recommended. Arrange travel health insurance before departure that covers your medical conditions and ongoing treatment in Thailand.</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Living in Chiang Mai</h2>
       
       <div class="faq-item">
-        <h3 class="faq-question">What are the financial requirements for DTV approval?</h3>
-        <div class="faq-answer">
-          <p>A financial sponsor must show:</p>
-          <ul>
-            <li>Bank statements with 500,000+ THB ($15,000+ USD)</li>
-            <li>Funds maintained for 3+ months</li>
-            <li>Sponsorship letter committing to emergency support</li>
-            <li>Proof of relationship to applicant</li>
-          </ul>
-        </div>
+        <h3>How much does it cost to live in Chiang Mai?</h3>
+        <p>Housing in the Suthep area ranges from $250-500/month for a furnished apartment. Food, transportation, and utilities are very affordable. Most people estimate $800-1,500/month for a comfortable lifestyle including housing.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Who can be my financial sponsor?</h3>
-        <div class="faq-answer">
-          <p>A financial sponsor is typically a family member or close contact with substantial savings. They commit to covering emergency expenses (e.g., medical emergencies, return flight to US). They do not need to live in Thailand.</p>
-        </div>
+        <h3>What's the Suthep area like?</h3>
+        <p>Suthep is a popular expat neighborhood in northern Chiang Mai with a large English-speaking community, many restaurants with Western and Thai cuisine, easy access to amenities, and a strong community of digital nomads and long-term residents. It has good transportation links via Grab (motorcycle taxi/car app) and is close to physical therapy clinics and hospitals.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">What is the total cost of obtaining a DTV visa?</h3>
-        <div class="faq-answer">
-          <p>Approximate costs:</p>
-          <ul>
-            <li>DTV application fee: $340</li>
-            <li>Medical consultation: $40-90</li>
-            <li>Medical treatment plan development: Variable</li>
-            <li>Vietnam visa: $25</li>
-            <li>Travel to Vietnam: $200-400</li>
-            <li>Accommodation in Vietnam: $400-600</li>
-          </ul>
-          <p>Total preliminary costs: $1,000-2,000 before settling in Thailand.</p>
-        </div>
+        <h3>How do I get around Chiang Mai?</h3>
+        <p>Download the Grab app for inexpensive motorcycle taxis and cars. ATM withdrawals cost 220 THB ($6.50) per transaction. Public transportation is also available but English information is limited.</p>
       </div>
-    </div>
 
-    <div class="faq-category">
-      <h2>Living in Thailand</h2>
+      <div class="faq-item">
+        <h3>What recovery resources are available?</h3>
+        <p>Chiang Mai has 50+ AA meetings per week. There are also Buddhist recovery meetings and Refuge Recovery programs. Many recovery-focused rehabs (like The Cabin) have alumni networks and counseling available.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are there social activities for expats?</h3>
+        <p>Yes. Chiang Mai has active expat communities with groups focused on yoga, hiking, art, cooking, board games, and volunteering (including English teaching and women's organizations). Join Facebook groups before arrival to connect with the community.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What about the burning season and air quality?</h3>
+        <p>March-May is the burning season when air quality can be poor in northern Thailand. Many people take trips to southern Thailand, Bali, or return home during these months.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is English widely spoken?</h3>
+        <p>In tourist areas and expat neighborhoods like Suthep, English is widely spoken. However, learning basic Thai is helpful and appreciated by locals. Many healthcare providers, restaurants, and services in popular expat areas have English speakers.</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Relocation Timeline & Planning</h2>
       
       <div class="faq-item">
-        <h3 class="faq-question">What is the cost of living in Chiang Mai?</h3>
-        <div class="faq-answer">
-          <p>Approximate monthly costs in Chiang Mai:</p>
-          <ul>
-            <li>Housing (Suthep area): $250-500/month</li>
-            <li>Food and dining: $300-500/month</li>
-            <li>Transportation (Grab): $20-50/month</li>
-            <li>Utilities: $30-60/month</li>
-            <li>Healthcare: Variable based on treatment</li>
-          </ul>
-          <p>Total budget: $600-1,200+/month depending on lifestyle.</p>
-        </div>
+        <h3>How long should I plan for the entire relocation process?</h3>
+        <p>Typically 3-4 months from pre-departure preparation to DTV approval. This includes pre-departure tasks (1-2 months), initial settling in Thailand (2-3 weeks), medical planning (3-4 weeks), and DTV application/approval (2-3 weeks including the Vietnam trip).</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">What neighborhoods in Chiang Mai have large expat communities?</h3>
-        <div class="faq-answer">
-          <p>Suthep is known for a large, established expat community with:</p>
-          <ul>
-            <li>English-speaking services and healthcare facilities</li>
-            <li>Convenience stores and grocery options</li>
-            <li>Western-style restaurants</li>
-            <li>Active recovery and community groups</li>
-            <li>Amenities like gyms, pools, and yoga studios</li>
-          </ul>
-        </div>
+        <h3>What's the optimal timeline for applying for the DTV?</h3>
+        <p>Apply after your 60-day tourist visa exemption is nearly expiring (around day 50-55). This gives you time to set up your medical plan and gather documents during your first month in Thailand.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">How do I get around in Thailand?</h3>
-        <div class="faq-answer">
-          <p>Popular transportation options:</p>
-          <ul>
-            <li><strong>Grab:</strong> App-based taxis and motorbikes, very inexpensive</li>
-            <li><strong>Songthaews:</strong> Shared red vans following set routes</li>
-            <li><strong>Motorbike rental:</strong> $50-100/month</li>
-            <li><strong>Walking:</strong> Popular in many neighborhoods</li>
-          </ul>
-        </div>
+        <h3>Should I get a 30-day tourist extension?</h3>
+        <p>Optional. If you need extra time before your DTV application, you can extend your tourist visa at the Chiang Mai immigration office for 1,900 THB ($57), bringing your total stay to 90 days.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Is there a recovery community in Chiang Mai?</h3>
-        <div class="faq-answer">
-          <p>Yes. Chiang Mai has 60+ AA meetings per week, Buddhist recovery groups (Refuge Recovery), and English-speaking addiction counseling options including Counselling Thailand and The Cabin alumni networks.</p>
-        </div>
+        <h3>What should I do before I leave the US?</h3>
+        <p>Get prescriptions refilled, gather US medical records (surgeries, MRIs, X-rays), get your passport, arrange travel health insurance, book temporary accommodation for the first 2 weeks in Thailand, buy your flight, join Chiang Mai Expat Facebook groups, and research nearby amenities in your desired neighborhood.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Can I find English-speaking medical care in Chiang Mai?</h3>
-        <div class="faq-answer">
-          <p>Yes. Bangkok Hospital Chiang Mai and Health Care Medical Clinic offer English-speaking doctors, 24/7 services, and are familiar with expat needs. Many pharmacies also have English-speaking staff.</p>
-        </div>
+        <h3>Do I need a financial sponsor for the DTV?</h3>
+        <p>Yes. Your sponsor must provide bank statements showing 500,000+ THB (~$15,000 USD) for 3+ months, a sponsorship letter committing to financial support in emergencies, and proof of relationship (such as a birth certificate if family).</p>
       </div>
-    </div>
 
-    <div class="faq-category">
-      <h2>Visa Extensions & Long-Term Stay</h2>
+      <div class="faq-item">
+        <h3>What's the first week in Thailand like?</h3>
+        <p>Plan for 3 quiet days to settle in. Go to nearby grocery stores, download and set up Grab for transportation, and rest. In your first 1-2 weeks, set up basic services: find a cleaner, identify a primary care doctor, connect with a physical therapist, locate pharmacies, and attend AA or recovery meetings to find a community and sponsor.</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Vietnam Trip for DTV Application</h2>
       
       <div class="faq-item">
-        <h3 class="faq-question">Can I extend my stay beyond 180 days on a DTV?</h3>
-        <div class="faq-answer">
-          <p>Yes. You can extend your stay to 360 days with a Thai visa extension (costs ~$300). After 360 days, you must exit and re-enter Thailand for a fresh DTV entry or do a border run every 180 days.</p>
-        </div>
+        <h3>Do I need a Vietnamese visa?</h3>
+        <p>Yes, US citizens need a Vietnamese visa. Online visas cost approximately $25 and can be obtained through online services. Budget $400-600 total for your Vietnam stay including visa, accommodation, and food.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">What is a border run?</h3>
-        <div class="faq-answer">
-          <p>A border run means exiting Thailand (typically to Laos or Malaysia) and re-entering to reset your visa. This can be done every 180 days to maintain your stay on a DTV.</p>
-        </div>
+        <h3>Where should I apply for the DTV—Hanoi or Ho Chi Minh City?</h3>
+        <p>Both embassies have high approval rates and reasonable processing times. Hanoi and Ho Chi Minh City are the most popular choices. Choose based on your flight availability and personal preference.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">How long is the DTV visa valid?</h3>
-        <div class="faq-answer">
-          <p>The DTV visa is valid for 5 years from issue date. This solves visa issues for 5+ years with proper extensions or border runs.</p>
-        </div>
+        <h3>How long will I stay in Vietnam?</h3>
+        <p>Typically 5-14 days. You'll arrive with your complete application, submit it within 24 hours, and wait 2-7 days for approval. The embassy may request additional documents during this time.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Do I need a re-entry permit?</h3>
-        <div class="faq-answer">
-          <p>A re-entry permit (costs ~$3-8) is only needed if you plan to exit and return during your visa validity and want to maintain your current visa status. With a DTV, re-entry permits are not required for the 5-year period.</p>
-        </div>
+        <h3>What accommodation should I book in Vietnam?</h3>
+        <p>Budget $30-40 per night for decent accommodation. Many travelers use Airbnb or local hotels. Book flexible accommodation in case processing takes longer than expected.</p>
       </div>
-    </div>
 
-    <div class="faq-category">
-      <h2>Application Process</h2>
+      <div class="faq-item">
+        <h3>What happens if the embassy requests more documents?</h3>
+        <p>Stay in Vietnam until you can provide them. Have digital copies of all your documents and be prepared to make copies at local shops if needed. Keep your sponsor available by phone/email to provide additional documentation quickly.</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Visa & Immigration</h2>
       
       <div class="faq-item">
-        <h3 class="faq-question">What documents do I need for DTV application?</h3>
-        <div class="faq-answer">
-          <p>Required documents:</p>
-          <ul>
-            <li>Completed application form</li>
-            <li>Passport (valid 6+ months)</li>
-            <li>Medical treatment plan and letters from Thai doctors</li>
-            <li>Financial sponsor bank statements (500,000+ THB)</li>
-            <li>Sponsorship letter</li>
-            <li>Proof of relationship to sponsor (birth certificate)</li>
-            <li>Passport photos</li>
-            <li>Proof of accommodation in Thailand</li>
-          </ul>
-          <p><strong>Critical:</strong> All documents must be error-free. Typos cause automatic rejection.</p>
-        </div>
+        <h3>Do I need a visa before traveling to Thailand?</h3>
+        <p>No. US citizens automatically receive a 60-day visa exemption upon arrival in Thailand. No pre-arranged visa is required for initial entry.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Where do I apply for the DTV visa?</h3>
-        <div class="faq-answer">
-          <p>Apply online at <strong>thaievisa.go.th</strong> at a Thai embassy or consulate. Most medical treatment applicants apply at the Thai Embassy in Hanoi or Ho Chi Minh City, Vietnam, which have high approval rates and fast processing.</p>
-        </div>
+        <h3>What's a "re-entry permit"?</h3>
+        <p>If you need to leave Thailand and return while on the DTV, you can obtain a re-entry permit. However, with the DTV you don't need re-entry permits for the 5-year duration of your visa.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Can I apply for the DTV online?</h3>
-        <div class="faq-answer">
-          <p>Yes. Since October 2024, all applications are online-only. Submit your complete application at thaievisa.go.th within 24 hours of arrival in Vietnam for best processing times.</p>
-        </div>
+        <h3>How long can I stay in Thailand with the DTV?</h3>
+        <p>The DTV allows stays of up to 180 days per entry. You can extend for another 180 days (total 360 days) or do a border run to reset your entry. Border runs typically involve flying to a nearby country and returning the same day.</p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">What happens if my DTV application is rejected?</h3>
-        <div class="faq-answer">
-          <p>If rejected, the embassy will provide reasons. Common reasons include:</p>
-          <ul>
-            <li>Incomplete or error-filled documents</li>
-            <li>Insufficient financial documentation</li>
-            <li>Medical condition deemed not requiring long-term treatment</li>
-            <li>Missing signatures or notarization</li>
-          </ul>
-          <p>You can reapply after addressing the issues. Most rejections can be remedied.</p>
-        </div>
+        <h3>What's a border run?</h3>
+        <p>A border run is a trip outside Thailand (to Laos, Malaysia, or another nearby country) and return on the same day to reset your visa entry date. With a DTV, you can do border runs every 180 days if preferred, though extending your stay is another option.</p>
       </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">Can I leave Thailand while my DTV is being processed?</h3>
-        <div class="faq-answer">
-          <p><strong>No.</strong> You must stay in Vietnam (or outside Thailand) during the processing period. You cannot return to Thailand until your DTV is approved. If you leave Vietnam, processing may be delayed or rejected.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="faq-category">
-      <h2>Initial Arrival & Setup</h2>
-      
-      <div class="faq-item">
-        <h3 class="faq-question">Do I need a visa to enter Thailand initially?</h3>
-        <div class="faq-answer">
-          <p>No. US citizens receive an automatic 60-day tourist visa exemption at entry. No pre-arranged visa is needed for initial arrival. You can extend this to 90 days at Thai immigration for 1,900 THB if needed before DTV processing.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">How long should I plan for initial settling before applying for DTV?</h3>
-        <div class="faq-answer">
-          <p>Plan 4-6 weeks for initial settling:</p>
-          <ul>
-            <li>Week 1-2: Rest and acclimate</li>
-            <li>Week 2-4: Medical consultation and treatment plan development</li>
-            <li>Week 4-6: Document preparation and visa extension (optional)</li>
-            <li>Week 6+: Travel to Vietnam for DTV application</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">What should I do on my first few days in Thailand?</h3>
-        <div class="faq-answer">
-          <p>First 3 days (suggested quiet period):</p>
-          <ul>
-            <li>Get cell phone plan (available at airport)</li>
-            <li>Visit nearby grocery store</li>
-            <li>Download Grab app for transportation</li>
-            <li>Rest and acclimate to new environment</li>
-          </ul>
-          <p>After acclimation, set up primary care doctor, physical therapist, and basic services.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">How much does it cost to set up housing in Chiang Mai?</h3>
-        <div class="faq-answer">
-          <p>Typical costs:</p>
-          <ul>
-            <li>Temporary accommodation (first 2 weeks): $400-600</li>
-            <li>Monthly rental (Suthep area): $250-500</li>
-            <li>Cleaning service: 500-800 THB ($15-24) for 2-3 hours</li>
-            <li>Utilities setup: Minimal costs</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="faq-category">
-      <h2>Legal & Important Information</h2>
-      
-      <div class="faq-item">
-        <h3 class="faq-question">Is the DTV visa officially recognized?</h3>
-        <div class="faq-answer">
-          <p>Yes. The DTV was officially introduced by the Thai government. It is a legitimate long-term visa category. However, regulations and requirements may change. Always consult official Thai embassy sources and legal professionals before applying.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">Can I work on a DTV visa?</h3>
-        <div class="faq-answer">
-          <p>The DTV is designed for digital nomads and medical treatment purposes. Work authorization rules are complex and vary. Consult Thai immigration or a legal professional regarding your specific employment situation.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">What happens if I overstay my visa?</h3>
-        <div class="faq-answer">
-          <p>Overstaying results in:</p>
-          <ul>
-            <li>Fines: 500 THB (~$15) per day</li>
-            <li>Potential deportation</li>
-            <li>Ban from re-entry</li>
-            <li>Difficulties with future visa applications</li>
-          </ul>
-          <p>Always maintain your visa status through extensions or timely border runs.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">Is this information current and accurate?</h3>
-        <div class="faq-answer">
-          <p>This guide reflects current information as of October 2025. However, Thai visa regulations change frequently. <strong>Always verify with official sources:</strong></p>
-          <ul>
-            <li>Thai Embassy website (your country)</li>
-            <li>thaievisa.go.th (official online portal)</li>
-            <li>Official immigration offices in Thailand</li>
-            <li>A qualified immigration lawyer</li>
-          </ul>
-          <p>This guide is informational only and not a substitute for professional legal advice.</p>
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
-</div><footer class="site-footer">
+</main><footer class="site-footer">
   <div class="footer-container">
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>Thailand DTV Guide</h3>
-        <p>Your complete resource for obtaining the 5-year Digital Nomad/Medical Treatment visa.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/carolyn-3/phases">Visa Phases</a></li>
-          <li><a href="/carolyn-3/resources">Resources</a></li>
-          <li><a href="/carolyn-3/faq">FAQ</a></li>
-          <li><a href="/carolyn-3/contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Important</h3>
-        <p>This guide is informational only. Consult official Thai embassy sources and legal professionals before applying.</p>
-      </div>
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Thailand DTV Guide. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
     </div>
   </div>
 </footer></body></html>
