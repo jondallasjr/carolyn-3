@@ -1,0 +1,1309 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Phase 3: Initial Settling In (3 weeks)</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+}
+
+.logo a {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-menu a {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 60px 40px 20px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .site-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .site-nav.active {
+    max-height: 300px;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px 0;
+  }
+  
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .logo a {
+    font-size: 1.2em;
+  }
+}
+/* Journey Phases - Page CSS */
+.phases-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.phases-container {
+  width: 100%;
+}
+
+.phases-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.phases-hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.phases-hero .subtitle {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.phase-card {
+  background: #f9f9f9;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.phase-card:hover {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+  transform: translateY(-4px);
+}
+
+.phase-number {
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.phase-card h2 {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.phase-duration {
+  font-size: 0.9em;
+  color: #999;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.phase-description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.phase-tasks {
+  list-style: none;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.phase-tasks li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #555;
+  line-height: 1.5;
+}
+
+.phase-tasks li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.phase-link {
+  display: inline-block;
+  color: #667eea;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.phase-link:hover {
+  border-bottom-color: #667eea;
+  text-decoration: none;
+}
+
+.phases-timeline {
+  background: #f5f5f5;
+  padding: 50px 40px;
+  border-radius: 8px;
+  margin-bottom: 80px;
+}
+
+.phases-timeline h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.timeline {
+  position: relative;
+  padding: 0;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #667eea;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 60px;
+  height: 60px;
+  background: #667eea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px #f5f5f5;
+}
+
+.timeline-content h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  color: #666;
+}
+
+.phases-info {
+  margin-top: 80px;
+}
+
+.phases-info h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.info-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.info-box h3 {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.info-box p {
+  line-height: 1.6;
+}
+
+.info-box strong {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .phases-main {
+    padding: 40px 20px;
+  }
+
+  .phases-hero h1 {
+    font-size: 2em;
+  }
+
+  .phases-grid {
+    gap: 20px;
+  }
+
+  .phase-card {
+    padding: 20px;
+  }
+
+  .phases-timeline {
+    padding: 30px 20px;
+  }
+
+  .timeline:before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 80px;
+  }
+
+  .timeline-marker {
+    width: 50px;
+    height: 50px;
+    left: -5px;
+    font-size: 0.9em;
+  }
+
+  .phases-info h2 {
+    font-size: 1.6em;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .phases-main {
+    padding: 30px 15px;
+  }
+
+  .phases-hero h1 {
+    font-size: 1.6em;
+  }
+
+  .phases-hero .subtitle {
+    font-size: 1em;
+  }
+
+  .phase-card h2 {
+    font-size: 1.2em;
+  }
+
+  .timeline:before {
+    left: 15px;
+  }
+
+  .timeline-item {
+    padding-left: 70px;
+    margin-bottom: 30px;
+  }
+
+  .timeline-marker {
+    width: 45px;
+    height: 45px;
+    left: -7px;
+    font-size: 0.8em;
+  }
+}
+
+/* Phase 3: Initial Settling In (3 weeks) - Page CSS */
+.settling-overview {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.overview-content h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.overview-content p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.key-dates {
+  display: flex;
+  gap: 40px;
+  margin-top: 25px;
+}
+
+.date-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.date-label {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.95em;
+}
+
+.date-value {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 500;
+}
+
+.settling-phases h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+
+.settling-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.settling-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.settling-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.settling-card h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.settling-card p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.settling-tasks {
+  list-style: none;
+  padding: 0;
+}
+
+.settling-tasks li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #555;
+  line-height: 1.5;
+}
+
+.settling-tasks li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.settling-info {
+  margin-bottom: 60px;
+}
+
+.settling-info h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.info-card {
+  background: #f9f9f9;
+  border-left: 4px solid #667eea;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+.info-card.important {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border-left-width: 5px;
+}
+
+.info-card h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.info-content p {
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.info-content p:last-child {
+  margin-bottom: 0;
+}
+
+.settling-timeline {
+  background: #f5f5f5;
+  padding: 50px 40px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.settling-timeline h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.timeline-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.timeline-phase {
+  background: #fff;
+  padding: 25px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.phase-marker {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+}
+
+.timeline-phase p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.settling-next {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
+}
+
+.settling-next h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.settling-next p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.settling-next .phase-link {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.settling-next .phase-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .settling-overview {
+    padding: 30px 20px;
+  }
+
+  .key-dates {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .settling-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .settling-card {
+    padding: 20px;
+  }
+
+  .settling-timeline {
+    padding: 30px 20px;
+  }
+
+  .timeline-details {
+    grid-template-columns: 1fr;
+  }
+
+  .settling-next {
+    padding: 30px 20px;
+  }
+
+  .settling-next h2 {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .settling-overview {
+    padding: 20px 15px;
+  }
+
+  .overview-content h2 {
+    font-size: 1.5em;
+  }
+
+  .settling-card h3 {
+    font-size: 1.1em;
+  }
+
+  .card-icon {
+    font-size: 2em;
+  }
+
+  .settling-info h2 {
+    font-size: 1.5em;
+  }
+
+  .settling-next {
+    padding: 20px 15px;
+  }
+
+  .settling-next h2 {
+    font-size: 1.3em;
+  }
+
+  .settling-next p {
+    font-size: 1em;
+  }
+}.settling-overview {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.overview-content h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.overview-content p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.key-dates {
+  display: flex;
+  gap: 40px;
+  margin-top: 25px;
+}
+
+.date-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.date-label {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.95em;
+}
+
+.date-value {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 500;
+}
+
+.settling-phases h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+
+.settling-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.settling-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.settling-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.settling-card h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.settling-card p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.settling-tasks {
+  list-style: none;
+  padding: 0;
+}
+
+.settling-tasks li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #555;
+  line-height: 1.5;
+}
+
+.settling-tasks li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.settling-info {
+  margin-bottom: 60px;
+}
+
+.settling-info h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.info-card {
+  background: #f9f9f9;
+  border-left: 4px solid #667eea;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+.info-card.important {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border-left-width: 5px;
+}
+
+.info-card h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.info-content p {
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.info-content p:last-child {
+  margin-bottom: 0;
+}
+
+.settling-timeline {
+  background: #f5f5f5;
+  padding: 50px 40px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.settling-timeline h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.timeline-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.timeline-phase {
+  background: #fff;
+  padding: 25px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.phase-marker {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+}
+
+.timeline-phase p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.settling-next {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
+}
+
+.settling-next h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.settling-next p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.settling-next .phase-link {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.settling-next .phase-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .settling-overview {
+    padding: 30px 20px;
+  }
+
+  .key-dates {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .settling-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .settling-card {
+    padding: 20px;
+  }
+
+  .settling-timeline {
+    padding: 30px 20px;
+  }
+
+  .timeline-details {
+    grid-template-columns: 1fr;
+  }
+
+  .settling-next {
+    padding: 30px 20px;
+  }
+
+  .settling-next h2 {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .settling-overview {
+    padding: 20px 15px;
+  }
+
+  .overview-content h2 {
+    font-size: 1.5em;
+  }
+
+  .settling-card h3 {
+    font-size: 1.1em;
+  }
+
+  .card-icon {
+    font-size: 2em;
+  }
+
+  .settling-info h2 {
+    font-size: 1.5em;
+  }
+
+  .settling-next {
+    padding: 20px 15px;
+  }
+
+  .settling-next h2 {
+    font-size: 1.3em;
+  }
+
+  .settling-next p {
+    font-size: 1em;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/carolyn-3/">Thailand DTV Guide</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<script>
+  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+    document.querySelector('.site-nav').classList.toggle('active');
+  });
+</script><nav class="site-nav">
+  <ul class="nav-menu">
+    <li><a href="/carolyn-3/">Home</a></li>
+    <li><a href="/carolyn-3/phases">Phases</a></li>
+    <li><a href="/carolyn-3/resources">Resources</a></li>
+    <li><a href="/carolyn-3/faq">FAQ</a></li>
+    <li><a href="/carolyn-3/contact">Contact</a></li>
+  </ul>
+</nav><main class="phases-main">
+  <div class="phases-container">
+    <div class="phases-hero">
+      <h1>Phase 3: Initial Settling In</h1>
+      <p class="subtitle">Your first 3 weeks in Chiang Mai: recovery, setting up essential services, and connecting with community</p>
+    </div>
+
+    <section class="settling-overview">
+      <div class="overview-content">
+        <h2>Welcome to Chiang Mai</h2>
+        <p>Your first three weeks are about finding your rhythm, establishing a support system, and taking care of practical necessities. This is a quieter phase focused on rest, recovery, and building connections.</p>
+        <div class="key-dates">
+          <div class="date-item">
+            <span class="date-label">Dates:</span>
+            <span class="date-value">August 26 - September 16, 2025</span>
+          </div>
+          <div class="date-item">
+            <span class="date-label">Duration:</span>
+            <span class="date-value">3 weeks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="settling-phases">
+      <h2>What You'll Do During Initial Settling</h2>
+      
+      <div class="settling-grid">
+        <div class="settling-card">
+          <div class="card-icon">🏠</div>
+          <h3>First 3 Days: Rest & Recover</h3>
+          <p>Take it easy after your 25+ hour journey. Adjust to the time zone, rest, and acclimate to your new environment.</p>
+          <ul class="settling-tasks">
+            <li>Sleep and recover from travel</li>
+            <li>Visit nearby grocery store</li>
+            <li>Download and set up Grab app for transportation</li>
+          </ul>
+        </div>
+
+        <div class="settling-card">
+          <div class="card-icon">🏥</div>
+          <h3>Set Up Basic Services</h3>
+          <p>Establish your healthcare and support infrastructure immediately for continuity of care.</p>
+          <ul class="settling-tasks">
+            <li>Schedule appointment with primary care doctor (recommended: Dr. Morgan at Health Care Medical Clinic)</li>
+            <li>Find and book physical therapist for ongoing treatment</li>
+            <li>Locate nearby pharmacy and fill prescriptions</li>
+            <li>Arrange cleaning service (500-800 THB / $15-24 for 2-3 hours)</li>
+          </ul>
+        </div>
+
+        <div class="settling-card">
+          <div class="card-icon">🤝</div>
+          <h3>Connect with Recovery Community</h3>
+          <p>Building your support network is crucial for long-term success and wellbeing in Thailand.</p>
+          <ul class="settling-tasks">
+            <li>Attend nearby AA meetings (Chiang Mai has 50+ meetings/week)</li>
+            <li>Explore Buddhist recovery and Refuge Recovery meetings</li>
+            <li>Find a sponsor</li>
+            <li>Research addiction counseling options (Counselling Thailand, The Cabin alumni network)</li>
+          </ul>
+        </div>
+
+        <div class="settling-card">
+          <div class="card-icon">📍</div>
+          <h3>Get Oriented to Suthep Area</h3>
+          <p>Familiarize yourself with your neighborhood and nearby amenities in the Suthep expat community.</p>
+          <ul class="settling-tasks">
+            <li>Locate convenience stores and grocery stores</li>
+            <li>Explore restaurants and local dining options</li>
+            <li>Map out transportation routes via Grab</li>
+            <li>Identify western-style services and familiar comforts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="settling-info">
+      <h2>Key Information & Resources</h2>
+      <div class="info-cards">
+        <div class="info-card important">
+          <h3>💰 Budget & Costs</h3>
+          <div class="info-content">
+            <p><strong>Housing (Suthep):</strong> $250-500/month</p>
+            <p><strong>ATM Fees:</strong> 220 THB ($6.50) per withdrawal</p>
+            <p><strong>Cleaning Service:</strong> 500-800 THB ($15-24) for 2-3 hours</p>
+            <p><strong>Doctor Consultation:</strong> $40-90</p>
+            <p><strong>Physical Therapy:</strong> $25-75/session (vs $100+ in US)</p>
+          </div>
+        </div>
+
+        <div class="info-card important">
+          <h3>🚗 Transportation</h3>
+          <div class="info-content">
+            <p>Download the <strong>Grab app</strong> in the airport for easy, inexpensive taxis and motorbikes throughout Chiang Mai. This is your primary transportation method.</p>
+          </div>
+        </div>
+
+        <div class="info-card important">
+          <h3>🏥 Medical Care</h3>
+          <div class="info-content">
+            <p><strong>Recommended Doctor:</strong> Dr. Morgan at Health Care Medical Clinic</p>
+            <p><strong>Hospital Option:</strong> Bangkok Hospital (proven track record for DTV documentation)</p>
+            <p>Many western-style restaurants and English-speaking medical facilities available.</p>
+          </div>
+        </div>
+
+        <div class="info-card important">
+          <h3>🌍 Recovery Community</h3>
+          <div class="info-content">
+            <p>Chiang Mai has <strong>50+ AA meetings per week</strong> with English-speaking groups. There's also a strong expat community with Buddhist and secular recovery options.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="settling-timeline">
+      <h2>Timeline Overview</h2>
+      <div class="timeline-details">
+        <div class="timeline-phase">
+          <div class="phase-marker">Days 1-3</div>
+          <p><strong>Rest & Recovery:</strong> Adjust to time zone, settle into accommodation, basic orientation</p>
+        </div>
+        <div class="timeline-phase">
+          <div class="phase-marker">Days 4-7</div>
+          <p><strong>Set Up Services:</strong> Doctor, PT, pharmacy appointments, cleaning service arranged</p>
+        </div>
+        <div class="timeline-phase">
+          <div class="phase-marker">Days 8-14</div>
+          <p><strong>Connect & Explore:</strong> First AA meetings, recovery community connections, neighborhood exploration</p>
+        </div>
+        <div class="timeline-phase">
+          <div class="phase-marker">Days 15-21</div>
+          <p><strong>Establish Routine:</strong> Regular doctor/PT appointments, recovery meetings, comfortable daily rhythm established</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="settling-next">
+      <h2>After Initial Settling</h2>
+      <p>Once you've completed the first 3 weeks and feel settled, you'll move into <strong>Phase 4: Deeper Settling In</strong>, where you'll expand your activities, join community groups beyond recovery (yoga, hiking, art, cooking), and begin preparing for your DTV medical documentation.</p>
+      <a href="/carolyn-3/phases/medical-planning" class="phase-link">Next Phase: Medical Planning →</a>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Thailand DTV Guide</h3>
+        <p>Your complete resource for obtaining the 5-year Digital Nomad/Medical Treatment visa.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/carolyn-3/phases">Visa Phases</a></li>
+          <li><a href="/carolyn-3/resources">Resources</a></li>
+          <li><a href="/carolyn-3/faq">FAQ</a></li>
+          <li><a href="/carolyn-3/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Important</h3>
+        <p>This guide is informational only. Consult official Thai embassy sources and legal professionals before applying.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Thailand DTV Guide. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
