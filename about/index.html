@@ -1,0 +1,622 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>About This Guide</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+}
+
+.logo a {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-menu a {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 60px 40px 20px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .site-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .site-nav.active {
+    max-height: 300px;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px 0;
+  }
+  
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .logo a {
+    font-size: 1.2em;
+  }
+}
+/* About This Guide - Page CSS */
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.about-hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.5;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about-section {
+  line-height: 1.8;
+}
+
+.about-section h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.about-section p {
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 1.05em;
+}
+
+.about-section ul {
+  margin: 20px 0 20px 20px;
+  list-style-type: disc;
+}
+
+.story-list li,
+.audience-list li,
+.disclaimer-list li {
+  margin-bottom: 12px;
+  color: #444;
+  font-size: 1.05em;
+}
+
+.about-section strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.important-note {
+  background-color: #f8f4ff;
+  padding: 30px;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+}
+
+.important-note h2 {
+  color: #667eea;
+}
+
+.important-note p {
+  color: #333;
+}
+
+.contact-cta {
+  background-color: #f0f4ff;
+  padding: 30px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  color: #667eea;
+}
+
+.contact-cta a {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.contact-cta a:hover {
+  color: #5568d3;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 20px;
+  }
+
+  .about-hero {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  .about-hero h1 {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1.1em;
+  }
+
+  .about-section h2 {
+    font-size: 1.4em;
+  }
+
+  .about-section p,
+  .story-list li,
+  .audience-list li,
+  .disclaimer-list li {
+    font-size: 1em;
+  }
+
+  .important-note,
+  .contact-cta {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 30px 15px;
+  }
+
+  .about-hero h1 {
+    font-size: 1.6em;
+  }
+
+  .about-section h2 {
+    font-size: 1.2em;
+  }
+}.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.about-hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.5;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about-section {
+  line-height: 1.8;
+}
+
+.about-section h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.about-section p {
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 1.05em;
+}
+
+.about-section ul {
+  margin: 20px 0 20px 20px;
+  list-style-type: disc;
+}
+
+.story-list li,
+.audience-list li,
+.disclaimer-list li {
+  margin-bottom: 12px;
+  color: #444;
+  font-size: 1.05em;
+}
+
+.about-section strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.important-note {
+  background-color: #f8f4ff;
+  padding: 30px;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+}
+
+.important-note h2 {
+  color: #667eea;
+}
+
+.important-note p {
+  color: #333;
+}
+
+.contact-cta {
+  background-color: #f0f4ff;
+  padding: 30px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  color: #667eea;
+}
+
+.contact-cta a {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.contact-cta a:hover {
+  color: #5568d3;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 20px;
+  }
+
+  .about-hero {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  .about-hero h1 {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1.1em;
+  }
+
+  .about-section h2 {
+    font-size: 1.4em;
+  }
+
+  .about-section p,
+  .story-list li,
+  .audience-list li,
+  .disclaimer-list li {
+    font-size: 1em;
+  }
+
+  .important-note,
+  .contact-cta {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 30px 15px;
+  }
+
+  .about-hero h1 {
+    font-size: 1.6em;
+  }
+
+  .about-section h2 {
+    font-size: 1.2em;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/carolyn-3/">Thailand DTV Guide</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<script>
+  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+    document.querySelector('.site-nav').classList.toggle('active');
+  });
+</script><nav class="site-nav">
+  <ul class="nav-menu">
+    <li><a href="/carolyn-3/">Home</a></li>
+    <li><a href="/carolyn-3/phases">Phases</a></li>
+    <li><a href="/carolyn-3/resources">Resources</a></li>
+    <li><a href="/carolyn-3/faq">FAQ</a></li>
+    <li><a href="/carolyn-3/contact">Contact</a></li>
+  </ul>
+</nav><main class="about-container">
+  <div class="about-hero">
+    <h1>About This Guide</h1>
+    <p class="subtitle">Understanding the DTV visa and one person's journey to medical tourism in Thailand</p>
+  </div>
+
+  <div class="about-content">
+    <section class="about-section">
+      <h2>Why This Guide Exists</h2>
+      <p>The Thailand DTV (Destination Thailand Visa) is a relatively new 5-year visa designed for digital nomads and people seeking long-term medical treatment. However, official information is scattered, contradictory, and often outdated.</p>
+      <p>This guide consolidates real-world experience, official requirements, and practical timelines into one comprehensive resource. It's designed to answer the questions most people have when considering a move to Thailand for medical care.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>The Author's Story</h2>
+      <p>Carolyn relocated to Chiang Mai, Thailand in August 2025 to pursue long-term physical therapy and medical treatment in a more affordable environment. What began as a personal relocation checklist evolved into a detailed, phase-by-phase guide to obtaining the DTV visa.</p>
+      <p>The journey from initial research to DTV approval takes approximately 4-5 months and involves:</p>
+      <ul class="story-list">
+        <li>Pre-departure preparation and document gathering</li>
+        <li>Initial 60-day entry to Thailand</li>
+        <li>Establishing a medical plan with Thai doctors</li>
+        <li>Building financial and legal sponsorship documentation</li>
+        <li>A brief trip to Vietnam for the actual visa application</li>
+        <li>Return to Thailand with a 5-year visa</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Who This Guide Is For</h2>
+      <p>This resource is intended for:</p>
+      <ul class="audience-list">
+        <li><strong>People seeking medical treatment</strong> – Physical therapy, surgery recovery, dental work, or other medical care at a fraction of US costs</li>
+        <li><strong>Digital nomads</strong> – Remote workers wanting long-term stability in Thailand</li>
+        <li><strong>US citizens</strong> – Currently, the DTV is most accessible to US passport holders</li>
+        <li><strong>Those with time to plan</strong> – The process requires 4-5 months of preparation</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Mission</h2>
+      <p>We believe accurate, detailed information should be freely available. The DTV process doesn't have to be confusing or expensive. By sharing a real timeline, actual costs, and honest challenges, this guide aims to help others make informed decisions about medical tourism in Thailand.</p>
+      <p>Whether you ultimately choose Thailand or not, you deserve clear, practical information to guide that decision.</p>
+    </section>
+
+    <section class="about-section important-note">
+      <h2>Important Disclaimer</h2>
+      <p><strong>This guide is informational only and not legal advice.</strong> Immigration laws and visa requirements change frequently. Always:</p>
+      <ul class="disclaimer-list">
+        <li>Verify current requirements with the <a href="https://www.mfa.go.th" target="_blank" rel="noopener">Thai Ministry of Foreign Affairs</a></li>
+        <li>Consult with a Thai immigration lawyer before applying</li>
+        <li>Contact your nearest Thai embassy for official guidance</li>
+        <li>Confirm medical facility requirements directly with hospitals</li>
+      </ul>
+      <p>The timeline and requirements in this guide reflect conditions as of October 2025 and may not apply to future applications.</p>
+    </section>
+
+    <section class="about-section contact-cta">
+      <h2>Have Questions?</h2>
+      <p>This guide will be regularly updated with new information and reader feedback. If you have corrections, clarifications, or questions about the DTV process, please <a href="/carolyn-3/contact">contact us</a>.</p>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Thailand DTV Guide</h3>
+        <p>Your complete resource for obtaining the 5-year Digital Nomad/Medical Treatment visa.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/carolyn-3/phases">Visa Phases</a></li>
+          <li><a href="/carolyn-3/resources">Resources</a></li>
+          <li><a href="/carolyn-3/faq">FAQ</a></li>
+          <li><a href="/carolyn-3/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Important</h3>
+        <p>This guide is informational only. Consult official Thai embassy sources and legal professionals before applying.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Thailand DTV Guide. All rights reserved.</p>
+    </div>
+  </div>
+</footer></body></html>
