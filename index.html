@@ -1,19 +1,27 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Thailand Relocation & DTV Visa Guide</title><style>/* Global CSS
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Thailand DTV Visa & Relocation Guide</title><style>/* Global CSS
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
   color: #333;
-  background: #ffffff;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
 }
 
 a {
-  color: #4a90e2;
+  color: #667eea;
   text-decoration: none;
 }
 
@@ -21,529 +29,920 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-/* Header Styles */
 .site-header {
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-  color: white;
-  padding: 30px 20px;
-  border-bottom: 3px solid #2d5a9f;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.header-content {
+.header-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.logo {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: white;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.tagline {
-  font-size: 0.95rem;
-  opacity: 0.95;
-  margin: 0;
-}
-
-/* Navigation Styles */
-.site-nav {
-  background: #f5f5f5;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0;
-}
-
-.nav-list {
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
 }
 
-.nav-list li {
-  margin: 0;
+.logo a {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #667eea;
 }
 
-.nav-list a {
-  display: block;
-  padding: 15px 20px;
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-menu a {
   color: #333;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.nav-list a:hover {
-  background: #efefef;
-  color: #4a90e2;
-  border-bottom-color: #4a90e2;
+.nav-menu a:hover {
+  color: #667eea;
   text-decoration: none;
 }
 
-/* Footer Styles */
 .site-footer {
-  background: #2d3436;
-  color: #ecf0f1;
-  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 60px 40px 20px;
   margin-top: 80px;
 }
 
-.footer-content {
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .site-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .site-nav.active {
+    max-height: 300px;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px 0;
+  }
+  
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .logo a {
+    font-size: 1.2em;
+  }
+}
+/* Thailand DTV Visa & Relocation Guide - Page CSS */
+.dtv-guide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero .subtitle {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #fff;
+  color: #667eea;
+  border-color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #667eea;
+}
+
+.quick-facts {
+  padding: 60px 40px;
+  background-color: #f8f9fa;
+}
+
+.quick-facts h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.fact-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-5px);
+}
+
+.fact-card h3 {
+  color: #667eea;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.fact-card p {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #333;
+}
+
+.phases-overview {
+  padding: 60px 40px;
+}
+
+.phases-overview h2 {
+  font-size: 2.2em;
+  margin-bottom: 50px;
+  color: #333;
   text-align: center;
 }
 
-.site-footer p {
-  margin: 10px 0;
-  font-size: 0.95rem;
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
-.disclaimer {
-  font-size: 0.85rem;
-  color: #bdc3c7;
-  font-style: italic;
+.phase-item {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
 }
 
-/* Responsive Design */
+.phase-item:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.phase-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #667eea;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.phase-item h3 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.phase-dates {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+}
+
+.phase-item p:last-child {
+  color: #666;
+  line-height: 1.6;
+}
+
+.key-details {
+  padding: 60px 40px;
+  background-color: #f8f9fa;
+}
+
+.key-details h2 {
+  font-size: 2.2em;
+  margin-bottom: 50px;
+  color: #333;
+  text-align: center;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.detail-box {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-box h3 {
+  color: #667eea;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.detail-box p {
+  color: #666;
+  line-height: 1.7;
+}
+
+.cta-section {
+  padding: 80px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.cta-section > p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.75rem;
+  .hero {
+    padding: 50px 20px;
   }
-
-  .subtitle {
-    font-size: 1rem;
+  
+  .hero-content h1 {
+    font-size: 2em;
   }
-
-  .nav-list {
-    flex-direction: column;
+  
+  .hero .subtitle {
+    font-size: 1.1em;
   }
-
-  .nav-list a {
-    border-bottom: 1px solid #e0e0e0;
+  
+  .quick-facts,
+  .phases-overview,
+  .key-details,
+  .cta-section {
+    padding: 40px 20px;
   }
-
-  .phases {
+  
+  .quick-facts h2,
+  .phases-overview h2,
+  .key-details h2,
+  .cta-section h2 {
+    font-size: 1.7em;
+  }
+  
+  .timeline,
+  .details-grid,
+  .facts-grid {
     grid-template-columns: 1fr;
   }
-}
-/* Thailand Relocation & DTV Visa Guide - Page CSS */
-.container {
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}.dtv-guide-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 0;
 }
 
 .hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 40px;
   text-align: center;
   margin-bottom: 60px;
-  padding: 40px 0;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #333;
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-.subtitle {
-  font-size: 1.25rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.overview {
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 8px;
-  margin-bottom: 60px;
-}
-
-.overview h2 {
-  margin-top: 0;
-  color: #333;
-}
-
-.phases-grid h2 {
-  text-align: center;
+.hero .subtitle {
+  font-size: 1.3em;
   margin-bottom: 40px;
-  color: #333;
-}
-
-.phases {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-bottom: 60px;
-}
-
-.phase-card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 25px;
-  transition: all 0.3s ease;
-}
-
-.phase-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: #4a90e2;
-}
-
-.phase-card h3 {
-  margin-top: 0;
-  color: #333;
-  font-size: 1.25rem;
-}
-
-.phase-card p {
-  color: #666;
+  opacity: 0.95;
   line-height: 1.6;
 }
 
-.phase-card p:first-of-type {
-  font-weight: bold;
-  color: #4a90e2;
-  font-size: 0.9rem;
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  background: #4a90e2;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+  padding: 14px 32px;
+  border-radius: 6px;
   font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.btn:hover {
-  background: #357abd;
+.btn-primary {
+  background-color: #fff;
+  color: #667eea;
+  border-color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #667eea;
 }
 
 .quick-facts {
-  background: #e8f4f8;
-  padding: 40px;
-  border-radius: 8px;
-  margin-bottom: 60px;
+  padding: 60px 40px;
+  background-color: #f8f9fa;
 }
 
 .quick-facts h2 {
-  color: #333;
-  margin-top: 0;
-}
-
-.facts-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.facts-list li {
-  color: #444;
-  line-height: 1.8;
-}
-
-.cta-section {
   text-align: center;
-  margin-bottom: 40px;
-}
-
-.cta-section h2 {
+  font-size: 2.2em;
+  margin-bottom: 50px;
   color: #333;
-  margin-bottom: 30px;
 }
 
-.cta-grid {
+.facts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
 }
 
-.cta-card {
-  background: #4a90e2;
-  color: white;
-  padding: 30px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80px;
-}
-
-.cta-card:hover {
-  background: #357abd;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 40px 0;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.overview {
-  background: #f9f9f9;
+.fact-card {
+  background: white;
   padding: 30px;
   border-radius: 8px;
-  margin-bottom: 60px;
-}
-
-.overview h2 {
-  margin-top: 0;
-  color: #333;
-}
-
-.phases-grid h2 {
   text-align: center;
-  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-5px);
+}
+
+.fact-card h3 {
+  color: #667eea;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.fact-card p {
+  font-size: 1.8em;
+  font-weight: 700;
   color: #333;
 }
 
-.phases {
+.phases-overview {
+  padding: 60px 40px;
+}
+
+.phases-overview h2 {
+  font-size: 2.2em;
+  margin-bottom: 50px;
+  color: #333;
+  text-align: center;
+}
+
+.timeline {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-bottom: 60px;
+  gap: 30px;
 }
 
-.phase-card {
+.phase-item {
   background: white;
-  border: 1px solid #e0e0e0;
+  padding: 30px;
   border-radius: 8px;
-  padding: 25px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
 }
 
-.phase-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: #4a90e2;
+.phase-item:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
 }
 
-.phase-card h3 {
-  margin-top: 0;
+.phase-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #667eea;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.phase-item h3 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
   color: #333;
-  font-size: 1.25rem;
 }
 
-.phase-card p {
+.phase-dates {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+}
+
+.phase-item p:last-child {
   color: #666;
   line-height: 1.6;
 }
 
-.phase-card p:first-of-type {
-  font-weight: bold;
-  color: #4a90e2;
-  font-size: 0.9rem;
+.key-details {
+  padding: 60px 40px;
+  background-color: #f8f9fa;
 }
 
-.btn {
-  display: inline-block;
-  background: #4a90e2;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  font-weight: 600;
-}
-
-.btn:hover {
-  background: #357abd;
-}
-
-.quick-facts {
-  background: #e8f4f8;
-  padding: 40px;
-  border-radius: 8px;
-  margin-bottom: 60px;
-}
-
-.quick-facts h2 {
+.key-details h2 {
+  font-size: 2.2em;
+  margin-bottom: 50px;
   color: #333;
-  margin-top: 0;
+  text-align: center;
 }
 
-.facts-list {
-  list-style: none;
-  padding: 0;
+.details-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
-.facts-list li {
-  color: #444;
-  line-height: 1.8;
+.detail-box {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-box h3 {
+  color: #667eea;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.detail-box p {
+  color: #666;
+  line-height: 1.7;
 }
 
 .cta-section {
+  padding: 80px 40px;
   text-align: center;
-  margin-bottom: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
 .cta-section h2 {
-  color: #333;
-  margin-bottom: 30px;
+  font-size: 2.2em;
+  margin-bottom: 15px;
 }
 
-.cta-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+.cta-section > p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  opacity: 0.95;
 }
 
-.cta-card {
-  background: #4a90e2;
-  color: white;
-  padding: 30px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80px;
-}
-
-.cta-card:hover {
-  background: #357abd;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2em;
+  }
+  
+  .hero .subtitle {
+    font-size: 1.1em;
+  }
+  
+  .quick-facts,
+  .phases-overview,
+  .key-details,
+  .cta-section {
+    padding: 40px 20px;
+  }
+  
+  .quick-facts h2,
+  .phases-overview h2,
+  .key-details h2,
+  .cta-section h2 {
+    font-size: 1.7em;
+  }
+  
+  .timeline,
+  .details-grid,
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
 }</style></head><body><header class="site-header">
-  <div class="header-content">
-    <a href="/carolyn-3/" class="logo">Thailand DTV Guide</a>
-    <p class="tagline">Your path to relocation & long-term visa</p>
+  <div class="header-container">
+    <div class="logo">
+      <a href="/carolyn-3/">Thailand DTV Guide</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
-</header><nav class="site-nav">
-  <ul class="nav-list">
+</header>
+<script>
+  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+    document.querySelector('.site-nav').classList.toggle('active');
+  });
+</script><nav class="site-nav">
+  <ul class="nav-menu">
     <li><a href="/carolyn-3/">Home</a></li>
     <li><a href="/carolyn-3/phases">Phases</a></li>
-    <li><a href="/carolyn-3/dtv-visa">DTV Visa</a></li>
-    <li><a href="/carolyn-3/budget">Budget</a></li>
-    <li><a href="/carolyn-3/faq">FAQ</a></li>
     <li><a href="/carolyn-3/resources">Resources</a></li>
+    <li><a href="/carolyn-3/faq">FAQ</a></li>
+    <li><a href="/carolyn-3/contact">Contact</a></li>
   </ul>
-</nav><main class="container">
-  <div class="hero">
-    <h1>Thailand Relocation & DTV Visa Guide</h1>
-    <p class="subtitle">Your complete roadmap for relocating to Thailand for medical treatment and obtaining a 5-year Digital Nomad Visa</p>
-  </div>
-
-  <section class="overview">
-    <h2>Overview</h2>
-    <p>This guide walks you through every step of relocating to Thailand for affordable medical treatment and securing a long-term DTV (Digital Nomad) visa. Whether you're planning a phased move or need comprehensive preparation, we've organized the journey into manageable phases.</p>
-  </section>
-
-  <section class="phases-grid">
-    <h2>Your Journey in Phases</h2>
-    <div class="phases">
-      <article class="phase-card">
-        <h3>Pre-Departure Preparation</h3>
-        <p>July 16 - August 23</p>
-        <p>Essential travel planning, document gathering, research, and logistics before leaving the US.</p>
-        <a href="/carolyn-3/phases/pre-departure" class="btn">View Phase →</a>
-      </article>
-
-      <article class="phase-card">
-        <h3>Travel to Thailand</h3>
-        <p>August 24 - 25</p>
-        <p>Your journey from Baltimore to Chiang Mai with visa exemption entry.</p>
-        <a href="/carolyn-3/phases/travel" class="btn">View Phase →</a>
-      </article>
-
-      <article class="phase-card">
-        <h3>Initial Settling In</h3>
-        <p>August 26 - September 16</p>
-        <p>First 3 weeks: establish services, connect with community, and build foundations.</p>
-        <a href="/carolyn-3/phases/settling-in" class="btn">View Phase →</a>
-      </article>
-
-      <article class="phase-card">
-        <h3>Medical Plan Development</h3>
-        <p>September 16 - October 14</p>
-        <p>Create the medical foundation required for DTV visa approval.</p>
-        <a href="/carolyn-3/phases/medical-plan" class="btn">View Phase →</a>
-      </article>
-
-      <article class="phase-card">
-        <h3>DTV Application</h3>
-        <p>October 20 - November 12</p>
-        <p>Compile documents and apply for your 5-year Digital Nomad Visa in Vietnam.</p>
-        <a href="/carolyn-3/phases/dtv-application" class="btn">View Phase →</a>
-      </article>
-
-      <article class="phase-card">
-        <h3>Long-Term Stay</h3>
-        <p>November 20 - Beyond</p>
-        <p>Settle into your 5+ year Thailand stay with visa and renewal strategies.</p>
-        <a href="/carolyn-3/phases/long-term-stay" class="btn">View Phase →</a>
-      </article>
+</nav><main class="dtv-guide-container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Thailand DTV Visa & Relocation Guide</h1>
+      <p class="subtitle">Complete step-by-step guidance for US citizens obtaining the 5-year Digital Nomad/Medical Treatment visa</p>
+      <div class="cta-buttons">
+        <a href="#phases" class="btn btn-primary">View Timeline</a>
+        <a href="#quick-facts" class="btn btn-secondary">Quick Facts</a>
+      </div>
     </div>
   </section>
 
-  <section class="quick-facts">
-    <h2>Quick Facts</h2>
-    <ul class="facts-list">
-      <li><strong>DTV Visa Duration:</strong> 5 years</li>
-      <li><strong>Initial Entry:</strong> 60-day visa exemption (US citizens)</li>
-      <li><strong>Cost Savings:</strong> Physical therapy $25-75/session vs $100+ in US</li>
-      <li><strong>Housing:</strong> $250-500/month in Suthep area</li>
-      <li><strong>Financial Requirement:</strong> 500,000+ THB ($15,000+ USD) for sponsor</li>
-      <li><strong>Processing Time:</strong> 2 days to 2 weeks for DTV approval</li>
-    </ul>
+  <section id="quick-facts" class="quick-facts">
+    <h2>DTV Visa at a Glance</h2>
+    <div class="facts-grid">
+      <div class="fact-card">
+        <h3>Duration</h3>
+        <p>5 years</p>
+      </div>
+      <div class="fact-card">
+        <h3>Stay per Entry</h3>
+        <p>Up to 180-360 days</p>
+      </div>
+      <div class="fact-card">
+        <h3>Application Fee</h3>
+        <p>$340 USD</p>
+      </div>
+      <div class="fact-card">
+        <h3>Financial Requirement</h3>
+        <p>$15,000+ USD (sponsor)</p>
+      </div>
+      <div class="fact-card">
+        <h3>Processing Time</h3>
+        <p>2-14 days typical</p>
+      </div>
+      <div class="fact-card">
+        <h3>Key Requirement</h3>
+        <p>Medical treatment plan</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="phases" class="phases-overview">
+    <h2>Your Journey: 16 Phases</h2>
+    <div class="timeline">
+      <div class="phase-item">
+        <div class="phase-number">1</div>
+        <h3>Pre-Departure Preparation</h3>
+        <p class="phase-dates">July 16 - Aug 23, 2025</p>
+        <p>Essential travel planning, document gathering, research & logistics</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">2</div>
+        <h3>Final Packing & Medical Check</h3>
+        <p class="phase-dates">Aug 20 - 23, 2025</p>
+        <p>Refill prescriptions, gather medical records from US doctors</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">3</div>
+        <h3>Travel to Thailand</h3>
+        <p class="phase-dates">Aug 24 - 25, 2025</p>
+        <p>Multi-leg journey: BWI → Detroit → Seoul → Chiang Mai</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">4</div>
+        <h3>Initial Settling In</h3>
+        <p class="phase-dates">Aug 26 - Sept 16, 2025</p>
+        <p>First 3 weeks establishing services, healthcare, community</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">5</div>
+        <h3>Get a Medical Plan</h3>
+        <p class="phase-dates">Sept 16 - Oct 14, 2025</p>
+        <p>Consult with Bangkok Hospital, establish 6+ month treatment plan</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">6</div>
+        <h3>Prepare for Vietnam Trip</h3>
+        <p class="phase-dates">Oct 20 - Nov 15, 2025</p>
+        <p>Get Vietnamese visa, book accommodation</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">7</div>
+        <h3>Travel to Vietnam</h3>
+        <p class="phase-dates">Nov 10 - 12, 2025</p>
+        <p>Fly Chiang Mai to Hanoi or Ho Chi Minh City</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">8</div>
+        <h3>DTV Application</h3>
+        <p class="phase-dates">Oct 29, 2025</p>
+        <p>Submit online application at thaievisa.go.th within 24 hours of arrival</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">9</div>
+        <h3>Stay in Vietnam During Processing</h3>
+        <p class="phase-dates">Nov 12 - 19, 2025</p>
+        <p>Wait for DTV approval (2 days to 2 weeks typical)</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">10</div>
+        <h3>Return to Thailand with DTV</h3>
+        <p class="phase-dates">Nov 19, 2025</p>
+        <p>Fly back to Chiang Mai with approved 5-year DTV visa</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-number">11</div>
+        <h3>Long-term Stay (5+ Years)</h3>
+        <p class="phase-dates">Nov 20, 2025 onwards</p>
+        <p>Continuous stay with optional 180/360-day extensions or border runs</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="key-details">
+    <h2>Critical Information</h2>
+    <div class="details-grid">
+      <div class="detail-box">
+        <h3>Visa Exemption First</h3>
+        <p>US citizens get automatic 60-day visa exemption on arrival. No visa needed for initial entry.</p>
+      </div>
+      <div class="detail-box">
+        <h3>Medical Records Required</h3>
+        <p>Bring US medical records: surgeries, MRI, X-rays. Essential for DTV approval and treatment plan.</p>
+      </div>
+      <div class="detail-box">
+        <h3>DTV Application from Vietnam</h3>
+        <p>Must apply from outside Thailand (Vietnam recommended). Cannot apply once in Thailand.</p>
+      </div>
+      <div class="detail-box">
+        <h3>High Approval Rate</h3>
+        <p>Very high DTV approval rates from Hanoi and Ho Chi Minh City embassies. Online-only since Oct 2024.</p>
+      </div>
+      <div class="detail-box">
+        <h3>Financial Sponsor</h3>
+        <p>Need sponsor with $15,000+ in 3+ months bank statements and sponsorship letter.</p>
+      </div>
+      <div class="detail-box">
+        <h3>Medication Availability</h3>
+        <p>Most US medications available in Thailand at fraction of US cost. Verify with pharmacist.</p>
+      </div>
+    </div>
   </section>
 
   <section class="cta-section">
-    <h2>Explore More</h2>
-    <div class="cta-grid">
-      <a href="/carolyn-3/budget" class="cta-card">Budget & Costs</a>
-      <a href="/carolyn-3/dtv-visa" class="cta-card">DTV Visa Details</a>
-      <a href="/carolyn-3/faq" class="cta-card">FAQ</a>
-      <a href="/carolyn-3/resources" class="cta-card">Resources</a>
+    <h2>Ready to Get Started?</h2>
+    <p>Explore detailed guides for each phase of your journey</p>
+    <div class="cta-buttons">
+      <a href="/carolyn-3/phases" class="btn btn-primary">View All Phases</a>
+      <a href="/carolyn-3/faq" class="btn btn-secondary">FAQ</a>
+      <a href="/carolyn-3/contact" class="btn btn-secondary">Contact</a>
     </div>
   </section>
 </main><footer class="site-footer">
-  <div class="footer-content">
-    <p>&copy; 2025 Thailand Relocation & DTV Visa Guide. Comprehensive resource for medical tourism and digital nomad visas.</p>
-    <p class="disclaimer">This guide is informational. Always verify current requirements with official Thai embassy sources.</p>
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Thailand DTV Guide</h3>
+        <p>Your complete resource for obtaining the 5-year Digital Nomad/Medical Treatment visa.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/carolyn-3/phases">Visa Phases</a></li>
+          <li><a href="/carolyn-3/resources">Resources</a></li>
+          <li><a href="/carolyn-3/faq">FAQ</a></li>
+          <li><a href="/carolyn-3/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Important</h3>
+        <p>This guide is informational only. Consult official Thai embassy sources and legal professionals before applying.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Thailand DTV Guide. All rights reserved.</p>
+    </div>
   </div>
 </footer></body></html>
