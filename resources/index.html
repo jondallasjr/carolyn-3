@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Resources & Tools</title><style>/* Global CSS
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Resources & Links</title><style>/* Global CSS
 * {
   margin: 0;
   padding: 0;
@@ -6,32 +6,36 @@
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
   line-height: 1.6;
-  background-color: #fff;
+  color: #333;
+  background: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
   line-height: 1.2;
 }
 
 a {
   color: #667eea;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #764ba2;
 }
 
+/* HEADER STYLES */
 .site-header {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -40,884 +44,527 @@ a:hover {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-  height: 70px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .logo a {
-  font-size: 1.5em;
-  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
   color: #667eea;
 }
 
-.mobile-menu-toggle {
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
   display: none;
-  flex-direction: column;
   background: none;
   border: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  gap: 5px;
-  padding: 5px;
-}
-
-.mobile-menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  transition: 0.3s;
-}
-
-.site-nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
+  color: #333;
 }
 
 .nav-menu {
-  display: flex;
   list-style: none;
-  gap: 40px;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
   color: #333;
+  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.2s ease;
 }
 
 .nav-menu a:hover {
   color: #667eea;
-  text-decoration: none;
 }
 
+/* FOOTER STYLES */
 .site-footer {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 60px 40px 20px;
-  margin-top: 80px;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.footer-section h3 {
-  margin-bottom: 15px;
-  color: #667eea;
+.footer-links {
+  display: flex;
+  gap: 2rem;
 }
 
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section ul li {
-  margin-bottom: 10px;
-}
-
-.footer-section a {
-  color: #ccc;
-  transition: color 0.3s;
-}
-
-.footer-section a:hover {
-  color: #667eea;
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.footer-section p {
-  color: #ccc;
-  line-height: 1.6;
+.footer-links a:hover {
+  color: #667eea;
 }
 
-.footer-bottom {
-  border-top: 1px solid #333;
-  padding-top: 20px;
-  text-align: center;
-  color: #999;
-}
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .header-container {
-    padding: 0 20px;
-  }
-  
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  
-  .site-nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  }
-  
-  .site-nav.active {
-    max-height: 300px;
+  .menu-toggle {
+    display: block;
   }
   
   .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
     flex-direction: column;
     gap: 0;
-    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
   }
   
   .nav-menu li {
-    border-bottom: 1px solid #eee;
-  }
-  
-  .nav-menu li:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid #e0e0e0;
   }
   
   .nav-menu a {
+    padding: 1rem;
     display: block;
-    padding: 15px 0;
   }
   
-  .site-footer {
-    padding: 40px 20px 20px;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-container {
-    padding: 0 15px;
-  }
-  
-  .logo a {
-    font-size: 1.2em;
-  }
-}
-/* Resources & Tools - Page CSS */
-.resources-main {
-  background-color: #f9f9f9;
-  padding: 60px 40px;
-  min-height: calc(100vh - 200px);
-}
-
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.page-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.page-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.page-header .lead {
-  font-size: 1.1em;
-  color: #666;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.resources-section {
-  margin-bottom: 80px;
-}
-
-.resources-section h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.resources-section > p {
-  color: #666;
-  margin-bottom: 30px;
-  font-size: 1.05em;
-}
-
-.resource-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 20px;
-}
-
-.resource-card {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.resource-card:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-color: #667eea;
-  transform: translateY(-2px);
-}
-
-.resource-card h3 {
-  font-size: 1.3em;
-  margin-bottom: 12px;
-  color: #333;
-}
-
-.resource-card p {
-  color: #666;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-.resource-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.resource-item {
-  background-color: #fff;
-  border-left: 4px solid #667eea;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.resource-item h3 {
-  font-size: 1.1em;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.resource-item p {
-  color: #666;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.resource-item > div {
-  flex: 1;
-}
-
-.download-link {
-  color: #667eea;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: color 0.3s;
-}
-
-.download-link:hover {
-  color: #5568d3;
-  text-decoration: underline;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-  text-align: center;
-}
-
-.btn-primary {
-  background-color: #667eea;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #5568d3;
-  text-decoration: none;
-}
-
-.btn-secondary {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #d0d0d0;
-}
-
-.btn-secondary:hover {
-  background-color: #e0e0e0;
-  text-decoration: none;
-}
-
-.resources-cta {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  text-align: center;
-  border: 1px solid #e0e0e0;
-}
-
-.resources-cta h2 {
-  margin-bottom: 15px;
-}
-
-.resources-cta > p {
-  margin-bottom: 30px;
-  color: #666;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .resources-main {
-    padding: 40px 20px;
-  }
-  
-  .page-header h1 {
-    font-size: 1.8em;
-  }
-  
-  .page-header .lead {
-    font-size: 1em;
-  }
-  
-  .resources-section h2 {
-    font-size: 1.5em;
-  }
-  
-  .resource-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .resource-item {
+  .footer-container {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .download-link {
-    white-space: normal;
-  }
-  
-  .resources-cta {
-    padding: 30px 20px;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-  }
-  
-  .cta-buttons .btn {
+  .footer-links {
     width: 100%;
+    flex-wrap: wrap;
   }
 }
-
-@media (max-width: 480px) {
-  .resources-main {
-    padding: 30px 15px;
-  }
-  
-  .page-header h1 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-  }
-  
-  .resources-section {
-    margin-bottom: 50px;
-  }
-  
-  .resources-section h2 {
-    font-size: 1.3em;
-  }
-  
-  .resource-card {
-    padding: 20px;
-  }
-}.resources-main {
-  background-color: #f9f9f9;
-  padding: 60px 40px;
-  min-height: calc(100vh - 200px);
-}
-
-.page-container {
+/* Resources & Links - Page CSS */
+.resources-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 .page-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 3rem;
 }
 
 .page-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
   color: #333;
 }
 
-.page-header .lead {
-  font-size: 1.1em;
+.subtitle {
+  font-size: 1.1rem;
   color: #666;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
 }
 
-.resources-section {
-  margin-bottom: 80px;
-}
-
-.resources-section h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.resources-section > p {
-  color: #666;
-  margin-bottom: 30px;
-  font-size: 1.05em;
-}
-
-.resource-grid {
+.resources-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
-.resource-card {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
+.resource-category {
+  background: #f8f9fa;
+  padding: 1.5rem;
   border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
 }
 
-.resource-card:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-color: #667eea;
-  transform: translateY(-2px);
-}
-
-.resource-card h3 {
-  font-size: 1.3em;
-  margin-bottom: 12px;
+.resource-category h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
   color: #333;
-}
-
-.resource-card p {
-  color: #666;
-  margin-bottom: 20px;
-  line-height: 1.5;
 }
 
 .resource-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.resource-item {
-  background-color: #fff;
-  border-left: 4px solid #667eea;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.resource-item h3 {
-  font-size: 1.1em;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.resource-item p {
-  color: #666;
+  list-style: none;
+  padding: 0;
   margin: 0;
-  line-height: 1.4;
 }
 
-.resource-item > div {
-  flex: 1;
+.resource-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
 }
 
-.download-link {
+.resource-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
   color: #667eea;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: color 0.3s;
+  font-weight: bold;
 }
 
-.download-link:hover {
-  color: #5568d3;
+.resource-list a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resource-list a:hover {
   text-decoration: underline;
+  color: #764ba2;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-  text-align: center;
-}
-
-.btn-primary {
-  background-color: #667eea;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #5568d3;
-  text-decoration: none;
-}
-
-.btn-secondary {
-  background-color: #f0f0f0;
+.resource-list strong {
   color: #333;
-  border: 1px solid #d0d0d0;
+  font-weight: 600;
 }
 
-.btn-secondary:hover {
-  background-color: #e0e0e0;
-  text-decoration: none;
-}
-
-.resources-cta {
-  background-color: #fff;
+.resources-tips {
+  background: #e8f4f8;
+  padding: 2rem;
   border-radius: 8px;
-  padding: 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  text-align: center;
-  border: 1px solid #e0e0e0;
+  border-left: 4px solid #764ba2;
 }
 
-.resources-cta h2 {
-  margin-bottom: 15px;
+.resources-tips h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-.resources-cta > p {
-  margin-bottom: 30px;
-  color: #666;
+.resources-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
+.resources-tips li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+}
+
+.resources-tips li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #764ba2;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  .resources-main {
-    padding: 40px 20px;
-  }
-  
   .page-header h1 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
   }
   
-  .page-header .lead {
-    font-size: 1em;
-  }
-  
-  .resources-section h2 {
-    font-size: 1.5em;
-  }
-  
-  .resource-grid {
+  .resources-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
-  .resource-item {
-    flex-direction: column;
-    align-items: flex-start;
+  .resources-tips {
+    padding: 1.5rem;
   }
-  
-  .download-link {
-    white-space: normal;
-  }
-  
-  .resources-cta {
-    padding: 30px 20px;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-  }
-  
-  .cta-buttons .btn {
-    width: 100%;
-  }
+}.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-@media (max-width: 480px) {
-  .resources-main {
-    padding: 30px 15px;
-  }
-  
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.resource-category {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.resource-category h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+}
+
+.resource-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.resource-list a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
+  color: #764ba2;
+}
+
+.resource-list strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.resources-tips {
+  background: #e8f4f8;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #764ba2;
+}
+
+.resources-tips h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.resources-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resources-tips li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+}
+
+.resources-tips li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #764ba2;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
   .page-header h1 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
   }
   
-  .resources-section {
-    margin-bottom: 50px;
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
-  .resources-section h2 {
-    font-size: 1.3em;
-  }
-  
-  .resource-card {
-    padding: 20px;
+  .resources-tips {
+    padding: 1.5rem;
   }
 }</style></head><body><header class="site-header">
   <div class="header-container">
     <div class="logo">
-      <a href="/carolyn-3/">Thailand DTV Guide</a>
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
     </div>
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
   </div>
-</header>
-<script>
-  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-    document.querySelector('.site-nav').classList.toggle('active');
-  });
-</script><nav class="site-nav">
-  <ul class="nav-menu">
-    <li><a href="/carolyn-3/">Home</a></li>
-    <li><a href="/carolyn-3/phases">Phases</a></li>
-    <li><a href="/carolyn-3/resources">Resources</a></li>
-    <li><a href="/carolyn-3/faq">FAQ</a></li>
-    <li><a href="/carolyn-3/contact">Contact</a></li>
-  </ul>
-</nav><main class="resources-main">
-  <div class="page-container">
-    <div class="page-header">
-      <h1>Resources & Tools</h1>
-      <p class="lead">Downloadable checklists, templates, cost breakdowns, provider directories, and practical tools for each phase of your DTV journey.</p>
-    </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><div class="resources-container">
+  <div class="page-header">
+    <h1>Resources & Links</h1>
+    <p class="subtitle">Curated directory of useful links, contacts, and organizations for Thailand relocation</p>
+  </div>
 
-    <section class="resources-section">
-      <h2>Phase-by-Phase Checklists</h2>
-      <p>Stay organized with detailed checklists for each stage of your visa application and relocation process.</p>
-      <div class="resource-grid">
-        <div class="resource-card">
-          <h3>Pre-Departure Preparation</h3>
-          <p>Essential tasks before leaving the US: medical records, documents, research, and logistics planning.</p>
-          <a href="#" class="btn btn-primary">Download Checklist</a>
-        </div>
-        <div class="resource-card">
-          <h3>Travel to Thailand</h3>
-          <p>Flight planning, visa exemption details, airport arrival procedures, and first day setup.</p>
-          <a href="#" class="btn btn-primary">Download Checklist</a>
-        </div>
-        <div class="resource-card">
-          <h3>Initial Settling In</h3>
-          <p>First 3 weeks: accommodation, services setup, community connection, and recovery support.</p>
-          <a href="#" class="btn btn-primary">Download Checklist</a>
-        </div>
-        <div class="resource-card">
-          <h3>Medical Planning</h3>
-          <p>Scheduling consultations, medical plans, and building documentation for DTV approval.</p>
-          <a href="#" class="btn btn-primary">Download Checklist</a>
-        </div>
-        <div class="resource-card">
-          <h3>DTV Application Prep</h3>
-          <p>Document compilation, financial sponsor requirements, and application readiness.</p>
-          <a href="#" class="btn btn-primary">Download Checklist</a>
-        </div>
-        <div class="resource-card">
-          <h3>Vietnam & DTV Application</h3>
-          <p>Travel to Vietnam, application submission, processing timeline, and return to Thailand.</p>
-          <a href="#" class="btn btn-primary">Download Checklist</a>
-        </div>
-      </div>
+  <div class="resources-grid">
+    <section class="resource-category">
+      <h2>Visa & Immigration</h2>
+      <ul class="resource-list">
+        <li><a href="https://thaievisa.go.th" target="_blank">Thai e-Visa Portal (thaievisa.go.th)</a> - Official DTV application platform</li>
+        <li><a href="https://www.thai-immigration.go.th" target="_blank">Thai Immigration Bureau</a> - Official immigration information</li>
+        <li><a href="https://www.mfa.go.th" target="_blank">Thai Ministry of Foreign Affairs</a> - Embassy and consulate locator</li>
+        <li>US Embassy Bangkok - For US citizens requiring consular services</li>
+      </ul>
     </section>
 
-    <section class="resources-section">
-      <h2>Templates & Forms</h2>
-      <p>Ready-to-use templates to streamline your planning and documentation.</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <h3>Financial Sponsorship Letter Template</h3>
-          <p>Customizable letter for your financial sponsor committing to emergency support.</p>
-          <a href="#" class="download-link">Download Template</a>
-        </div>
-        <div class="resource-item">
-          <h3>Medical Records Checklist</h3>
-          <p>Organize and track all medical documents needed for DTV approval.</p>
-          <a href="#" class="download-link">Download Template</a>
-        </div>
-        <div class="resource-item">
-          <h3>Emergency Contact Information Form</h3>
-          <p>Keep important medical and personal contacts organized in one place.</p>
-          <a href="#" class="download-link">Download Template</a>
-        </div>
-        <div class="resource-item">
-          <h3>Monthly Budget Tracker</h3>
-          <p>Compare US costs vs. Thailand living expenses and track monthly spending.</p>
-          <a href="#" class="download-link">Download Template</a>
-        </div>
-        <div class="resource-item">
-          <h3>Medication & Pharmacy Log</h3>
-          <p>Track your medications, dosages, Thai pharmacy equivalents, and costs.</p>
-          <a href="#" class="download-link">Download Template</a>
-        </div>
-      </div>
+    <section class="resource-category">
+      <h2>Medical Services in Chiang Mai</h2>
+      <ul class="resource-list">
+        <li><strong>Bangkok Hospital Chiang Mai</strong> - English-speaking medical facility, DTV medical letters</li>
+        <li><strong>Dr. Morgan, Health Care Medical Clinic</strong> - Recommended primary care physician</li>
+        <li>Physical therapy clinics throughout Suthep area</li>
+        <li>International pharmacies with English-speaking staff</li>
+      </ul>
     </section>
 
-    <section class="resources-section">
-      <h2>Cost Breakdowns & Budgets</h2>
-      <p>Detailed financial planning guides to help you budget for your DTV journey.</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <h3>DTV Application Costs</h3>
-          <p>Complete breakdown: visa fees, medical consultation, medical plan costs, processing fees, and contingencies.</p>
-          <a href="#" class="download-link">View Breakdown</a>
-        </div>
-        <div class="resource-item">
-          <h3>Initial Setup Costs (First 3 Months)</h3>
-          <p>Housing, utilities, mobile phone, internet, medical fees, and community setup in Chiang Mai.</p>
-          <a href="#" class="download-link">View Breakdown</a>
-        </div>
-        <div class="resource-item">
-          <h3>Monthly Living Expenses (Ongoing)</h3>
-          <p>Housing, food, transportation, healthcare, gym, and recreational activities in Thailand.</p>
-          <a href="#" class="download-link">View Breakdown</a>
-        </div>
-        <div class="resource-item">
-          <h3>Vietnam Trip Costs</h3>
-          <p>Flights, accommodation, food, visa fees, and contingency budget for DTV processing.</p>
-          <a href="#" class="download-link">View Breakdown</a>
-        </div>
-      </div>
+    <section class="resource-category">
+      <h2>Housing & Accommodation</h2>
+      <ul class="resource-list">
+        <li><a href="https://www.airbnb.com" target="_blank">Airbnb</a> - Short-term rentals</li>
+        <li><a href="https://www.booking.com" target="_blank">Booking.com</a> - Hotels and accommodations</li>
+        <li>Facebook groups: "Chiang Mai Housing", "Suthep Rentals"</li>
+        <li>Local real estate agents in Chiang Mai - Can arrange long-term rentals ($250-500/month in Suthep)</li>
+      </ul>
     </section>
 
-    <section class="resources-section">
-      <h2>Provider Directories</h2>
-      <p>Vetted medical facilities, services, and contacts in Chiang Mai and Thailand.</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <h3>Chiang Mai Medical Facilities</h3>
-          <p>English-speaking hospitals, clinics, physical therapists, and 24/7 emergency services.</p>
-          <a href="#" class="download-link">View Directory</a>
-        </div>
-        <div class="resource-item">
-          <h3>Recovery Services & Support Groups</h3>
-          <p>AA meetings, Buddhist recovery programs, counseling services, and sponsor networks.</p>
-          <a href="#" class="download-link">View Directory</a>
-        </div>
-        <div class="resource-item">
-          <h3>Expat Community Resources</h3>
-          <p>Facebook groups, community organizations, hobby clubs, and volunteer opportunities.</p>
-          <a href="#" class="download-link">View Directory</a>
-        </div>
-        <div class="resource-item">
-          <h3>Essential Services</h3>
-          <p>Mobile phone providers, banks, ATM networks, insurance providers, and visa services.</p>
-          <a href="#" class="download-link">View Directory</a>
-        </div>
-      </div>
+    <section class="resource-category">
+      <h2>Recovery & Community</h2>
+      <ul class="resource-list">
+        <li><strong>AA Meetings Chiang Mai</strong> - 50+ meetings per week throughout the city</li>
+        <li><a href="https://refugerecovery.org" target="_blank">Refuge Recovery</a> - Buddhist-based recovery program</li>
+        <li><strong>Counselling Thailand</strong> - Addiction counseling services</li>
+        <li><strong>The Cabin Alumni Network</strong> - Support for treatment program graduates</li>
+        <li>Chiang Mai Expats Facebook groups - Social and activity communities</li>
+      </ul>
     </section>
 
-    <section class="resources-section">
-      <h2>Reference Documents</h2>
-      <p>Key information, official links, and reference materials for your visa application and relocation.</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <h3>Official Thai Embassy Links</h3>
-          <p>Direct links to DTV visa information, application portals, and official requirements.</p>
-          <a href="#" class="download-link">View Links</a>
-        </div>
-        <div class="resource-item">
-          <h3>DTV Requirements Checklist</h3>
-          <p>Official document requirements and specifications for flawless application submission.</p>
-          <a href="#" class="download-link">View Checklist</a>
-        </div>
-        <div class="resource-item">
-          <h3>Thailand Visa Rules & Extensions</h3>
-          <p>DTV validity, re-entry permits, border run requirements, and extension procedures.</p>
-          <a href="#" class="download-link">View Guide</a>
-        </div>
-        <div class="resource-item">
-          <h3>Understanding Chiang Mai</h3>
-          <p>Neighborhoods, climate, seasons, seasonal risks, and expat-friendly areas to explore.</p>
-          <a href="#" class="download-link">View Guide</a>
-        </div>
-      </div>
+    <section class="resource-category">
+      <h2>Transportation & Local Services</h2>
+      <ul class="resource-list">
+        <li><a href="https://grab.com" target="_blank">Grab App</a> - Taxis, motorbikes, and ride-sharing</li>
+        <li>Local SIM cards available at Chiang Mai Airport</li>
+        <li>AIS, DTAC, True Move - Thai mobile providers with English support</li>
+        <li>Local convenience stores (7-Eleven, Family Mart)</li>
+        <li>Grocery stores and markets in Suthep neighborhood</li>
+      </ul>
     </section>
 
-    <section class="resources-section resources-cta">
-      <h2>Need More Help?</h2>
-      <p>Can't find what you're looking for? Check our FAQ or reach out with questions.</p>
-      <div class="cta-buttons">
-        <a href="/carolyn-3/faq" class="btn btn-primary">Browse FAQ</a>
-        <a href="/carolyn-3/contact" class="btn btn-secondary">Contact Us</a>
-      </div>
+    <section class="resource-category">
+      <h2>Activities & Recreation</h2>
+      <ul class="resource-list">
+        <li>Gym and pool memberships - Available throughout Chiang Mai ($30-100/month)</li>
+        <li>Yoga studios and classes</li>
+        <li>Hiking groups and outdoor activities</li>
+        <li>Art therapy and creative workshops</li>
+        <li>Cooking classes and food tours</li>
+        <li>Board game groups and meetups</li>
+      </ul>
+    </section>
+
+    <section class="resource-category">
+      <h2>Financial & Banking</h2>
+      <ul class="resource-list">
+        <li>Thai banks: Kasikornbank (K-Bank), Bangkok Bank, Krung Thai Bank</li>
+        <li>ATMs throughout Chiang Mai (220 THB fee for foreign cards)</li>
+        <li>Exchange services for currency conversion</li>
+        <li>International wire transfer services</li>
+      </ul>
+    </section>
+
+    <section class="resource-category">
+      <h2>Useful Information</h2>
+      <ul class="resource-list">
+        <li><strong>Currency:</strong> Thai Baht (THB) - Approximately $1 USD = 33-35 THB</li>
+        <li><strong>Emergency Services:</strong> 911 (same as US)</li>
+        <li><strong>Time Zone:</strong> Indochina Time (ICT), UTC+7</li>
+        <li><strong>Language:</strong> Thai language apps and classes available</li>
+        <li><strong>Burning Season:</strong> March-May (consider southern Thailand or Bali during worst air quality months)</li>
+      </ul>
     </section>
   </div>
-</main><footer class="site-footer">
+
+  <div class="resources-tips">
+    <h2>Tips for Using These Resources</h2>
+    <ul>
+      <li>Join Chiang Mai Expats Facebook groups before arrival to connect with the community</li>
+      <li>Many services have English-speaking staff in the Suthep area</li>
+      <li>Costs are significantly lower than US - verify with local contacts for current pricing</li>
+      <li>Building relationships with local service providers (doctors, therapists) is essential for DTV medical documentation</li>
+      <li>Always keep copies of medical records and important documents</li>
+    </ul>
+  </div>
+</div><footer class="site-footer">
   <div class="footer-container">
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>Thailand DTV Guide</h3>
-        <p>Your complete resource for obtaining the 5-year Digital Nomad/Medical Treatment visa.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/carolyn-3/phases">Visa Phases</a></li>
-          <li><a href="/carolyn-3/resources">Resources</a></li>
-          <li><a href="/carolyn-3/faq">FAQ</a></li>
-          <li><a href="/carolyn-3/contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Important</h3>
-        <p>This guide is informational only. Consult official Thai embassy sources and legal professionals before applying.</p>
-      </div>
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Thailand DTV Guide. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
     </div>
   </div>
 </footer></body></html>
