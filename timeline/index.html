@@ -1,0 +1,938 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Complete Journey Timeline</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* Complete Journey Timeline - Page CSS */
+.timeline-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.timeline-main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.timeline-container {
+  width: 100%;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e0e0e0;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 100px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #667eea;
+  z-index: 10;
+}
+
+.timeline-item.phase-1 .timeline-marker {
+  border-color: #667eea;
+}
+
+.timeline-item.phase-2 .timeline-marker {
+  border-color: #764ba2;
+}
+
+.timeline-item.phase-3 .timeline-marker {
+  border-color: #f093fb;
+}
+
+.timeline-item.phase-4 .timeline-marker {
+  border-color: #4facfe;
+}
+
+.timeline-item.phase-5 .timeline-marker {
+  border-color: #43e97b;
+}
+
+.timeline-content {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.timeline-item.phase-1 .timeline-content {
+  border-left-color: #667eea;
+}
+
+.timeline-item.phase-2 .timeline-content {
+  border-left-color: #764ba2;
+}
+
+.timeline-item.phase-3 .timeline-content {
+  border-left-color: #f093fb;
+}
+
+.timeline-item.phase-4 .timeline-content {
+  border-left-color: #4facfe;
+}
+
+.timeline-item.phase-5 .timeline-content {
+  border-left-color: #43e97b;
+}
+
+.timeline-content:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.phase-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+.timeline-item.phase-2 .phase-label {
+  background: #764ba2;
+}
+
+.timeline-item.phase-3 .phase-label {
+  background: #f093fb;
+}
+
+.timeline-item.phase-4 .phase-label {
+  background: #4facfe;
+}
+
+.timeline-item.phase-5 .phase-label {
+  background: #43e97b;
+}
+
+.timeline-content ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.timeline-content li {
+  padding: 0.4rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-content li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.key-note, .warning, .cost-info {
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  border-radius: 3px;
+  margin-top: 1rem;
+}
+
+.key-note {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-left: 3px solid #1976d2;
+}
+
+.warning {
+  background: #fff3e0;
+  color: #e65100;
+  border-left: 3px solid #e65100;
+}
+
+.cost-info {
+  background: #f3e5f5;
+  color: #6a1b9a;
+  border-left: 3px solid #6a1b9a;
+}
+
+.timeline-summary {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.timeline-summary h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.summary-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.summary-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.summary-card p {
+  color: #666;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .timeline-main h1 {
+    font-size: 1.8rem;
+  }
+  
+  .timeline::before {
+    left: 12px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-marker {
+    width: 28px;
+    height: 28px;
+    left: 8px;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}.timeline-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.timeline-main h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.timeline-container {
+  width: 100%;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e0e0e0;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 100px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #667eea;
+  z-index: 10;
+}
+
+.timeline-item.phase-1 .timeline-marker {
+  border-color: #667eea;
+}
+
+.timeline-item.phase-2 .timeline-marker {
+  border-color: #764ba2;
+}
+
+.timeline-item.phase-3 .timeline-marker {
+  border-color: #f093fb;
+}
+
+.timeline-item.phase-4 .timeline-marker {
+  border-color: #4facfe;
+}
+
+.timeline-item.phase-5 .timeline-marker {
+  border-color: #43e97b;
+}
+
+.timeline-content {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.timeline-item.phase-1 .timeline-content {
+  border-left-color: #667eea;
+}
+
+.timeline-item.phase-2 .timeline-content {
+  border-left-color: #764ba2;
+}
+
+.timeline-item.phase-3 .timeline-content {
+  border-left-color: #f093fb;
+}
+
+.timeline-item.phase-4 .timeline-content {
+  border-left-color: #4facfe;
+}
+
+.timeline-item.phase-5 .timeline-content {
+  border-left-color: #43e97b;
+}
+
+.timeline-content:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.phase-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  background: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+.timeline-item.phase-2 .phase-label {
+  background: #764ba2;
+}
+
+.timeline-item.phase-3 .phase-label {
+  background: #f093fb;
+}
+
+.timeline-item.phase-4 .phase-label {
+  background: #4facfe;
+}
+
+.timeline-item.phase-5 .phase-label {
+  background: #43e97b;
+}
+
+.timeline-content ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.timeline-content li {
+  padding: 0.4rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-content li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.key-note, .warning, .cost-info {
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  border-radius: 3px;
+  margin-top: 1rem;
+}
+
+.key-note {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-left: 3px solid #1976d2;
+}
+
+.warning {
+  background: #fff3e0;
+  color: #e65100;
+  border-left: 3px solid #e65100;
+}
+
+.cost-info {
+  background: #f3e5f5;
+  color: #6a1b9a;
+  border-left: 3px solid #6a1b9a;
+}
+
+.timeline-summary {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.timeline-summary h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.summary-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.summary-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.summary-card p {
+  color: #666;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .timeline-main h1 {
+    font-size: 1.8rem;
+  }
+  
+  .timeline::before {
+    left: 12px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-marker {
+    width: 28px;
+    height: 28px;
+    left: 8px;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><main class="timeline-main">
+  <div class="timeline-container">
+    <h1>Complete Journey Timeline</h1>
+    <p class="intro-text">Your complete relocation timeline from pre-departure preparation through long-term settlement in Thailand.</p>
+    
+    <div class="timeline">
+      <div class="timeline-item phase-1">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Pre-Departure Preparation (Jul 16 - Aug 23)</h3>
+          <p class="phase-label">Phase 1: Foundation</p>
+          <ul>
+            <li>Buy flight ticket</li>
+            <li>Book temporary accommodation</li>
+            <li>Arrange travel health insurance</li>
+            <li>Gather US medical records</li>
+            <li>Get prescriptions refilled</li>
+            <li>Join Chiang Mai expat groups</li>
+            <li>Research nearby amenities</li>
+          </ul>
+          <p class="key-note">⚠️ Last chance to get medical documentation from US doctors</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-1">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Final Packing & Check (Aug 20-23)</h3>
+          <p class="phase-label">Phase 1: Foundation</p>
+          <ul>
+            <li>Get prescriptions refilled</li>
+            <li>Bring 90-day medication supply</li>
+            <li>Final document verification</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-2">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Travel to Thailand (Aug 24-25)</h3>
+          <p class="phase-label">Phase 2: Arrival & Initial Settlement</p>
+          <ul>
+            <li>Baltimore → Detroit → Seoul → Chiang Mai</li>
+            <li>Arrive: Aug 25, 9:55 PM</li>
+            <li>Enter on 60-day visa exemption (no visa required)</li>
+            <li>Get cell phone plan at airport</li>
+          </ul>
+          <p class="key-note">ℹ️ Total journey: 25+ hours with layovers</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-2">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Initial Settling In (Aug 26 - Sep 16)</h3>
+          <p class="phase-label">Phase 2: Arrival & Initial Settlement</p>
+          <ul>
+            <li>3 quiet days to adjust</li>
+            <li>Set up basic services (cleaner, doctor, PT, pharmacy)</li>
+            <li>Connect with recovery community (AA meetings, sponsor)</li>
+            <li>Download Grab app for transportation</li>
+          </ul>
+          <p class="cost-info">Cleaning: 500-800 THB ($15-24) | Housing: $250-500/month</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-3">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Get Medical Plan for DTV (Sep 16 - Oct 14)</h3>
+          <p class="phase-label">Phase 3: DTV Preparation</p>
+          <ul>
+            <li>Contact Bangkok Hospital Chiang Mai</li>
+            <li>Schedule in-person consultation (~$40-90)</li>
+            <li>Review medical records with Thai doctor</li>
+            <li>Establish 6+ month medical/PT plan</li>
+          </ul>
+          <p class="key-note">✓ This consultation is the foundation for visa approval</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-3">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Apply for 30-Day Extension (Oct 19-20)</h3>
+          <p class="phase-label">Phase 3: DTV Preparation</p>
+          <ul>
+            <li>Visit immigration office in Chiang Mai</li>
+            <li>Pay 1,900 THB fee</li>
+            <li>Extend stay to 90 days total</li>
+          </ul>
+          <p class="key-note">📋 Same-day processing</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-3">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>DTV Application Preparation (Oct 20 - Nov 10)</h3>
+          <p class="phase-label">Phase 3: DTV Preparation</p>
+          <ul>
+            <li>Compile complete document package</li>
+            <li>Medical plans and doctor letters</li>
+            <li>Financial sponsor documentation (500,000+ THB bank statements)</li>
+            <li>Sponsorship commitment letter</li>
+            <li>Proof of relationship documents</li>
+          </ul>
+          <p class="warning">⚠️ All documents must be error-free - typos cause automatic rejection</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-3">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Travel to Vietnam (Nov 10-12)</h3>
+          <p class="phase-label">Phase 3: DTV Preparation</p>
+          <ul>
+            <li>Fly Chiang Mai → Hanoi or Ho Chi Minh City</li>
+            <li>Travel with financial sponsor</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-4">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>DTV Application in Vietnam (Nov 12-19)</h3>
+          <p class="phase-label">Phase 4: Visa Processing</p>
+          <ul>
+            <li>Submit online application at thaievisa.go.th within 24 hours of arrival</li>
+            <li>Pay non-refundable fee: $340</li>
+            <li>Wait for approval (2 days to 2 weeks, officially 5 working days)</li>
+            <li>Receive DTV electronically, print multiple copies</li>
+          </ul>
+          <p class="warning">⚠️ Cannot return to Thailand during processing - must stay in Vietnam</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-4">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Prepare for Vietnam Stay (Oct 20 - Nov 15)</h3>
+          <p class="phase-label">Phase 4: Visa Processing</p>
+          <ul>
+            <li>Get Vietnamese tourist visa</li>
+            <li>Book accommodation ($30-40/night)</li>
+          </ul>
+          <p class="cost-info">Budget: $400-600 total for Vietnam stay</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-5">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Return to Thailand (Nov 19)</h3>
+          <p class="phase-label">Phase 5: Long-Term Settlement</p>
+          <ul>
+            <li>Fly back to Chiang Mai with approved 5-year DTV</li>
+            <li>Show printed DTV approval at border</li>
+            <li>Stay for 180+ days</li>
+          </ul>
+          <p class="key-note">✓ No re-entry permits needed for 5 years</p>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-5">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Deeper Settling In (Sep 13 - Nov 8)</h3>
+          <p class="phase-label">Phase 5: Long-Term Settlement</p>
+          <ul>
+            <li>Get gym/pool membership</li>
+            <li>Join expat community groups (yoga, hiking, art, cooking, board games)</li>
+            <li>Research volunteering opportunities</li>
+            <li>Learn Thai language</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-5">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Plan for Future (Oct 1 - Nov 8)</h3>
+          <p class="phase-label">Phase 5: Long-Term Settlement</p>
+          <ul>
+            <li>Look for permanent housing</li>
+            <li>Establish long-term community connections</li>
+            <li>Plan for burning season trip (southern Thailand/Bali)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item phase-5">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Long-Term Stay (Nov 20 onwards)</h3>
+          <p class="phase-label">Phase 5: Long-Term Settlement</p>
+          <ul>
+            <li>Stay in Thailand for 5+ years with DTV visa</li>
+            <li>Leave and return every 180-360 days for fresh entry</li>
+            <li>Option: Extension costs ~$300</li>
+            <li>Option: Border run every 180 days</li>
+          </ul>
+          <p class="key-note">✓ Continuous stay possible for up to 360 days with one extension</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-summary">
+      <h2>Quick Reference</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <h4>Total Timeline</h4>
+          <p><strong>5 Months</strong> (Aug - Nov 2025)</p>
+        </div>
+        <div class="summary-card">
+          <h4>Key Visa Dates</h4>
+          <p>60-day exemption: Aug 25 - Oct 24<br>90-day total: Oct 24 - Nov 23</p>
+        </div>
+        <div class="summary-card">
+          <h4>DTV Application</h4>
+          <p>Vietnam application: Nov 12-19<br>Processing: 2 days - 2 weeks</p>
+        </div>
+        <div class="summary-card">
+          <h4>5-Year Visa</h4>
+          <p>Approved: Nov 19<br>Valid: 5 years from issuance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
