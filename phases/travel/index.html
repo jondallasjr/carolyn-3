@@ -1,19 +1,27 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Phase 2: Travel to Thailand</title><style>/* Global CSS
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Phase 2: Travel to Thailand (24-25 hours)</title><style>/* Global CSS
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
   color: #333;
-  background: #ffffff;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
 }
 
 a {
-  color: #4a90e2;
+  color: #667eea;
   text-decoration: none;
 }
 
@@ -21,144 +29,215 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-/* Header Styles */
 .site-header {
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-  color: white;
-  padding: 30px 20px;
-  border-bottom: 3px solid #2d5a9f;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.header-content {
+.header-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.logo {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: white;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.tagline {
-  font-size: 0.95rem;
-  opacity: 0.95;
-  margin: 0;
-}
-
-/* Navigation Styles */
-.site-nav {
-  background: #f5f5f5;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0;
-}
-
-.nav-list {
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
 }
 
-.nav-list li {
-  margin: 0;
+.logo a {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #667eea;
 }
 
-.nav-list a {
-  display: block;
-  padding: 15px 20px;
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-menu a {
   color: #333;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.nav-list a:hover {
-  background: #efefef;
-  color: #4a90e2;
-  border-bottom-color: #4a90e2;
+.nav-menu a:hover {
+  color: #667eea;
   text-decoration: none;
 }
 
-/* Footer Styles */
 .site-footer {
-  background: #2d3436;
-  color: #ecf0f1;
-  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 60px 40px 20px;
   margin-top: 80px;
 }
 
-.footer-content {
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
   text-align: center;
+  color: #999;
 }
 
-.site-footer p {
-  margin: 10px 0;
-  font-size: 0.95rem;
-}
-
-.disclaimer {
-  font-size: 0.85rem;
-  color: #bdc3c7;
-  font-style: italic;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.75rem;
+  .header-container {
+    padding: 0 20px;
   }
-
-  .subtitle {
-    font-size: 1rem;
+  
+  .mobile-menu-toggle {
+    display: flex;
   }
-
-  .nav-list {
+  
+  .site-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
     flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   }
-
-  .nav-list a {
-    border-bottom: 1px solid #e0e0e0;
+  
+  .site-nav.active {
+    max-height: 300px;
   }
-
-  .phases {
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px 0;
+  }
+  
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-content {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .logo a {
+    font-size: 1.2em;
   }
 }
 /* Journey Phases - Page CSS */
-.phases-container {
+.phases-main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 60px 40px;
 }
 
-.phases-intro {
+.phases-container {
+  width: 100%;
+}
+
+.phases-hero {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
-.phases-intro h1 {
-  font-size: 2.5rem;
-  color: #2d3436;
-  margin-bottom: 20px;
+.phases-hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.intro-text {
-  font-size: 1.1rem;
+.phases-hero .subtitle {
+  font-size: 1.2em;
   color: #666;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .phases-grid {
@@ -169,629 +248,1110 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .phase-card {
-  background: white;
+  background: #f9f9f9;
   border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 30px;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.phase-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  display: flex;
+  flex-direction: column;
 }
 
 .phase-card:hover {
-  border-color: #4a90e2;
-  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
   transform: translateY(-4px);
 }
 
 .phase-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-  color: white;
-  font-size: 1.75rem;
+  display: inline-block;
+  font-size: 2em;
   font-weight: 700;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-.phase-card h2 {
-  font-size: 1.5rem;
-  color: #2d3436;
+  color: #667eea;
   margin-bottom: 10px;
 }
 
+.phase-card h2 {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
 .phase-duration {
-  font-size: 0.9rem;
-  color: #4a90e2;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 0.9em;
+  color: #999;
+  font-weight: 500;
   margin-bottom: 15px;
 }
 
 .phase-description {
   color: #666;
-  line-height: 1.7;
   margin-bottom: 20px;
-  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.phase-tasks {
+  list-style: none;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.phase-tasks li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #555;
+  line-height: 1.5;
+}
+
+.phase-tasks li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
 }
 
 .phase-link {
   display: inline-block;
-  color: #4a90e2;
+  color: #667eea;
   font-weight: 600;
-  transition: all 0.3s ease;
-  margin-top: 10px;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
 }
 
 .phase-link:hover {
-  color: #357abd;
+  border-bottom-color: #667eea;
   text-decoration: none;
-  transform: translateX(4px);
 }
 
 .phases-timeline {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 40px;
-  margin-top: 60px;
+  background: #f5f5f5;
+  padding: 50px 40px;
+  border-radius: 8px;
+  margin-bottom: 80px;
 }
 
 .phases-timeline h2 {
-  font-size: 1.75rem;
-  color: #2d3436;
-  margin-bottom: 30px;
+  font-size: 2em;
+  margin-bottom: 40px;
   text-align: center;
+  color: #333;
 }
 
 .timeline {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  position: relative;
+  padding: 0;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #667eea;
 }
 
 .timeline-item {
-  background: white;
-  padding: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 60px;
+  height: 60px;
+  background: #667eea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px #f5f5f5;
+}
+
+.timeline-content h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  color: #666;
+}
+
+.phases-info {
+  margin-top: 80px;
+}
+
+.phases-info h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.info-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
   border-radius: 8px;
-  border-left: 4px solid #4a90e2;
   text-align: center;
 }
 
-.timeline-date {
-  font-size: 0.85rem;
-  color: #4a90e2;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 10px;
+.info-box h3 {
+  font-size: 1.1em;
+  margin-bottom: 15px;
 }
 
-.timeline-event {
-  font-size: 0.95rem;
-  color: #2d3436;
-  font-weight: 600;
+.info-box p {
+  line-height: 1.6;
+}
+
+.info-box strong {
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
-  .phases-container {
+  .phases-main {
     padding: 40px 20px;
   }
 
-  .phases-intro h1 {
-    font-size: 1.75rem;
-  }
-
-  .intro-text {
-    font-size: 1rem;
+  .phases-hero h1 {
+    font-size: 2em;
   }
 
   .phases-grid {
-    grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .timeline {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .phase-card {
+    padding: 20px;
   }
 
   .phases-timeline {
-    padding: 25px;
+    padding: 30px 20px;
+  }
+
+  .timeline:before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 80px;
+  }
+
+  .timeline-marker {
+    width: 50px;
+    height: 50px;
+    left: -5px;
+    font-size: 0.9em;
+  }
+
+  .phases-info h2 {
+    font-size: 1.6em;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Phase 2: Travel to Thailand - Page CSS */
-.phase-detail-content {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  margin-top: 40px;
+@media (max-width: 480px) {
+  .phases-main {
+    padding: 30px 15px;
+  }
+
+  .phases-hero h1 {
+    font-size: 1.6em;
+  }
+
+  .phases-hero .subtitle {
+    font-size: 1em;
+  }
+
+  .phase-card h2 {
+    font-size: 1.2em;
+  }
+
+  .timeline:before {
+    left: 15px;
+  }
+
+  .timeline-item {
+    padding-left: 70px;
+    margin-bottom: 30px;
+  }
+
+  .timeline-marker {
+    width: 45px;
+    height: 45px;
+    left: -7px;
+    font-size: 0.8em;
+  }
 }
 
-.phase-section {
-  margin-bottom: 50px;
-  padding-bottom: 40px;
-  border-bottom: 2px solid #f0f0f0;
+/* Phase 2: Travel to Thailand (24-25 hours) - Page CSS */
+.travel-itinerary {
+  max-width: 900px;
 }
 
-.phase-section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+.itinerary-section {
+  margin-bottom: 60px;
 }
 
-.phase-section h2 {
-  font-size: 1.75rem;
-  color: #2d3436;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #4a90e2;
-  display: inline-block;
+.itinerary-section h2 {
+  font-size: 1.6em;
+  margin-bottom: 30px;
+  color: #333;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 15px;
 }
 
-.phase-section h3 {
-  font-size: 1.2rem;
-  color: #357abd;
-  margin-bottom: 15px;
-  margin-top: 0;
-}
-
-.detail-box {
-  background: #f9f9f9;
-  border-left: 4px solid #4a90e2;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 6px;
-}
-
-.detail-box.warning {
-  background: #fff9e6;
-  border-left-color: #f39c12;
-}
-
-.detail-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.detail-box li {
-  margin-bottom: 12px;
-  padding-left: 0;
-  line-height: 1.7;
-  color: #555;
-}
-
-.detail-box li ul {
-  margin-top: 8px;
-  margin-left: 20px;
-}
-
-.detail-box li ul li {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.checklist li:before {
-  content: '✓ ';
-  color: #4a90e2;
-  font-weight: bold;
-  margin-right: 8px;
-}
-
-.detail-box p {
-  margin: 0 0 15px 0;
-  color: #555;
-  line-height: 1.8;
-}
-
-.timeline-detail {
+.route-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #f9fafb 100%);
+  border: 2px solid #e0e7ff;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.timeline-marker {
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-  color: white;
-  padding: 15px 20px;
+.route-leg {
+  flex: 1;
+  min-width: 180px;
+  padding: 20px;
+  background: white;
   border-radius: 6px;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  border-left: 4px solid #667eea;
 }
 
-.timeline-marker strong {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 1rem;
+.route-label {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.next-phase-list {
+.route-leg p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.route-leg strong {
+  color: #667eea;
+}
+
+.route-duration {
+  font-size: 0.9em;
+  color: #999;
+  font-weight: 500;
+}
+
+.route-connector {
+  font-size: 1.5em;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.arrival-info {
+  background: #f0f4ff;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+}
+
+.arrival-info p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.info-card h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.info-card.highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.info-card.highlight h3 {
+  color: white;
+}
+
+.info-card.warning {
+  background: #fff8f0;
+  border-color: #ffa500;
+}
+
+.info-card.warning h3 {
+  color: #ff8c00;
+}
+
+.compact-list {
   list-style: none;
   padding: 0;
-  margin: 15px 0;
 }
 
-.next-phase-list li {
-  padding-left: 25px;
-  margin-bottom: 10px;
+.compact-list li {
+  padding: 8px 0;
+  padding-left: 24px;
   position: relative;
   color: #555;
 }
 
-.next-phase-list li:before {
-  content: '→';
+.compact-list li:before {
+  content: "✓";
   position: absolute;
   left: 0;
-  color: #4a90e2;
-  font-weight: bold;
+  color: #667eea;
+  font-weight: 700;
 }
 
-.phase-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+.info-card.highlight .compact-list li:before {
   color: white;
-  border-radius: 6px;
-  font-weight: 600;
+}
+
+.checklist {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-top: 5px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.checklist-item label {
+  cursor: pointer;
+  color: #333;
+  line-height: 1.5;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tip-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
   transition: all 0.3s ease;
 }
 
-.phase-link:hover {
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+.tip-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-  .phase-detail-content {
-    padding: 25px;
-  }
-
-  .phase-section h2 {
-    font-size: 1.4rem;
-  }
-
-  .detail-box {
-    padding: 15px;
-  }
-
-  .timeline-marker {
-    padding: 12px 15px;
-    font-size: 0.9rem;
-  }
-}.phase-detail-content {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  margin-top: 40px;
-}
-
-.phase-section {
-  margin-bottom: 50px;
-  padding-bottom: 40px;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.phase-section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.phase-section h2 {
-  font-size: 1.75rem;
-  color: #2d3436;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #4a90e2;
-  display: inline-block;
-}
-
-.phase-section h3 {
-  font-size: 1.2rem;
-  color: #357abd;
-  margin-bottom: 15px;
-  margin-top: 0;
-}
-
-.detail-box {
-  background: #f9f9f9;
-  border-left: 4px solid #4a90e2;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 6px;
-}
-
-.detail-box.warning {
-  background: #fff9e6;
-  border-left-color: #f39c12;
-}
-
-.detail-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.detail-box li {
+.tip-card h3 {
+  color: #667eea;
   margin-bottom: 12px;
-  padding-left: 0;
-  line-height: 1.7;
+  font-size: 1em;
+}
+
+.tip-card p {
   color: #555;
+  font-size: 0.95em;
+  line-height: 1.5;
 }
 
-.detail-box li ul {
-  margin-top: 8px;
-  margin-left: 20px;
+.next-phase {
+  background: linear-gradient(135deg, #f5f7fa 0%, #f9fafb 100%);
+  padding: 40px;
+  border-radius: 8px;
+  border-left: 5px solid #667eea;
+  margin-top: 80px;
 }
 
-.detail-box li ul li {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-  color: #666;
+.next-phase h2 {
+  border-bottom: 3px solid #667eea;
 }
 
-.checklist li:before {
-  content: '✓ ';
-  color: #4a90e2;
-  font-weight: bold;
-  margin-right: 8px;
+.phase-preview {
+  list-style: none;
+  margin: 20px 0 30px 0;
+  padding: 0;
 }
 
-.detail-box p {
-  margin: 0 0 15px 0;
+.phase-preview li {
+  padding: 12px 0;
+  padding-left: 24px;
+  position: relative;
   color: #555;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
-.timeline-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.phase-preview li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.btn-next {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
   margin-top: 20px;
 }
 
-.timeline-marker {
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-  color: white;
-  padding: 15px 20px;
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .itinerary-section h2 {
+    font-size: 1.3em;
+  }
+
+  .route-card {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .route-leg {
+    width: 100%;
+  }
+
+  .route-connector {
+    transform: rotate(90deg);
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .next-phase {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .itinerary-section {
+    margin-bottom: 40px;
+  }
+
+  .itinerary-section h2 {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .route-card {
+    padding: 15px;
+  }
+
+  .route-leg {
+    padding: 15px;
+  }
+
+  .arrival-info {
+    padding: 15px;
+  }
+
+  .checklist {
+    padding: 20px;
+  }
+
+  .checklist-item {
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  .tip-card {
+    padding: 15px;
+  }
+
+  .btn-next {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}.travel-itinerary {
+  max-width: 900px;
+}
+
+.itinerary-section {
+  margin-bottom: 60px;
+}
+
+.itinerary-section h2 {
+  font-size: 1.6em;
+  margin-bottom: 30px;
+  color: #333;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 15px;
+}
+
+.route-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #f9fafb 100%);
+  border: 2px solid #e0e7ff;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.route-leg {
+  flex: 1;
+  min-width: 180px;
+  padding: 20px;
+  background: white;
   border-radius: 6px;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  border-left: 4px solid #667eea;
 }
 
-.timeline-marker strong {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 1rem;
+.route-label {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.next-phase-list {
+.route-leg p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.route-leg strong {
+  color: #667eea;
+}
+
+.route-duration {
+  font-size: 0.9em;
+  color: #999;
+  font-weight: 500;
+}
+
+.route-connector {
+  font-size: 1.5em;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.arrival-info {
+  background: #f0f4ff;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+}
+
+.arrival-info p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.info-card h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.info-card.highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.info-card.highlight h3 {
+  color: white;
+}
+
+.info-card.warning {
+  background: #fff8f0;
+  border-color: #ffa500;
+}
+
+.info-card.warning h3 {
+  color: #ff8c00;
+}
+
+.compact-list {
   list-style: none;
   padding: 0;
-  margin: 15px 0;
 }
 
-.next-phase-list li {
-  padding-left: 25px;
-  margin-bottom: 10px;
+.compact-list li {
+  padding: 8px 0;
+  padding-left: 24px;
   position: relative;
   color: #555;
 }
 
-.next-phase-list li:before {
-  content: '→';
+.compact-list li:before {
+  content: "✓";
   position: absolute;
   left: 0;
-  color: #4a90e2;
-  font-weight: bold;
+  color: #667eea;
+  font-weight: 700;
 }
 
-.phase-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+.info-card.highlight .compact-list li:before {
   color: white;
-  border-radius: 6px;
-  font-weight: 600;
+}
+
+.checklist {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-top: 5px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.checklist-item label {
+  cursor: pointer;
+  color: #333;
+  line-height: 1.5;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tip-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
   transition: all 0.3s ease;
 }
 
-.phase-link:hover {
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+.tip-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
   transform: translateY(-2px);
 }
 
+.tip-card h3 {
+  color: #667eea;
+  margin-bottom: 12px;
+  font-size: 1em;
+}
+
+.tip-card p {
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.next-phase {
+  background: linear-gradient(135deg, #f5f7fa 0%, #f9fafb 100%);
+  padding: 40px;
+  border-radius: 8px;
+  border-left: 5px solid #667eea;
+  margin-top: 80px;
+}
+
+.next-phase h2 {
+  border-bottom: 3px solid #667eea;
+}
+
+.phase-preview {
+  list-style: none;
+  margin: 20px 0 30px 0;
+  padding: 0;
+}
+
+.phase-preview li {
+  padding: 12px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #555;
+  line-height: 1.5;
+}
+
+.phase-preview li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.btn-next {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
-  .phase-detail-content {
+  .itinerary-section h2 {
+    font-size: 1.3em;
+  }
+
+  .route-card {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .route-leg {
+    width: 100%;
+  }
+
+  .route-connector {
+    transform: rotate(90deg);
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .next-phase {
     padding: 25px;
   }
+}
 
-  .phase-section h2 {
-    font-size: 1.4rem;
+@media (max-width: 480px) {
+  .itinerary-section {
+    margin-bottom: 40px;
   }
 
-  .detail-box {
+  .itinerary-section h2 {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .route-card {
     padding: 15px;
   }
 
-  .timeline-marker {
-    padding: 12px 15px;
-    font-size: 0.9rem;
+  .route-leg {
+    padding: 15px;
+  }
+
+  .arrival-info {
+    padding: 15px;
+  }
+
+  .checklist {
+    padding: 20px;
+  }
+
+  .checklist-item {
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  .tip-card {
+    padding: 15px;
+  }
+
+  .btn-next {
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 }</style></head><body><header class="site-header">
-  <div class="header-content">
-    <a href="/carolyn-3/" class="logo">Thailand DTV Guide</a>
-    <p class="tagline">Your path to relocation & long-term visa</p>
+  <div class="header-container">
+    <div class="logo">
+      <a href="/carolyn-3/">Thailand DTV Guide</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
-</header><nav class="site-nav">
-  <ul class="nav-list">
+</header>
+<script>
+  document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+    document.querySelector('.site-nav').classList.toggle('active');
+  });
+</script><nav class="site-nav">
+  <ul class="nav-menu">
     <li><a href="/carolyn-3/">Home</a></li>
     <li><a href="/carolyn-3/phases">Phases</a></li>
-    <li><a href="/carolyn-3/dtv-visa">DTV Visa</a></li>
-    <li><a href="/carolyn-3/budget">Budget</a></li>
-    <li><a href="/carolyn-3/faq">FAQ</a></li>
     <li><a href="/carolyn-3/resources">Resources</a></li>
+    <li><a href="/carolyn-3/faq">FAQ</a></li>
+    <li><a href="/carolyn-3/contact">Contact</a></li>
   </ul>
-</nav><div class="phases-container">
-  <div class="phases-intro">
-    <h1>Phase 2: Travel to Thailand</h1>
-    <p class="intro-text">Flight logistics, visa exemption entry, and your first 24 hours in Chiang Mai. This phase covers your journey from the US to Thailand and initial arrival setup.</p>
+</nav><main class="phases-main">
+  <div class="phases-container">
+    <div class="phases-hero">
+      <h1>Phase 2: Travel to Thailand</h1>
+      <p class="subtitle">24-25 hours from Baltimore to Chiang Mai via Detroit and Seoul</p>
+    </div>
+
+    <div class="travel-itinerary">
+      <section class="itinerary-section">
+        <h2>Your Flight Route</h2>
+        <div class="route-card">
+          <div class="route-leg">
+            <span class="route-label">Leg 1</span>
+            <p><strong>Baltimore (BWI) → Detroit (DTW)</strong></p>
+            <p class="route-duration">~2 hours</p>
+          </div>
+          <div class="route-connector">→</div>
+          <div class="route-leg">
+            <span class="route-label">Leg 2</span>
+            <p><strong>Detroit (DTW) → Seoul (ICN)</strong></p>
+            <p class="route-duration">~13 hours + layover</p>
+          </div>
+          <div class="route-connector">→</div>
+          <div class="route-leg">
+            <span class="route-label">Leg 3</span>
+            <p><strong>Seoul (ICN) → Chiang Mai (CNX)</strong></p>
+            <p class="route-duration">~5 hours</p>
+          </div>
+        </div>
+        <div class="arrival-info">
+          <p><strong>Expected Arrival:</strong> August 25, 9:55 PM (Chiang Mai local time)</p>
+          <p><strong>Total Journey Time:</strong> 25+ hours with layovers</p>
+        </div>
+      </section>
+
+      <section class="itinerary-section">
+        <h2>Entry Requirements & Visa Exemption</h2>
+        <div class="info-cards">
+          <div class="info-card highlight">
+            <h3>✓ Visa Exemption</h3>
+            <p>US citizens receive a <strong>60-day visa exemption stamp</strong> automatically upon arrival at the airport. No advance visa application required.</p>
+          </div>
+          <div class="info-card">
+            <h3>Documents Needed</h3>
+            <ul class="compact-list">
+              <li>Valid US passport (6+ months validity)</li>
+              <li>Return or onward ticket (airline may ask)</li>
+              <li>Proof of accommodation</li>
+            </ul>
+          </div>
+          <div class="info-card warning">
+            <h3>⚠ Important Note</h3>
+            <p>You cannot apply for the DTV visa from inside Thailand. This 60-day exemption is your entry window. You'll apply for the 5-year DTV visa later from Vietnam.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="itinerary-section">
+        <h2>Airport Arrivals: First Night Checklist</h2>
+        <div class="checklist">
+          <div class="checklist-item">
+            <input type="checkbox" id="check1">
+            <label for="check1">Get a local cell phone plan at the airport (highly recommended for Grab app and communication)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check2">
+            <label for="check2">Exchange some currency or locate an ATM (note: 220 THB charge per withdrawal, ~$6.50)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check3">
+            <label for="check3">Download and set up the Grab app (ride-hailing like Uber; very affordable in Chiang Mai)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check4">
+            <label for="check4">Head to pre-booked accommodation (ensure you have temporary housing for first 2 weeks)</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="check5">
+            <label for="check5">Rest well—you've had a long journey</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="itinerary-section">
+        <h2>Travel Tips & Considerations</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h3>Layover Strategy</h3>
+            <p>With 13+ hours in Seoul, you might consider a short layover hotel to rest. Or stay in the airport terminal for a quieter transition.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Medication & Health</h3>
+            <p>Keep all medications in original containers in your carry-on bag. Bring your 90-day medication supply as planned. Medical records should also be accessible.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Flight Comfort</h3>
+            <p>Pack compression socks, neck pillow, and stay hydrated during the long journey. Move around the cabin when possible to maintain circulation.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Connection Tips</h3>
+            <p>Allow plenty of time between connections. Ask airline staff about connecting flight status. International transfers typically need 2-3 hours minimum.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Luggage Tracking</h3>
+            <p>Tag all luggage with your new Thailand contact info (phone number or temporary accommodation address). Take photos of luggage tags before checking bags.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Airport Arrival Time</h3>
+            <p>Chiang Mai airport is smaller and less crowded than Bangkok. Immigration should be relatively quick. Budget 45 minutes to 1 hour for arrival procedures.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="itinerary-section next-phase">
+        <h2>What's Next?</h2>
+        <p>After arrival on August 25, you'll begin <strong>Phase 3: Initial Settling In</strong> (August 26 - September 16). This includes:</p>
+        <ul class="phase-preview">
+          <li>First 3 quiet days to adjust and recover from travel</li>
+          <li>Setting up basic services (doctor, pharmacy, cleaner)</li>
+          <li>Connecting with recovery community and AA meetings</li>
+          <li>Downloading essential apps and settling into your temporary accommodation</li>
+        </ul>
+        <a href="/carolyn-3/phases/initial-settling" class="btn-next">Continue to Phase 3: Initial Settling →</a>
+      </section>
+    </div>
   </div>
-
-  <div class="phase-detail-content">
-    <section class="phase-section">
-      <h2>Flight: Baltimore → Chiang Mai</h2>
-      <div class="detail-box">
-        <h3>Itinerary</h3>
-        <ul class="checklist">
-          <li><strong>Route:</strong> Baltimore (BWI) → Detroit → Seoul → Chiang Mai</li>
-          <li><strong>Total Journey:</strong> 25+ hours with layovers</li>
-          <li><strong>Arrival:</strong> Chiang Mai 9:55 PM on August 25</li>
-          <li><strong>Entry:</strong> 60-day visa exemption (no visa required for US citizens)</li>
-        </ul>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Thailand DTV Guide</h3>
+        <p>Your complete resource for obtaining the 5-year Digital Nomad/Medical Treatment visa.</p>
       </div>
-
-      <div class="detail-box warning">
-        <h3>⚠️ Important Notes</h3>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
         <ul>
-          <li>Airlines may ask for return or onward ticket proof</li>
-          <li>You'll automatically receive a 60-day entry stamp</li>
-          <li>No advance visa application needed</li>
-          <li>Keep your passport and arrival documents safe</li>
+          <li><a href="/carolyn-3/phases">Visa Phases</a></li>
+          <li><a href="/carolyn-3/resources">Resources</a></li>
+          <li><a href="/carolyn-3/faq">FAQ</a></li>
+          <li><a href="/carolyn-3/contact">Contact</a></li>
         </ul>
       </div>
-    </section>
-
-    <section class="phase-section">
-      <h2>Immigration & Arrival (First 24 Hours)</h2>
-      <div class="detail-box">
-        <h3>At Immigration</h3>
-        <ul class="checklist">
-          <li>Present passport to immigration officer</li>
-          <li>Complete arrival card (TM.6 form provided on plane)</li>
-          <li>Get 60-day tourist entry stamp</li>
-          <li>Keep the departure card attached to your passport</li>
-        </ul>
+      <div class="footer-section">
+        <h3>Important</h3>
+        <p>This guide is informational only. Consult official Thai embassy sources and legal professionals before applying.</p>
       </div>
-
-      <div class="detail-box">
-        <h3>Immediate Tasks</h3>
-        <ul class="checklist">
-          <li>Get a local cell phone plan at the airport
-            <ul>
-              <li>AIS, Dtac, or True Move are main providers</li>
-              <li>Tourist SIM cards available at airport booths</li>
-              <li>Budget: 300-500 THB ($9-15) for starter package</li>
-            </ul>
-          </li>
-          <li>Exchange currency or withdraw Thai Baht from ATM
-            <ul>
-              <li>ATM fee: 220 THB ($6.50) per withdrawal</li>
-              <li>Exchange rate usually better at ATM than airport</li>
-            </ul>
-          </li>
-          <li>Download Grab app (ride-sharing, similar to Uber)
-            <ul>
-              <li>Essential for getting around Chiang Mai</li>
-              <li>Very affordable taxi and motorbike options</li>
-            </ul>
-          </li>
-          <li>Get to your accommodation
-            <ul>
-              <li>Should be pre-booked for first 2 weeks</li>
-              <li>Grab is easiest option from airport</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="phase-section">
-      <h2>First 2-3 Days: Settling In</h2>
-      <div class="detail-box">
-        <h3>Take It Slow</h3>
-        <p>Give yourself quiet time to recover from jet lag and adjust to your new environment. The first few days should prioritize rest and basic orientation.</p>
-        <ul class="checklist">
-          <li>Rest and manage jet lag</li>
-          <li>Locate nearby grocery store (Tesco Lotus, Big C, or local markets)</li>
-          <li>Familiarize yourself with neighborhood</li>
-          <li>Visit local convenience store (7-Eleven on many corners)</li>
-          <li>Confirm accommodation for longer-term stay</li>
-        </ul>
-      </div>
-
-      <div class="detail-box">
-        <h3>Suthep Area Overview</h3>
-        <p>Your base location has excellent expat infrastructure:</p>
-        <ul>
-          <li>Large English-speaking expat community</li>
-          <li>Multiple grocery stores within walking distance</li>
-          <li>Numerous Western-style restaurants</li>
-          <li>Bangkok Hospital Chiang Mai (24/7 English-speaking medical)</li>
-          <li>30+ AA meetings per week in English</li>
-          <li>Gyms, pools, and recreational facilities</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="phase-section">
-      <h2>60-Day Visa Exemption Timeline</h2>
-      <div class="timeline-detail">
-        <div class="timeline-marker">
-          <strong>Day 1 (Aug 25):</strong> Arrive in Chiang Mai, automatic 60-day stamp
-        </div>
-        <div class="timeline-marker">
-          <strong>Days 2-3:</strong> Settle in, handle jet lag, basic orientation
-        </div>
-        <div class="timeline-marker">
-          <strong>Days 4-22:</strong> Begin next phase (Initial Settling In, Sept 13)
-        </div>
-        <div class="timeline-marker">
-          <strong>Day 60 (Oct 24):</strong> 60-day visa exemption expires
-        </div>
-        <div class="timeline-marker">
-          <strong>Optional (Oct 19-20):</strong> Extend for additional 30 days (total 90 days)
-        </div>
-      </div>
-    </section>
-
-    <section class="phase-section">
-      <h2>What Comes Next</h2>
-      <p>After settling your immediate needs, you'll move into Phase 3: Initial Settling In, which focuses on:</p>
-      <ul class="next-phase-list">
-        <li>Establishing medical care</li>
-        <li>Connecting with recovery community (AA/addiction support)</li>
-        <li>Setting up basic services (cleaner, pharmacy)</li>
-        <li>Joining expat groups and communities</li>
-      </ul>
-      <p><a href="/carolyn-3/phases/settling-in" class="phase-link">→ Continue to Phase 3: Initial Settling In</a></p>
-    </section>
-  </div>
-</div><footer class="site-footer">
-  <div class="footer-content">
-    <p>&copy; 2025 Thailand Relocation & DTV Visa Guide. Comprehensive resource for medical tourism and digital nomad visas.</p>
-    <p class="disclaimer">This guide is informational. Always verify current requirements with official Thai embassy sources.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Thailand DTV Guide. All rights reserved.</p>
+    </div>
   </div>
 </footer></body></html>
