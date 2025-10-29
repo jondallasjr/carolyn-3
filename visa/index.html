@@ -1,0 +1,1137 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>DTV Visa Guide</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* DTV Visa Guide - Page CSS */
+.visa-guide-main {
+  background: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 2rem 0 3rem 0;
+  border-bottom: 2px solid #667eea;
+  margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.overview-section {
+  margin-bottom: 3rem;
+}
+
+.overview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.overview-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.overview-card {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.overview-card h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.overview-card p {
+  color: #555;
+  margin: 0;
+}
+
+.key-requirements-section {
+  margin-bottom: 3rem;
+}
+
+.key-requirements-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.requirement-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 3px solid #667eea;
+}
+
+.requirement-item h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.requirement-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.requirement-item li {
+  padding: 0.4rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.requirement-item li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.timeline-overview-section {
+  margin-bottom: 3rem;
+}
+
+.timeline-overview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.timeline-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.step-number {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.step-content p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.approval-rates-section {
+  margin-bottom: 3rem;
+  background: #f0f4ff;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.approval-rates-section h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.approval-info .highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.approval-info p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.approval-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.approval-info li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.approval-info li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.important-notes-section {
+  margin-bottom: 3rem;
+}
+
+.important-notes-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+}
+
+.note-card h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.note-card p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.next-steps-section {
+  margin-bottom: 3rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.next-steps-section h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.next-steps-content p {
+  color: #666;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.next-steps-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #764ba2;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+  background: #f0f4ff;
+  color: #667eea;
+}
+
+.faq-preview-section {
+  margin-bottom: 2rem;
+}
+
+.faq-preview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.faq-item p {
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .overview-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .next-steps-links {
+    grid-template-columns: 1fr;
+  }
+}.visa-guide-main {
+  background: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 2rem 0 3rem 0;
+  border-bottom: 2px solid #667eea;
+  margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.overview-section {
+  margin-bottom: 3rem;
+}
+
+.overview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.overview-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.overview-card {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.overview-card h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.overview-card p {
+  color: #555;
+  margin: 0;
+}
+
+.key-requirements-section {
+  margin-bottom: 3rem;
+}
+
+.key-requirements-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.requirement-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 3px solid #667eea;
+}
+
+.requirement-item h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.requirement-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.requirement-item li {
+  padding: 0.4rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.requirement-item li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.timeline-overview-section {
+  margin-bottom: 3rem;
+}
+
+.timeline-overview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.timeline-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f0f4ff;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.step-number {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.step-content p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.approval-rates-section {
+  margin-bottom: 3rem;
+  background: #f0f4ff;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.approval-rates-section h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.approval-info .highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.approval-info p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.approval-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.approval-info li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.approval-info li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.important-notes-section {
+  margin-bottom: 3rem;
+}
+
+.important-notes-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+}
+
+.note-card h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.note-card p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.next-steps-section {
+  margin-bottom: 3rem;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.next-steps-section h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.next-steps-content p {
+  color: #666;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.next-steps-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #764ba2;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+  background: #f0f4ff;
+  color: #667eea;
+}
+
+.faq-preview-section {
+  margin-bottom: 2rem;
+}
+
+.faq-preview-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.faq-item p {
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .overview-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .next-steps-links {
+    grid-template-columns: 1fr;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><main class="visa-guide-main">
+  <div class="container">
+    <section class="hero-section">
+      <h1>Thailand DTV Visa Guide</h1>
+      <p class="subtitle">Complete roadmap to obtaining the 5-year Destination Thailand Visa for medical tourism and long-term stays</p>
+    </section>
+
+    <section class="overview-section">
+      <h2>What is the DTV Visa?</h2>
+      <div class="overview-content">
+        <div class="overview-card">
+          <h3>Duration</h3>
+          <p><strong>5 years</strong> of continuous stay in Thailand</p>
+        </div>
+        <div class="overview-card">
+          <h3>Purpose</h3>
+          <p>Medical tourism, wellness, and treatment in Thailand</p>
+        </div>
+        <div class="overview-card">
+          <h3>Application Fee</h3>
+          <p><strong>$340 USD</strong> non-refundable</p>
+        </div>
+        <div class="overview-card">
+          <h3>Requirements</h3>
+          <p>Medical plan, financial sponsor, documentation</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="key-requirements-section">
+      <h2>Key Requirements</h2>
+      <div class="requirements-grid">
+        <div class="requirement-item">
+          <h3>Medical Documentation</h3>
+          <ul>
+            <li>Medical plan from Thai hospital (6+ months treatment)</li>
+            <li>Consultation with Thai doctor (~$40-90)</li>
+            <li>US medical records (surgeries, MRI, X-rays, etc.)</li>
+            <li>Proof of ongoing treatment need</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Financial Sponsor</h3>
+          <ul>
+            <li>Bank statements: 500,000+ THB ($15,000+ USD)</li>
+            <li>Funds held for 3+ months</li>
+            <li>Sponsorship letter committing to emergency support</li>
+            <li>Proof of relationship to applicant</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Personal Documents</h3>
+          <ul>
+            <li>Valid passport</li>
+            <li>Passport photos</li>
+            <li>Visa application form</li>
+            <li>Emergency contact information</li>
+          </ul>
+        </div>
+        <div class="requirement-item">
+          <h3>Application Rules</h3>
+          <ul>
+            <li>Must apply from OUTSIDE Thailand</li>
+            <li>Online-only applications (since Oct 2024)</li>
+            <li>Submit within 24 hours of arrival in Vietnam</li>
+            <li>All documents must be error-free</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-overview-section">
+      <h2>DTV Application Timeline</h2>
+      <div class="timeline-steps">
+        <div class="timeline-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Pre-Departure (7-8 weeks before)</h3>
+            <p>Gather documents, research, book temporary accommodation, arrange travel insurance</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Arrival in Thailand (60-day visa exemption)</h3>
+            <p>No visa required for US citizens. Settle in, establish with doctors and services</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Medical Planning (weeks 3-5)</h3>
+            <p>Consult Bangkok Hospital or Thai doctor, create 6-month medical treatment plan</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Optional 30-Day Extension (week 7)</h3>
+            <p>Extend tourist stay to 90 days at immigration office (1,900 THB)</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Document Compilation (weeks 7-8)</h3>
+            <p>Gather medical letters, financial documents, sponsor information, passport photos</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Travel to Vietnam (week 8)</h3>
+            <p>Fly to Hanoi or Ho Chi Minh City. Must leave Thailand to submit application</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">7</div>
+          <div class="step-content">
+            <h3>Submit Application & Wait (day 1 in Vietnam)</h3>
+            <p>Submit online at thaievisa.go.th. Official processing: 5 working days. Realistic: 2 days to 2 weeks</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">8</div>
+          <div class="step-content">
+            <h3>Return to Thailand with DTV</h3>
+            <p>Receive approval via email. Print multiple copies. Show at border. Valid for 5 years!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approval-rates-section">
+      <h2>DTV Approval Success Rate</h2>
+      <div class="approval-info">
+        <p class="highlight">VERY HIGH approval rate from Hanoi and Ho Chi Minh City embassies</p>
+        <p>Key factors for approval:</p>
+        <ul>
+          <li>Complete medical documentation showing 6+ months treatment need</li>
+          <li>Clear financial sponsor backing with sufficient funds</li>
+          <li>Error-free document submission (typos cause automatic rejection)</li>
+          <li>Proof of actual medical treatment plan from Thai hospital</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="important-notes-section">
+      <h2>Important Notes</h2>
+      <div class="notes-grid">
+        <div class="note-card">
+          <h3>⚠️ Cannot Apply from Inside Thailand</h3>
+          <p>You MUST leave Thailand to submit your application. Vietnam trip is required.</p>
+        </div>
+        <div class="note-card">
+          <h3>⚠️ Cannot Return During Processing</h3>
+          <p>You must stay in Vietnam while waiting for approval. Returning to Thailand voids your application.</p>
+        </div>
+        <div class="note-card">
+          <h3>✅ No Re-entry Permit Needed</h3>
+          <p>With DTV approval, you can leave and return to Thailand for 5 years without additional visas.</p>
+        </div>
+        <div class="note-card">
+          <h3>✅ Extended Stay Option</h3>
+          <p>You can stay continuously for up to 360 days with one extension (~$300). Or do a border run every 180 days.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-steps-section">
+      <h2>Next Steps</h2>
+      <div class="next-steps-content">
+        <p>Ready to dive deeper? Explore our detailed guides:</p>
+        <div class="next-steps-links">
+          <a href="/carolyn-3/visa/preparation" class="btn btn-primary">DTV Application Preparation Checklist</a>
+          <a href="/carolyn-3/visa/vietnam-application" class="btn btn-primary">Vietnam Application & Processing Guide</a>
+          <a href="/carolyn-3/timeline" class="btn btn-secondary">Full Relocation Timeline</a>
+          <a href="/carolyn-3/resources" class="btn btn-secondary">Thailand Resources</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-preview-section">
+      <h2>Common Questions</h2>
+      <div class="faq-item">
+        <h3>Can US citizens get a 60-day visa exemption?</h3>
+        <p>Yes! US citizens automatically receive a 60-day tourist stamp upon arrival in Thailand. No visa needed beforehand.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much does the DTV cost?</h3>
+        <p>$340 USD application fee, plus costs for medical consultation (~$40-90), documentation gathering, and Vietnam trip ($400-600).</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if my application is rejected?</h3>
+        <p>Very rare with proper documentation. Most rejections are due to typos or incomplete medical justification. The $340 fee is non-refundable.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does approval take?</h3>
+        <p>Official timeline: 5 working days. Realistic: 2 days to 2 weeks. You'll receive approval via email.</p>
+      </div>
+    </section>
+  </div>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
