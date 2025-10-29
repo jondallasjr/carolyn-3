@@ -1,0 +1,597 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Journey Phases</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #ffffff;
+}
+
+a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Header Styles */
+.site-header {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  padding: 30px 20px;
+  border-bottom: 3px solid #2d5a9f;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* Navigation Styles */
+.site-nav {
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  display: block;
+  padding: 15px 20px;
+  color: #333;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-list a:hover {
+  background: #efefef;
+  color: #4a90e2;
+  border-bottom-color: #4a90e2;
+  text-decoration: none;
+}
+
+/* Footer Styles */
+.site-footer {
+  background: #2d3436;
+  color: #ecf0f1;
+  padding: 40px 20px;
+  margin-top: 80px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: #bdc3c7;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list a {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .phases {
+    grid-template-columns: 1fr;
+  }
+}
+/* Journey Phases - Page CSS */
+.phases-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.phases-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.phases-intro h1 {
+  font-size: 2.5rem;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.phase-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.phase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+}
+
+.phase-card:hover {
+  border-color: #4a90e2;
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
+  transform: translateY(-4px);
+}
+
+.phase-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.phase-card h2 {
+  font-size: 1.5rem;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.phase-duration {
+  font-size: 0.9rem;
+  color: #4a90e2;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.phase-description {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.phase-link {
+  display: inline-block;
+  color: #4a90e2;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.phase-link:hover {
+  color: #357abd;
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.phases-timeline {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 60px;
+}
+
+.phases-timeline h2 {
+  font-size: 1.75rem;
+  color: #2d3436;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.timeline-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #4a90e2;
+  text-align: center;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #4a90e2;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.timeline-event {
+  font-size: 0.95rem;
+  color: #2d3436;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .phases-container {
+    padding: 40px 20px;
+  }
+
+  .phases-intro h1 {
+    font-size: 1.75rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .phases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .phases-timeline {
+    padding: 25px;
+  }
+}.phases-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.phases-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.phases-intro h1 {
+  font-size: 2.5rem;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.phase-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.phase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+}
+
+.phase-card:hover {
+  border-color: #4a90e2;
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
+  transform: translateY(-4px);
+}
+
+.phase-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.phase-card h2 {
+  font-size: 1.5rem;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.phase-duration {
+  font-size: 0.9rem;
+  color: #4a90e2;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.phase-description {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.phase-link {
+  display: inline-block;
+  color: #4a90e2;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.phase-link:hover {
+  color: #357abd;
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.phases-timeline {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 60px;
+}
+
+.phases-timeline h2 {
+  font-size: 1.75rem;
+  color: #2d3436;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.timeline-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #4a90e2;
+  text-align: center;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #4a90e2;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.timeline-event {
+  font-size: 0.95rem;
+  color: #2d3436;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .phases-container {
+    padding: 40px 20px;
+  }
+
+  .phases-intro h1 {
+    font-size: 1.75rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .phases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .phases-timeline {
+    padding: 25px;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-content">
+    <a href="/carolyn-3/" class="logo">Thailand DTV Guide</a>
+    <p class="tagline">Your path to relocation & long-term visa</p>
+  </div>
+</header><nav class="site-nav">
+  <ul class="nav-list">
+    <li><a href="/carolyn-3/">Home</a></li>
+    <li><a href="/carolyn-3/phases">Phases</a></li>
+    <li><a href="/carolyn-3/dtv-visa">DTV Visa</a></li>
+    <li><a href="/carolyn-3/budget">Budget</a></li>
+    <li><a href="/carolyn-3/faq">FAQ</a></li>
+    <li><a href="/carolyn-3/resources">Resources</a></li>
+  </ul>
+</nav><main class="phases-container">
+  <section class="phases-intro">
+    <h1>Journey Phases</h1>
+    <p class="intro-text">Your Thailand relocation and DTV visa journey unfolds across 6 major phases. Each phase builds on the previous one, from initial preparation through long-term settlement.</p>
+  </section>
+
+  <div class="phases-grid">
+    <article class="phase-card" data-phase="1">
+      <div class="phase-number">1</div>
+      <h2>Pre-Departure Preparation</h2>
+      <p class="phase-duration">4-6 weeks before departure</p>
+      <p class="phase-description">Essential tasks including document gathering, travel insurance, housing research, medical records compilation, and logistics planning.</p>
+      <a href="/carolyn-3/phases/pre-departure" class="phase-link">View Phase →</a>
+    </article>
+
+    <article class="phase-card" data-phase="2">
+      <div class="phase-number">2</div>
+      <h2>Travel to Thailand</h2>
+      <p class="phase-duration">Travel day + first 24 hours</p>
+      <p class="phase-description">Flight logistics, visa exemption entry process, and arrival in Chiang Mai. No visa required for US citizens.</p>
+      <a href="/carolyn-3/phases/travel" class="phase-link">View Phase →</a>
+    </article>
+
+    <article class="phase-card" data-phase="3">
+      <div class="phase-number">3</div>
+      <h2>Initial Settling In</h2>
+      <p class="phase-duration">First 2-3 weeks</p>
+      <p class="phase-description">Establishing healthcare providers, connecting with recovery community, setting up daily services, and building expat connections.</p>
+      <a href="/carolyn-3/phases/settling-in" class="phase-link">View Phase →</a>
+    </article>
+
+    <article class="phase-card" data-phase="4">
+      <div class="phase-number">4</div>
+      <h2>Medical Plan & DTV Foundation</h2>
+      <p class="phase-duration">Weeks 3-8</p>
+      <p class="phase-description">Establishing 6+ month medical treatment plan with Thai physician. This medical foundation is required for DTV visa eligibility.</p>
+      <a href="/carolyn-3/phases/medical-plan" class="phase-link">View Phase →</a>
+    </article>
+
+    <article class="phase-card" data-phase="5">
+      <div class="phase-number">5</div>
+      <h2>DTV Visa Application</h2>
+      <p class="phase-duration">Weeks 7-11</p>
+      <p class="phase-description">Comprehensive application process applied from Vietnam, including document compilation, embassy submission, and approval waiting period.</p>
+      <a href="/carolyn-3/phases/dtv-application" class="phase-link">View Phase →</a>
+    </article>
+
+    <article class="phase-card" data-phase="6">
+      <div class="phase-number">6</div>
+      <h2>Long-Term Stay & Beyond</h2>
+      <p class="phase-duration">After DTV approval (5+ years)</p>
+      <p class="phase-description">Establishing permanent residence, deepening community connections, and managing visa renewals and extensions.</p>
+      <a href="/carolyn-3/phases/long-term-stay" class="phase-link">View Phase →</a>
+    </article>
+  </div>
+
+  <section class="phases-timeline">
+    <h2>Timeline Overview</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Weeks -6 to -4</div>
+        <div class="timeline-event">Phase 1: Pre-Departure</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Day 0</div>
+        <div class="timeline-event">Phase 2: Travel</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Days 1-21</div>
+        <div class="timeline-event">Phase 3: Settling In</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Weeks 3-8</div>
+        <div class="timeline-event">Phase 4: Medical Plan</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Weeks 7-11</div>
+        <div class="timeline-event">Phase 5: DTV Application</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Week 11+</div>
+        <div class="timeline-event">Phase 6: Long-Term Stay</div>
+      </div>
+    </div>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Thailand Relocation & DTV Visa Guide. Comprehensive resource for medical tourism and digital nomad visas.</p>
+    <p class="disclaimer">This guide is informational. Always verify current requirements with official Thai embassy sources.</p>
+  </div>
+</footer></body></html>
