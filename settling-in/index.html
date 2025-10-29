@@ -1,0 +1,596 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Initial Settling In</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #764ba2;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #667eea;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #667eea;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    display: block;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-links {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+/* Initial Settling In - Page CSS */
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+.timeline-info {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #667eea;
+}
+
+.timeline-info p {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: #667eea;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  padding: 0.5rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.card ul ul {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.card ul ul li {
+  font-size: 0.95rem;
+}
+
+.highlight-section {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.info-box {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #764ba2;
+  border-radius: 4px;
+}
+
+.info-box h3 {
+  color: #667eea;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.info-box ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.info-box li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.next-steps {
+  background: #f0f4ff;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.next-steps h2 {
+  color: #667eea;
+  margin-top: 0;
+}
+
+.next-steps p {
+  color: #555;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-section {
+    padding: 1rem;
+  }
+
+  .info-box {
+    padding: 1rem;
+  }
+}.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+.timeline-info {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #667eea;
+}
+
+.timeline-info p {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: #667eea;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  padding: 0.5rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.card ul ul {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.card ul ul li {
+  font-size: 0.95rem;
+}
+
+.highlight-section {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.info-box {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #764ba2;
+  border-radius: 4px;
+}
+
+.info-box h3 {
+  color: #667eea;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.info-box ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.info-box li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.next-steps {
+  background: #f0f4ff;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.next-steps h2 {
+  color: #667eea;
+  margin-top: 0;
+}
+
+.next-steps p {
+  color: #555;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-section {
+    padding: 1rem;
+  }
+
+  .info-box {
+    padding: 1rem;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1><a href="/carolyn-3/">Thailand Relocation Guide</a></h1>
+    </div>
+    <nav class="header-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/carolyn-3/">Home</a></li>
+        <li><a href="/carolyn-3/timeline">Timeline</a></li>
+        <li><a href="/carolyn-3/visa">DTV Visa</a></li>
+        <li><a href="/carolyn-3/resources">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</header><main class="page-container">
+  <div class="page-header">
+    <h1>Initial Settling In</h1>
+    <p class="subtitle">Your first 3 weeks in Chiang Mai: establishing essential services and building community connections</p>
+  </div>
+
+  <section class="content-section">
+    <div class="timeline-info">
+      <p><strong>Timeline:</strong> August 26 - September 16, 2025</p>
+      <p><strong>Duration:</strong> 3 weeks</p>
+    </div>
+
+    <div class="section-grid">
+      <div class="card">
+        <h2>First 3 Quiet Days</h2>
+        <ul>
+          <li>Visit nearby grocery store to familiarize yourself with the area</li>
+          <li>Download and set up <strong>Grab app</strong> for transportation (taxis & motorbikes)</li>
+          <li>Rest and adjust to the time zone</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Set Up Basic Services</h2>
+        <ul>
+          <li><strong>Cleaner:</strong> 500-800 THB ($15-24) for 2-3 hours</li>
+          <li><strong>Primary Care Doctor:</strong> Recommended: Dr. Morgan at Health Care Medical Clinic</li>
+          <li><strong>Physical Therapist:</strong> Essential for your medical plan</li>
+          <li><strong>Pharmacy:</strong> Locate nearby for prescription refills</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Connect with Recovery Community</h2>
+        <ul>
+          <li>Attend nearby AA meetings (50+ per week in Chiang Mai)</li>
+          <li>Buddhist recovery or Refuge Recovery meetings</li>
+          <li>Find a sponsor</li>
+          <li>Research addiction counseling options:
+            <ul>
+              <li>Counselling Thailand</li>
+              <li>The Cabin alumni network</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section highlight-section">
+    <h2>Key Information</h2>
+    <div class="info-box">
+      <h3>Recovery Resources in Chiang Mai</h3>
+      <p>Chiang Mai has a well-established recovery community with 50+ AA meetings per week. The city is known as a hub for expats seeking recovery and wellness. Many meetings are English-speaking or have English translation available.</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Cost of Living Notes</h3>
+      <ul>
+        <li><strong>Housing in Suthep:</strong> $250-500/month</li>
+        <li><strong>Physical therapy:</strong> $25-75/session (vs $100+ in US)</li>
+        <li><strong>ATM withdrawals:</strong> 220 THB ($6.50) fee per transaction</li>
+        <li><strong>Western-style restaurants:</strong> Abundant in Chiang Mai</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h3>Transportation</h3>
+      <p>Grab is the primary app for taxis and motorbikes in Chiang Mai. Prices are very inexpensive compared to Western countries. The Suthep area has good access to all essential services.</p>
+    </div>
+  </section>
+
+  <section class="content-section next-steps">
+    <h2>What Comes Next</h2>
+    <p>After establishing your routine and services (by mid-September), you'll move on to the next phase: <strong>Getting a Medical Plan</strong> required for your DTV visa application.</p>
+    <p>This medical consultation with a Thai doctor creates the foundation for visa approval and should show that you need 6+ months of ongoing treatment (physical therapy/pain management).</p>
+  </section>
+</main><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2025 Thailand Relocation Guide. Information accurate as of October 2025.</p>
+      <p>This guide covers the DTV (Digital Nomad Visa), medical tourism, and settling in Chiang Mai, Thailand.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/carolyn-3/faq">FAQ</a>
+      <a href="/carolyn-3/resources">Resources</a>
+      <a href="/carolyn-3/budget">Budget Guide</a>
+    </div>
+  </div>
+</footer></body></html>
